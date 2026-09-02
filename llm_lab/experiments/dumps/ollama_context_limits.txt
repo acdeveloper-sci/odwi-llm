@@ -1,0 +1,59 @@
+provider: ollama
+model: qwen3:0.6b
+sdk: openai + httpx (2.54.0)
+generated_utc: 2026-09-02T12:39:50+00:00
+========================================================================
+### (a) max_tokens=10
+prompt: Write a detailed 500-word essay on the history of the printing press, covering Gutenberg, movable type, and the spread of literacy in Europe.
+note: choices[0].finish_reason='length' ; content='' ; usage.completion_tokens=10
+------------------------------------------------------------------------
+type: openai.types.chat.chat_completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-646",
+  "choices": [
+    {
+      "finish_reason": "length",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null,
+        "reasoning": "Okay, I need to write a "
+      }
+    }
+  ],
+  "created": 1788352784,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "fp_ollama",
+  "usage": {
+    "completion_tokens": 10,
+    "prompt_tokens": 41,
+    "total_tokens": 51,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-646', choices=[Choice(finish_reason='length', index=0, logprobs=None, message=ChatCompletionMessage(content='', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning='Okay, I need to write a '))], created=1788352784, model='qwen3:0.6b', object='chat.completion', moderation=None, service_tier=None, system_fingerprint='fp_ollama', usage=CompletionUsage(completion_tokens=10, prompt_tokens=41, total_tokens=51, completion_tokens_details=None, prompt_tokens_details=None))
+
+========================================================================
+### (b) context overflow (num_ctx=256)
+prompt: POST http://localhost:11434/api/chat  options.num_ctx=256, prompt~2.6k tokens
+note: HTTP 200; keys=['created_at', 'done', 'done_reason', 'eval_count', 'eval_duration', 'load_duration', 'message', 'model', 'prompt_eval_count', 'prompt_eval_duration', 'total_duration']; prompt_eval_count=130; error=None; done_reason='length'
+------------------------------------------------------------------------
+type: builtins.dict
+
+# repr():
+{'request': 'POST http://localhost:11434/api/chat  options.num_ctx=256, prompt~2.6k tokens', 'status_code': 200, 'json': {'model': 'qwen3:0.6b', 'created_at': '2026-09-02T12:39:50.202497Z', 'message': {'role': 'assistant', 'content': '', 'thinking': "Okay, let's see. The user provided a series of statements about the brown fox and the lazy dog. The main point seems to be that the brown fox is jumping over the lazy dog"}, 'done': True, 'done_reason': 'length', 'total_duration': 3644327500, 'load_duration': 3313046300, 'prompt_eval_count': 130, 'prompt_eval_duration': 106623000, 'eval_count': 40, 'eval_duration': 207170000}}
+

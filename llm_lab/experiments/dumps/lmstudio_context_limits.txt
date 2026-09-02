@@ -1,0 +1,64 @@
+provider: lmstudio
+model: llama-3.2-3b-instruct
+sdk: openai (2.54.0)
+generated_utc: 2026-09-02T12:39:55+00:00
+========================================================================
+### (a) max_tokens=10
+prompt: Write a detailed 500-word essay on the history of the printing press, covering Gutenberg, movable type, and the spread of literacy in Europe.
+note: choices[0].finish_reason='length' ; content='The printing press, invented by Johannes Gutenberg in the' ; usage.completion_tokens=10
+------------------------------------------------------------------------
+type: openai.types.chat.chat_completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-jchezw4pxrsqvtvybx9h",
+  "choices": [
+    {
+      "finish_reason": "length",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "The printing press, invented by Johannes Gutenberg in the",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning_content": ""
+      }
+    }
+  ],
+  "created": 1788352792,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "usage": {
+    "completion_tokens": 10,
+    "prompt_tokens": 64,
+    "total_tokens": 74,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "stats": {}
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-jchezw4pxrsqvtvybx9h', choices=[Choice(finish_reason='length', index=0, logprobs=None, message=ChatCompletionMessage(content='The printing press, invented by Johannes Gutenberg in the', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[], reasoning_content=''))], created=1788352792, model='llama-3.2-3b-instruct', object='chat.completion', moderation=None, service_tier=None, system_fingerprint='llama-3.2-3b-instruct', usage=CompletionUsage(completion_tokens=10, prompt_tokens=64, total_tokens=74, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=0, rejected_prediction_tokens=None), prompt_tokens_details=None), stats={})
+
+========================================================================
+### (b) context overflow (~35k-token prompt)
+note: RAISED openai.BadRequestError: Error code: 400 - {'error': 'Engine protocol predict request returned 400: {"error":{"code":400,"message":"request (40035 tokens) exceeds the available context size (8192 tokens), try increasing it","type":"exceed_context_size_error","n_prompt_tokens":40035,"n_ctx":8192}}'}
+------------------------------------------------------------------------
+type: builtins.dict
+
+# repr():
+{'exception_type': 'openai.BadRequestError', 'str': 'Error code: 400 - {\'error\': \'Engine protocol predict request returned 400: {"error":{"code":400,"message":"request (40035 tokens) exceeds the available context size (8192 tokens), try increasing it","type":"exceed_context_size_error","n_prompt_tokens":40035,"n_ctx":8192}}\'}', 'status_code': 400, 'code': None, 'body': 'Engine protocol predict request returned 400: {"error":{"code":400,"message":"request (40035 tokens) exceeds the available context size (8192 tokens), try increasing it","type":"exceed_context_size_error","n_prompt_tokens":40035,"n_ctx":8192}}'}
+
