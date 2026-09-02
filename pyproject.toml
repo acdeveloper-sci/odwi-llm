@@ -1,0 +1,13 @@
+[project]
+name = "odwi-llm"
+version = "0.1.0"
+description = "Provider-agnostic LLM access layer: a thin port (LLMPort) plus interchangeable adapters."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic>=2",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
