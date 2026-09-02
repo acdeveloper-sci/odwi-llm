@@ -1,0 +1,51 @@
+provider: lmstudio
+model: llama-3.2-3b-instruct
+sdk: openai-sdk (openai 2.54.0)
+generated_utc: 2026-09-02T05:13:17+00:00
+prompt: In one sentence, list the three primary colors of light in the additive model.
+========================================================================
+type: openai.types.chat.chat_completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-x1knw3y75vtgj0k03pxy",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "The three primary colors of light in the additive model are Red (R), Green (G), and Blue (B).",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning_content": ""
+      }
+    }
+  ],
+  "created": 1788325996,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "usage": {
+    "completion_tokens": 25,
+    "prompt_tokens": 51,
+    "total_tokens": 76,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "stats": {}
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-x1knw3y75vtgj0k03pxy', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='The three primary colors of light in the additive model are Red (R), Green (G), and Blue (B).', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[], reasoning_content=''))], created=1788325996, model='llama-3.2-3b-instruct', object='chat.completion', moderation=None, service_tier=None, system_fingerprint='llama-3.2-3b-instruct', usage=CompletionUsage(completion_tokens=25, prompt_tokens=51, total_tokens=76, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=0, rejected_prediction_tokens=None), prompt_tokens_details=None), stats={})
