@@ -2,4 +2,12 @@
 name = "odwi-llm-lab"
 version = "0.1.0"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "any-llm-sdk>=1.26.0",
+    "google-genai>=2.21.0",
+    "groq>=1.7.0",
+    "litellm>=1.99.0",
+    "openai>=2.54.0",
+    "pydantic>=2.13.5",
+    "python-dotenv>=1.2.3",
+]
