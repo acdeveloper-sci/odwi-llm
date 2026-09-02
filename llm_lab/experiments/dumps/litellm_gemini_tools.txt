@@ -1,0 +1,76 @@
+provider: gemini
+model: gemini/gemini-3.5-flash-lite
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:29+00:00
+prompt: [{'role': 'user', 'content': 'What is the current weather in Paris? You must call the get_weather tool.'}]
+lib_model: gemini/gemini-3.5-flash-lite
+op: tools
+litellm_response_cost: 6.34e-05
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,custom_llm_provider,litellm_call_id,litellm_model_name,model_id,optional_params,region_name,response_cost,vertex_ai_citation_metadata,vertex_ai_grounding_metadata,vertex_ai_safety_results,vertex_ai_url_context_metadata
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "8TeYavCKHIWtqtsP-vKDsAw",
+  "created": 1788360689,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "message": {
+        "content": null,
+        "role": "assistant",
+        "tool_calls": [
+          {
+            "index": 0,
+            "provider_specific_fields": {
+              "thought_signature": "El4KXAERTTIPuFWb/+5h9v+kyIXh/Y6/vliS2aL1L4eGXEv4oFI9GBpzFWKvJv1eP+Ia19qp5UQ/dcWFTM2liaALeo9miz6FXcAH0yLjSHpgQUratwhqT0FbNuyjG1lt"
+            },
+            "function": {
+              "arguments": "{\"city\": \"Paris\"}",
+              "name": "get_weather"
+            },
+            "id": "call_1869350__thought__El4KXAERTTIPuFWb/+5h9v+kyIXh/Y6/vliS2aL1L4eGXEv4oFI9GBpzFWKvJv1eP+Ia19qp5UQ/dcWFTM2liaALeo9miz6FXcAH0yLjSHpgQUratwhqT0FbNuyjG1lt",
+            "type": "function"
+          }
+        ],
+        "function_call": null,
+        "images": [],
+        "thinking_blocks": [],
+        "provider_specific_fields": {
+          "thought_signatures": [
+            "El4KXAERTTIPuFWb/+5h9v+kyIXh/Y6/vliS2aL1L4eGXEv4oFI9GBpzFWKvJv1eP+Ia19qp5UQ/dcWFTM2liaALeo9miz6FXcAH0yLjSHpgQUratwhqT0FbNuyjG1lt"
+          ]
+        }
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 16,
+    "prompt_tokens": 78,
+    "total_tokens": 94,
+    "completion_tokens_details": {
+      "text_tokens": 16
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": null,
+      "text_tokens": 78,
+      "image_tokens": null,
+      "video_tokens": null
+    },
+    "cache_read_input_tokens": null
+  },
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_url_context_metadata": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": [],
+  "service_tier": "default"
+}
+
+# repr():
+ModelResponse(id='8TeYavCKHIWtqtsP-vKDsAw', created=1788360689, model='gemini-3.5-flash-lite', object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='tool_calls', index=0, message=Message(content=None, role='assistant', tool_calls=[ChatCompletionMessageToolCall(index=0, provider_specific_fields={'thought_signature': 'El4KXAERTTIPuFWb/+5h9v+kyIXh/Y6/vliS2aL1L4eGXEv4oFI9GBpzFWKvJv1eP+Ia19qp5UQ/dcWFTM2liaALeo9miz6FXcAH0yLjSHpgQUratwhqT0FbNuyjG1lt'}, function=Function(arguments='{"city": "Paris"}', name='get_weather'), id='call_1869350__thought__El4KXAERTTIPuFWb/+5h9v+kyIXh/Y6/vliS2aL1L4eGXEv4oFI9GBpzFWKvJv1eP+Ia19qp5UQ/dcWFTM2liaALeo9miz6FXcAH0yLjSHpgQUratwhqT0FbNuyjG1lt', type='function')], function_call=None, images=[], thinking_blocks=[], provider_specific_fields={'thought_signatures': ['El4KXAERTTIPuFWb/+5h9v+kyIXh/Y6/vliS2aL1L4eGXEv4oFI9GBpzFWKvJv1eP+Ia19qp5UQ/dcWFTM2liaALeo9miz6FXcAH0yLjSHpgQUratwhqT0FbNuyjG1lt']}))], usage=Usage(completion_tokens=16, prompt_tokens=78, total_tokens=94, completion_tokens_details=CompletionTokensDetailsWrapper(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=None, rejected_prediction_tokens=None, text_tokens=16, image_tokens=None, video_tokens=None), prompt_tokens_details=PromptTokensDetailsWrapper(audio_tokens=None, cached_tokens=None, text_tokens=78, image_tokens=None, video_tokens=None), cache_read_input_tokens=None), vertex_ai_grounding_metadata=[], vertex_ai_url_context_metadata=[], vertex_ai_safety_results=[], vertex_ai_citation_metadata=[], service_tier='default')

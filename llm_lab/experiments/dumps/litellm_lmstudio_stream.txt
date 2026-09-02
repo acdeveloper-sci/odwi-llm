@@ -1,0 +1,261 @@
+provider: lmstudio
+model: lm_studio/llama-3.2-3b-instruct
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:54+00:00
+prompt: Write three short sentences about why the sky is blue.
+chunk_count: 75
+lib_model: lm_studio/llama-3.2-3b-instruct
+op: stream
+========================================================================
+# every chunk (compact):
+[  0] content='The' reasoning=None finish=None choices=1 usage=no
+[  1] content=' sky' reasoning=None finish=None choices=1 usage=no
+[  2] content=' appears' reasoning=None finish=None choices=1 usage=no
+[  3] content=' blue' reasoning=None finish=None choices=1 usage=no
+[  4] content=' due' reasoning=None finish=None choices=1 usage=no
+[  5] content=' to' reasoning=None finish=None choices=1 usage=no
+[  6] content=' a' reasoning=None finish=None choices=1 usage=no
+[  7] content=' phenomenon' reasoning=None finish=None choices=1 usage=no
+[  8] content=' called' reasoning=None finish=None choices=1 usage=no
+[  9] content=' Ray' reasoning=None finish=None choices=1 usage=no
+[ 10] content='leigh' reasoning=None finish=None choices=1 usage=no
+[ 11] content=' scattering' reasoning=None finish=None choices=1 usage=no
+[ 12] content=',' reasoning=None finish=None choices=1 usage=no
+[ 13] content=' where' reasoning=None finish=None choices=1 usage=no
+[ 14] content=' shorter' reasoning=None finish=None choices=1 usage=no
+[ 15] content=' wavelengths' reasoning=None finish=None choices=1 usage=no
+[ 16] content=' of' reasoning=None finish=None choices=1 usage=no
+[ 17] content=' light' reasoning=None finish=None choices=1 usage=no
+[ 18] content=' (' reasoning=None finish=None choices=1 usage=no
+[ 19] content='such' reasoning=None finish=None choices=1 usage=no
+[ 20] content=' as' reasoning=None finish=None choices=1 usage=no
+[ 21] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 22] content=' and' reasoning=None finish=None choices=1 usage=no
+[ 23] content=' violet' reasoning=None finish=None choices=1 usage=no
+[ 24] content=')' reasoning=None finish=None choices=1 usage=no
+[ 25] content=' are' reasoning=None finish=None choices=1 usage=no
+[ 26] content=' scattered' reasoning=None finish=None choices=1 usage=no
+[ 27] content=' by' reasoning=None finish=None choices=1 usage=no
+[ 28] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 29] content=' tiny' reasoning=None finish=None choices=1 usage=no
+[ 30] content=' molecules' reasoning=None finish=None choices=1 usage=no
+[ 31] content=' of' reasoning=None finish=None choices=1 usage=no
+[ 32] content=' gases' reasoning=None finish=None choices=1 usage=no
+[ 33] content=' in' reasoning=None finish=None choices=1 usage=no
+[ 34] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 35] content=' atmosphere' reasoning=None finish=None choices=1 usage=no
+[ 36] content=' more' reasoning=None finish=None choices=1 usage=no
+[ 37] content=' than' reasoning=None finish=None choices=1 usage=no
+[ 38] content=' longer' reasoning=None finish=None choices=1 usage=no
+[ 39] content=' wavelengths' reasoning=None finish=None choices=1 usage=no
+[ 40] content=' (' reasoning=None finish=None choices=1 usage=no
+[ 41] content='like' reasoning=None finish=None choices=1 usage=no
+[ 42] content=' red' reasoning=None finish=None choices=1 usage=no
+[ 43] content=').' reasoning=None finish=None choices=1 usage=no
+[ 44] content=' This' reasoning=None finish=None choices=1 usage=no
+[ 45] content=' scattering' reasoning=None finish=None choices=1 usage=no
+[ 46] content=' effect' reasoning=None finish=None choices=1 usage=no
+[ 47] content=' gives' reasoning=None finish=None choices=1 usage=no
+[ 48] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 49] content=' sky' reasoning=None finish=None choices=1 usage=no
+[ 50] content=' its' reasoning=None finish=None choices=1 usage=no
+[ 51] content=' characteristic' reasoning=None finish=None choices=1 usage=no
+[ 52] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 53] content=' hue' reasoning=None finish=None choices=1 usage=no
+[ 54] content='.' reasoning=None finish=None choices=1 usage=no
+[ 55] content=' The' reasoning=None finish=None choices=1 usage=no
+[ 56] content=' color' reasoning=None finish=None choices=1 usage=no
+[ 57] content=' we' reasoning=None finish=None choices=1 usage=no
+[ 58] content=' see' reasoning=None finish=None choices=1 usage=no
+[ 59] content=' is' reasoning=None finish=None choices=1 usage=no
+[ 60] content=' also' reasoning=None finish=None choices=1 usage=no
+[ 61] content=' influenced' reasoning=None finish=None choices=1 usage=no
+[ 62] content=' by' reasoning=None finish=None choices=1 usage=no
+[ 63] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 64] content=' Earth' reasoning=None finish=None choices=1 usage=no
+[ 65] content="'s" reasoning=None finish=None choices=1 usage=no
+[ 66] content=' atmospheric' reasoning=None finish=None choices=1 usage=no
+[ 67] content=' conditions' reasoning=None finish=None choices=1 usage=no
+[ 68] content=' and' reasoning=None finish=None choices=1 usage=no
+[ 69] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 70] content=' time' reasoning=None finish=None choices=1 usage=no
+[ 71] content=' of' reasoning=None finish=None choices=1 usage=no
+[ 72] content=' day' reasoning=None finish=None choices=1 usage=no
+[ 73] content='.' reasoning=None finish=None choices=1 usage=no
+[ 74] content=None reasoning=None finish='stop' choices=1 usage=no
+
+========================================================================
+### full chunk [0]  (first)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-htlo59c5kb7vmpsxkmw8bs",
+  "created": 1788360713,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "refusal": null,
+        "content": "The",
+        "role": "assistant",
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null,
+  "moderation": null,
+  "service_tier": null
+}
+
+# repr():
+ModelResponseStream(id='chatcmpl-htlo59c5kb7vmpsxkmw8bs', created=1788360713, model='llama-3.2-3b-instruct', object='chat.completion.chunk', system_fingerprint='llama-3.2-3b-instruct', choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields=None, refusal=None, content='The', role='assistant', function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None, moderation=None, service_tier=None)
+
+========================================================================
+### full chunk [1]  (first)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-htlo59c5kb7vmpsxkmw8bs",
+  "created": 1788360713,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "provider_specific_fields": null,
+        "refusal": null,
+        "content": " sky",
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null,
+  "moderation": null,
+  "service_tier": null
+}
+
+# repr():
+ModelResponseStream(id='chatcmpl-htlo59c5kb7vmpsxkmw8bs', created=1788360713, model='llama-3.2-3b-instruct', object='chat.completion.chunk', system_fingerprint='llama-3.2-3b-instruct', choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields=None, refusal=None, content=' sky', role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None, moderation=None, service_tier=None)
+
+========================================================================
+### full chunk [72]  (tail)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-htlo59c5kb7vmpsxkmw8bs",
+  "created": 1788360713,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "provider_specific_fields": null,
+        "refusal": null,
+        "content": " day",
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null,
+  "moderation": null,
+  "service_tier": null
+}
+
+# repr():
+ModelResponseStream(id='chatcmpl-htlo59c5kb7vmpsxkmw8bs', created=1788360713, model='llama-3.2-3b-instruct', object='chat.completion.chunk', system_fingerprint='llama-3.2-3b-instruct', choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields=None, refusal=None, content=' day', role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None, moderation=None, service_tier=None)
+
+========================================================================
+### full chunk [73]  (tail)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-htlo59c5kb7vmpsxkmw8bs",
+  "created": 1788360713,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "provider_specific_fields": null,
+        "refusal": null,
+        "content": ".",
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null,
+  "moderation": null,
+  "service_tier": null
+}
+
+# repr():
+ModelResponseStream(id='chatcmpl-htlo59c5kb7vmpsxkmw8bs', created=1788360713, model='llama-3.2-3b-instruct', object='chat.completion.chunk', system_fingerprint='llama-3.2-3b-instruct', choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields=None, refusal=None, content='.', role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None, moderation=None, service_tier=None)
+
+========================================================================
+### full chunk [74]  (tail)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-htlo59c5kb7vmpsxkmw8bs",
+  "created": 1788360713,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "delta": {
+        "content": null,
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "moderation": null,
+  "service_tier": null
+}
+
+# repr():
+ModelResponseStream(id='chatcmpl-htlo59c5kb7vmpsxkmw8bs', created=1788360713, model='llama-3.2-3b-instruct', object='chat.completion.chunk', system_fingerprint='llama-3.2-3b-instruct', choices=[StreamingChoices(finish_reason='stop', index=0, delta=Delta(provider_specific_fields=None, content=None, role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, moderation=None, service_tier=None)

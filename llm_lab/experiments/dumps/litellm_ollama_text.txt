@@ -1,0 +1,43 @@
+provider: ollama
+model: ollama_chat/qwen3:0.6b
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:45+00:00
+prompt: [{'role': 'user', 'content': 'In one sentence, list the three primary colors of light in the additive model.'}]
+lib_model: ollama_chat/qwen3:0.6b
+op: text
+litellm_response_cost: 0.0
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,custom_llm_provider,litellm_call_id,litellm_model_name,model_id,optional_params,region_name,response_cost
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-69e1cb8b-0a55-4a16-b6f8-490ef27b404f",
+  "created": 1788360703,
+  "model": "ollama_chat/qwen3:0.6b",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "In the additive model, the three primary colors of light are red, green, and blue.",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "reasoning_content": "Okay, the user wants me to list the three primary colors of light in the additive model in one sentence. Let me start by recalling what I know about light. In the additive model, light is composed of different wavelengths, right? The primary colors are red, green, and blue. Wait, but how do they combine? Adding each color's light gives the desired color. So the three primary colors would be red, green, and blue. That makes sense. I need to make sure there's no confusion with other models. The additive model is about light, so the answer should be straightforward. Let me check if there's any other color, like yellow or orange, but I think those are subtractive in color theory. Yep, so the three are red, green, and blue. Alright, that should be it.\n"
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 191,
+    "prompt_tokens": 26,
+    "total_tokens": 217,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ModelResponse(id='chatcmpl-69e1cb8b-0a55-4a16-b6f8-490ef27b404f', created=1788360703, model='ollama_chat/qwen3:0.6b', object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='stop', index=0, message=Message(content='In the additive model, the three primary colors of light are red, green, and blue.', role='assistant', tool_calls=None, function_call=None, reasoning_content="Okay, the user wants me to list the three primary colors of light in the additive model in one sentence. Let me start by recalling what I know about light. In the additive model, light is composed of different wavelengths, right? The primary colors are red, green, and blue. Wait, but how do they combine? Adding each color's light gives the desired color. So the three primary colors would be red, green, and blue. That makes sense. I need to make sure there's no confusion with other models. The additive model is about light, so the answer should be straightforward. Let me check if there's any other color, like yellow or orange, but I think those are subtractive in color theory. Yep, so the three are red, green, and blue. Alright, that should be it.\n", provider_specific_fields=None))], usage=Usage(completion_tokens=191, prompt_tokens=26, total_tokens=217, completion_tokens_details=None, prompt_tokens_details=None))

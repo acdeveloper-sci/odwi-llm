@@ -1,0 +1,202 @@
+provider: gemini
+model: gemini/gemini-3.5-flash-lite
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:31+00:00
+prompt: Write three short sentences about why the sky is blue.
+chunk_count: 6
+lib_model: gemini/gemini-3.5-flash-lite
+op: stream
+========================================================================
+# every chunk (compact):
+[  0] content='The sky' reasoning=None finish=None choices=1 usage=no
+[  1] content=" appears blue because of how sunlight interacts with Earth's atmosphere. Air molecules scatter" reasoning=None finish=None choices=1 usage=no
+[  2] content=' short blue wavelengths of light in every direction much more than other colors. When we look up, we see this scattered blue light' reasoning=None finish=None choices=1 usage=no
+[  3] content=' shining down on us.' reasoning=None finish=None choices=1 usage=no
+[  4] content=None reasoning=None finish=None choices=1 usage=no
+[  5] content=None reasoning=None finish='stop' choices=1 usage=no
+
+========================================================================
+### full chunk [0]  (first)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "8jeYar2wJ8ywqtsP5pyf4QE",
+  "created": 1788360691,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "provider_specific_fields": null,
+        "content": "The sky",
+        "role": "assistant",
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null,
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_url_context_metadata": [],
+  "vertex_ai_safety_ratings": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": []
+}
+
+# repr():
+ModelResponseStream(id='8jeYar2wJ8ywqtsP5pyf4QE', created=1788360691, model='gemini-3.5-flash-lite', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields=None, content='The sky', role='assistant', function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None, vertex_ai_grounding_metadata=[], vertex_ai_url_context_metadata=[], vertex_ai_safety_ratings=[], vertex_ai_safety_results=[], vertex_ai_citation_metadata=[])
+
+========================================================================
+### full chunk [1]  (first)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "8jeYar2wJ8ywqtsP5pyf4QE",
+  "created": 1788360691,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "provider_specific_fields": null,
+        "content": " appears blue because of how sunlight interacts with Earth's atmosphere. Air molecules scatter",
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null,
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_url_context_metadata": [],
+  "vertex_ai_safety_ratings": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": []
+}
+
+# repr():
+ModelResponseStream(id='8jeYar2wJ8ywqtsP5pyf4QE', created=1788360691, model='gemini-3.5-flash-lite', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields=None, content=" appears blue because of how sunlight interacts with Earth's atmosphere. Air molecules scatter", role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None, vertex_ai_grounding_metadata=[], vertex_ai_url_context_metadata=[], vertex_ai_safety_ratings=[], vertex_ai_safety_results=[], vertex_ai_citation_metadata=[])
+
+========================================================================
+### full chunk [3]  (tail)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "8jeYar2wJ8ywqtsP5pyf4QE",
+  "created": 1788360691,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "provider_specific_fields": null,
+        "content": " shining down on us.",
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null,
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_url_context_metadata": [],
+  "vertex_ai_safety_ratings": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": []
+}
+
+# repr():
+ModelResponseStream(id='8jeYar2wJ8ywqtsP5pyf4QE', created=1788360691, model='gemini-3.5-flash-lite', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields=None, content=' shining down on us.', role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None, vertex_ai_grounding_metadata=[], vertex_ai_url_context_metadata=[], vertex_ai_safety_ratings=[], vertex_ai_safety_results=[], vertex_ai_citation_metadata=[])
+
+========================================================================
+### full chunk [4]  (tail)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "8jeYar2wJ8ywqtsP5pyf4QE",
+  "created": 1788360691,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "provider_specific_fields": {
+          "thought_signatures": [
+            "El4KXAERTTIPU3vO2tQ5vnwyTLzz8/rHBkjRuw2CPsHJJr9nx6HdjbLpyZcFzyc3CjimsR6+v11E+gaQ5oRuQhglOUQIgbBb4gX7BNqC3N4RneNxpCaeBTRhmSzNvnKG"
+          ]
+        },
+        "content": null,
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null,
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_url_context_metadata": [],
+  "vertex_ai_safety_ratings": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": []
+}
+
+# repr():
+ModelResponseStream(id='8jeYar2wJ8ywqtsP5pyf4QE', created=1788360691, model='gemini-3.5-flash-lite', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields={'thought_signatures': ['El4KXAERTTIPU3vO2tQ5vnwyTLzz8/rHBkjRuw2CPsHJJr9nx6HdjbLpyZcFzyc3CjimsR6+v11E+gaQ5oRuQhglOUQIgbBb4gX7BNqC3N4RneNxpCaeBTRhmSzNvnKG']}, content=None, role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None, vertex_ai_grounding_metadata=[], vertex_ai_url_context_metadata=[], vertex_ai_safety_ratings=[], vertex_ai_safety_results=[], vertex_ai_citation_metadata=[])
+
+========================================================================
+### full chunk [5]  (tail)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "8jeYar2wJ8ywqtsP5pyf4QE",
+  "created": 1788360691,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion.chunk",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "delta": {
+        "content": null,
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null
+}
+
+# repr():
+ModelResponseStream(id='8jeYar2wJ8ywqtsP5pyf4QE', created=1788360691, model='gemini-3.5-flash-lite', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason='stop', index=0, delta=Delta(provider_specific_fields=None, content=None, role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None)

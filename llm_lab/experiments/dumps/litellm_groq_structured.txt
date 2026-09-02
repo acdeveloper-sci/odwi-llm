@@ -1,0 +1,55 @@
+provider: groq
+model: groq/openai/gpt-oss-120b
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:32+00:00
+prompt: [{'role': 'user', 'content': 'Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.'}]
+lib_model: groq/openai/gpt-oss-120b
+op: structured
+litellm_response_cost: 0.00017085
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,litellm_call_id,litellm_model_name,model_id,response_cost
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-a9423075-9d6d-4e45-8589-9fd47326bad5",
+  "created": 1788360692,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_19b184c447",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"title\":\"Reviewing the Q3 budget\",\"priority\":\"high\",\"assignee\":{\"name\":\"Dana Lee\",\"email\":\"dana@example.com\"},\"done\":false}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "reasoning": "We need to output JSON matching TaskItem schema. Fields: title, priority, assignee (with name and email), done. Title: \"Reviewing the Q3 budget\". Or \"Review Q3 budget\". The user: \"reviewing the Q3 budget\". So title: \"Reviewing the Q3 budget\". priority: \"high\". assignee: name \"Dana Lee\", email \"dana@example.com\". done: false. Ensure JSON compact, no extra spaces? compact means no unnecessary whitespace, but normal minimal is fine. Provide exactly required fields.\n\nThus output: {\"title\":\"Reviewing the Q3 budget\",\"priority\":\"high\",\"assignee\":{\"name\":\"Dana Lee\",\"email\":\"dana@example.com\"},\"done\":false}\n\nCheck schema: order doesn't matter. Must include all required. Good.\n\nNow output only JSON."
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 214,
+    "prompt_tokens": 283,
+    "total_tokens": 497,
+    "completion_tokens_details": {
+      "reasoning_tokens": 171
+    },
+    "prompt_tokens_details": null,
+    "queue_time": 0.087052545,
+    "prompt_time": 0.016097946,
+    "completion_time": 0.454283956,
+    "total_time": 0.470381902
+  },
+  "usage_breakdown": null,
+  "x_groq": {
+    "id": "req_01m1h9n4gzes596cwstryncjjq",
+    "seed": 1691567123
+  },
+  "service_tier": "auto"
+}
+
+# repr():
+ModelResponse(id='chatcmpl-a9423075-9d6d-4e45-8589-9fd47326bad5', created=1788360692, model='openai/gpt-oss-120b', object='chat.completion', system_fingerprint='fp_19b184c447', choices=[Choices(finish_reason='stop', index=0, message=Message(content='{"title":"Reviewing the Q3 budget","priority":"high","assignee":{"name":"Dana Lee","email":"dana@example.com"},"done":false}', role='assistant', tool_calls=None, function_call=None, provider_specific_fields=None, reasoning='We need to output JSON matching TaskItem schema. Fields: title, priority, assignee (with name and email), done. Title: "Reviewing the Q3 budget". Or "Review Q3 budget". The user: "reviewing the Q3 budget". So title: "Reviewing the Q3 budget". priority: "high". assignee: name "Dana Lee", email "dana@example.com". done: false. Ensure JSON compact, no extra spaces? compact means no unnecessary whitespace, but normal minimal is fine. Provide exactly required fields.\n\nThus output: {"title":"Reviewing the Q3 budget","priority":"high","assignee":{"name":"Dana Lee","email":"dana@example.com"},"done":false}\n\nCheck schema: order doesn\'t matter. Must include all required. Good.\n\nNow output only JSON.'))], usage=Usage(completion_tokens=214, prompt_tokens=283, total_tokens=497, completion_tokens_details=CompletionTokensDetailsWrapper(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=171, rejected_prediction_tokens=None, text_tokens=None, image_tokens=None, video_tokens=None), prompt_tokens_details=None, queue_time=0.087052545, prompt_time=0.016097946, completion_time=0.454283956, total_time=0.470381902), usage_breakdown=None, x_groq={'id': 'req_01m1h9n4gzes596cwstryncjjq', 'seed': 1691567123}, service_tier='auto')

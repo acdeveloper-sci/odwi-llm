@@ -3,7 +3,7 @@ name = "odwi-llm-lab"
 version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = [
-    "any-llm-sdk>=1.26.0",
+    "any-llm-sdk[lmstudio,ollama]>=1.26.0",
     "google-genai>=2.21.0",
     "groq>=1.7.0",
     "litellm>=1.99.0",

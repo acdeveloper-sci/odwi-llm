@@ -1,0 +1,57 @@
+provider: gemini
+model: gemini:gemini-3.5-flash-lite
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:20:43+00:00
+prompt: [{'role': 'user', 'content': 'What is the current weather in Paris? You must call the get_weather tool.'}]
+lib_model: gemini:gemini-3.5-flash-lite
+op: tools
+========================================================================
+type: any_llm.types.completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "google_genai_response",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_1014496373885369144_0",
+            "function": {
+              "arguments": "{\"city\": \"Paris\"}",
+              "name": "get_weather"
+            },
+            "type": "function"
+          }
+        ],
+        "reasoning": null,
+        "extra_content": null
+      }
+    }
+  ],
+  "created": 0,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 16,
+    "prompt_tokens": 78,
+    "total_tokens": 94,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ChatCompletion(id='google_genai_response', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_1014496373885369144_0', function=Function(arguments='{"city": "Paris"}', name='get_weather'), type='function', extra_content={'google': {'thought_signature': 'El4KXAERTTIP6KM6HHE4yY+Ci1aitXkFbgxWxmU0gbp+Xxixcw3Ik+Kk149uxdXvc6Mt29lefLiVqr1ZJpl288t/016IR0bx6g9PO0+H9H0XlyVw7mWMP4jhJfGlBLIa'}})], reasoning=None, extra_content=None))], created=0, model='gemini-3.5-flash-lite', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=16, prompt_tokens=78, total_tokens=94, completion_tokens_details=None, prompt_tokens_details=None))

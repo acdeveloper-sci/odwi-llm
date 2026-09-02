@@ -1,0 +1,55 @@
+provider: lmstudio
+model: lm_studio/llama-3.2-3b-instruct
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:51+00:00
+prompt: [{'role': 'user', 'content': 'In one sentence, list the three primary colors of light in the additive model.'}]
+lib_model: lm_studio/llama-3.2-3b-instruct
+op: text
+litellm_response_cost: None
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,custom_llm_provider,litellm_call_id,litellm_model_name,litellm_overhead_time_ms,model_id,optional_params,region_name,response_cost
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-wx81ax1xhthechvjiws46",
+  "created": 1788360710,
+  "model": "lm_studio/llama-3.2-3b-instruct",
+  "object": "chat.completion",
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "The three primary colors of light in the additive model are red, green, and blue (RGB).",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "reasoning_content": "",
+        "provider_specific_fields": {
+          "refusal": null
+        }
+      },
+      "provider_specific_fields": {}
+    }
+  ],
+  "usage": {
+    "completion_tokens": 21,
+    "prompt_tokens": 51,
+    "total_tokens": 72,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "moderation": null,
+  "service_tier": null,
+  "stats": {}
+}
+
+# repr():
+ModelResponse(id='chatcmpl-wx81ax1xhthechvjiws46', created=1788360710, model='lm_studio/llama-3.2-3b-instruct', object='chat.completion', system_fingerprint='llama-3.2-3b-instruct', choices=[Choices(finish_reason='stop', index=0, message=Message(content='The three primary colors of light in the additive model are red, green, and blue (RGB).', role='assistant', tool_calls=None, function_call=None, reasoning_content='', provider_specific_fields={'refusal': None}), provider_specific_fields={})], usage=Usage(completion_tokens=21, prompt_tokens=51, total_tokens=72, completion_tokens_details=CompletionTokensDetailsWrapper(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=0, rejected_prediction_tokens=None, text_tokens=None, image_tokens=None, video_tokens=None), prompt_tokens_details=None), moderation=None, service_tier=None, stats={})

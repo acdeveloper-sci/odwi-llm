@@ -1,0 +1,48 @@
+provider: gemini
+model: gemini:gemini-3.5-flash-lite
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:20:36+00:00
+prompt: [{'role': 'user', 'content': 'In one sentence, list the three primary colors of light in the additive model.'}]
+lib_model: gemini:gemini-3.5-flash-lite
+op: text
+========================================================================
+type: any_llm.types.completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "google_genai_response",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "The three primary colors of light in the additive model are red, green, and blue.",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      }
+    }
+  ],
+  "created": 0,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 18,
+    "prompt_tokens": 17,
+    "total_tokens": 35,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ChatCompletion(id='google_genai_response', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='The three primary colors of light in the additive model are red, green, and blue.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning=None, extra_content=None))], created=0, model='gemini-3.5-flash-lite', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=18, prompt_tokens=17, total_tokens=35, completion_tokens_details=None, prompt_tokens_details=None))

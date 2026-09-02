@@ -1,0 +1,43 @@
+provider: ollama
+model: ollama_chat/qwen3:0.6b
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:46+00:00
+prompt: [{'role': 'user', 'content': 'Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.'}]
+lib_model: ollama_chat/qwen3:0.6b
+op: structured
+litellm_response_cost: 0.0
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,custom_llm_provider,litellm_call_id,litellm_model_name,model_id,optional_params,region_name,response_cost
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-8c199ad6-2809-4c92-957c-6ed41e0f7458",
+  "created": 1788360706,
+  "model": "ollama_chat/qwen3:0.6b",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"title\": \"Review Q3 Budget Allocation\",\n  \"priority\": \"high\",\n  \"assignee\": {\n    \"name\": \"Dana Lee\",\n    \"email\": \"dana@example.com\"\n  },\n  \"done\": false\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "reasoning_content": "Okay, the user wants me to create a task item for reviewing the Q3 budget, assigned to Dana Lee, with high priority and not done yet. Let me start by understanding the requirements.\n\nFirst, the task item should be in JSON format. So, I need to structure it properly. The user mentioned Dana Lee, so the name is correct. High priority and not done yet are the statuses. I should make sure to include all necessary fields like task description, assignee, priority, and status.\n\nWait, the task is for reviewing the Q3 budget, so the task description should be a brief summary. Maybe something like \"Review the Q3 budget allocation and ensure compliance with all financial guidelines.\" Then, assignee is Dana Lee, priority is high, and status is not done yet. All these details need to be included. Let me double-check the JSON syntax to ensure there are no errors. No commas after the last item, and proper quotes. Alright, that should do it.\n"
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 53,
+    "prompt_tokens": 246,
+    "total_tokens": 299,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ModelResponse(id='chatcmpl-8c199ad6-2809-4c92-957c-6ed41e0f7458', created=1788360706, model='ollama_chat/qwen3:0.6b', object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='stop', index=0, message=Message(content='{\n  "title": "Review Q3 Budget Allocation",\n  "priority": "high",\n  "assignee": {\n    "name": "Dana Lee",\n    "email": "dana@example.com"\n  },\n  "done": false\n}', role='assistant', tool_calls=None, function_call=None, reasoning_content='Okay, the user wants me to create a task item for reviewing the Q3 budget, assigned to Dana Lee, with high priority and not done yet. Let me start by understanding the requirements.\n\nFirst, the task item should be in JSON format. So, I need to structure it properly. The user mentioned Dana Lee, so the name is correct. High priority and not done yet are the statuses. I should make sure to include all necessary fields like task description, assignee, priority, and status.\n\nWait, the task is for reviewing the Q3 budget, so the task description should be a brief summary. Maybe something like "Review the Q3 budget allocation and ensure compliance with all financial guidelines." Then, assignee is Dana Lee, priority is high, and status is not done yet. All these details need to be included. Let me double-check the JSON syntax to ensure there are no errors. No commas after the last item, and proper quotes. Alright, that should do it.\n', provider_specific_fields=None))], usage=Usage(completion_tokens=53, prompt_tokens=246, total_tokens=299, completion_tokens_details=None, prompt_tokens_details=None))

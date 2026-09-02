@@ -1,0 +1,63 @@
+provider: gemini
+model: gemini/gemini-3.5-flash-lite
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:28+00:00
+prompt: [{'role': 'user', 'content': 'In one sentence, list the three primary colors of light in the additive model.'}]
+lib_model: gemini/gemini-3.5-flash-lite
+op: text
+litellm_response_cost: 5.0100000000000005e-05
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,custom_llm_provider,litellm_call_id,litellm_model_name,model_id,optional_params,region_name,response_cost,vertex_ai_citation_metadata,vertex_ai_grounding_metadata,vertex_ai_safety_results,vertex_ai_url_context_metadata
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "7zeYarO3Kv-kmtkPqO7foAE",
+  "created": 1788360687,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "The three primary colors of light in the additive model are red, green, and blue.",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "images": [],
+        "thinking_blocks": [],
+        "provider_specific_fields": {
+          "thought_signatures": [
+            "El4KXAERTTIPMFadnw+xa3nroVID2Cd1vWyrUsPy8i6OzvWJpUgvooSVBiFQ68htZSZ9wcCnDtOvUYmkyasD2O3mcdYCzeeNkqbzKqQtybdyvAbReuUJarSXirNLJkHk"
+          ]
+        }
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 18,
+    "prompt_tokens": 17,
+    "total_tokens": 35,
+    "completion_tokens_details": {
+      "text_tokens": 18
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": null,
+      "text_tokens": 17,
+      "image_tokens": null,
+      "video_tokens": null
+    },
+    "cache_read_input_tokens": null
+  },
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_url_context_metadata": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": [],
+  "service_tier": "default"
+}
+
+# repr():
+ModelResponse(id='7zeYarO3Kv-kmtkPqO7foAE', created=1788360687, model='gemini-3.5-flash-lite', object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='stop', index=0, message=Message(content='The three primary colors of light in the additive model are red, green, and blue.', role='assistant', tool_calls=None, function_call=None, images=[], thinking_blocks=[], provider_specific_fields={'thought_signatures': ['El4KXAERTTIPMFadnw+xa3nroVID2Cd1vWyrUsPy8i6OzvWJpUgvooSVBiFQ68htZSZ9wcCnDtOvUYmkyasD2O3mcdYCzeeNkqbzKqQtybdyvAbReuUJarSXirNLJkHk']}))], usage=Usage(completion_tokens=18, prompt_tokens=17, total_tokens=35, completion_tokens_details=CompletionTokensDetailsWrapper(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=None, rejected_prediction_tokens=None, text_tokens=18, image_tokens=None, video_tokens=None), prompt_tokens_details=PromptTokensDetailsWrapper(audio_tokens=None, cached_tokens=None, text_tokens=17, image_tokens=None, video_tokens=None), cache_read_input_tokens=None), vertex_ai_grounding_metadata=[], vertex_ai_url_context_metadata=[], vertex_ai_safety_results=[], vertex_ai_citation_metadata=[], service_tier='default')

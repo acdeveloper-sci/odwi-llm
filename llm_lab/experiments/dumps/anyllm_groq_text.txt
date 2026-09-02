@@ -1,0 +1,52 @@
+provider: groq
+model: groq:openai/gpt-oss-120b
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:20:54+00:00
+prompt: [{'role': 'user', 'content': 'In one sentence, list the three primary colors of light in the additive model.'}]
+lib_model: groq:openai/gpt-oss-120b
+op: text
+========================================================================
+type: any_llm.types.completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-ac4950ee-0bc4-468c-9cee-29fbf8009134",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "The additive primary colors of light are **red, green, and blue**.",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null,
+        "reasoning": "The user asks: \"In one sentence, list the three primary colors of light in the additive model.\" That's straightforward. Provide a single sentence listing red, green, blue. So answer: \"The additive primary colors of light are red, green, and blue.\"",
+        "extra_content": null
+      }
+    }
+  ],
+  "created": 1788358854,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 79,
+    "prompt_tokens": 87,
+    "total_tokens": 166,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "queue_time": 0.141169402,
+    "prompt_time": 0.003711458,
+    "completion_time": 0.164990747,
+    "total_time": 0.168702205
+  }
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-ac4950ee-0bc4-468c-9cee-29fbf8009134', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='The additive primary colors of light are **red, green, and blue**.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning=Reasoning(content='The user asks: "In one sentence, list the three primary colors of light in the additive model." That\'s straightforward. Provide a single sentence listing red, green, blue. So answer: "The additive primary colors of light are red, green, and blue."'), extra_content=None))], created=1788358854, model='openai/gpt-oss-120b', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=79, prompt_tokens=87, total_tokens=166, completion_tokens_details=None, prompt_tokens_details=None, queue_time=0.141169402, prompt_time=0.003711458, completion_time=0.164990747, total_time=0.168702205))

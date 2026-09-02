@@ -1,0 +1,467 @@
+provider: ollama
+model: ollama:qwen3:0.6b
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:19:02+00:00
+prompt: Write three short sentences about why the sky is blue.
+chunk_count: 272
+lib_model: ollama:qwen3:0.6b
+op: stream
+========================================================================
+# every chunk (compact):
+[  0] content='' reasoning=Reasoning(content='Okay') finish=None choices=1 usage=no
+[  1] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[  2] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[  3] content='' reasoning=Reasoning(content=' user') finish=None choices=1 usage=no
+[  4] content='' reasoning=Reasoning(content=' wants') finish=None choices=1 usage=no
+[  5] content='' reasoning=Reasoning(content=' three') finish=None choices=1 usage=no
+[  6] content='' reasoning=Reasoning(content=' short') finish=None choices=1 usage=no
+[  7] content='' reasoning=Reasoning(content=' sentences') finish=None choices=1 usage=no
+[  8] content='' reasoning=Reasoning(content=' about') finish=None choices=1 usage=no
+[  9] content='' reasoning=Reasoning(content=' why') finish=None choices=1 usage=no
+[ 10] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 11] content='' reasoning=Reasoning(content=' sky') finish=None choices=1 usage=no
+[ 12] content='' reasoning=Reasoning(content=' is') finish=None choices=1 usage=no
+[ 13] content='' reasoning=Reasoning(content=' blue') finish=None choices=1 usage=no
+[ 14] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[ 15] content='' reasoning=Reasoning(content=' Let') finish=None choices=1 usage=no
+[ 16] content='' reasoning=Reasoning(content=' me') finish=None choices=1 usage=no
+[ 17] content='' reasoning=Reasoning(content=' start') finish=None choices=1 usage=no
+[ 18] content='' reasoning=Reasoning(content=' by') finish=None choices=1 usage=no
+[ 19] content='' reasoning=Reasoning(content=' recalling') finish=None choices=1 usage=no
+[ 20] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 21] content='' reasoning=Reasoning(content=' reasons') finish=None choices=1 usage=no
+[ 22] content='' reasoning=Reasoning(content=' for') finish=None choices=1 usage=no
+[ 23] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 24] content='' reasoning=Reasoning(content=' sky') finish=None choices=1 usage=no
+[ 25] content='' reasoning=Reasoning(content="'s") finish=None choices=1 usage=no
+[ 26] content='' reasoning=Reasoning(content=' color') finish=None choices=1 usage=no
+[ 27] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[ 28] content='' reasoning=Reasoning(content=' The') finish=None choices=1 usage=no
+[ 29] content='' reasoning=Reasoning(content=' most') finish=None choices=1 usage=no
+[ 30] content='' reasoning=Reasoning(content=' common') finish=None choices=1 usage=no
+[ 31] content='' reasoning=Reasoning(content=' ones') finish=None choices=1 usage=no
+[ 32] content='' reasoning=Reasoning(content=' are') finish=None choices=1 usage=no
+[ 33] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 34] content='' reasoning=Reasoning(content=' scattering') finish=None choices=1 usage=no
+[ 35] content='' reasoning=Reasoning(content=' of') finish=None choices=1 usage=no
+[ 36] content='' reasoning=Reasoning(content=' sunlight') finish=None choices=1 usage=no
+[ 37] content='' reasoning=Reasoning(content=' by') finish=None choices=1 usage=no
+[ 38] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 39] content='' reasoning=Reasoning(content=' atmosphere') finish=None choices=1 usage=no
+[ 40] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[ 41] content='' reasoning=Reasoning(content=' Ray') finish=None choices=1 usage=no
+[ 42] content='' reasoning=Reasoning(content='leigh') finish=None choices=1 usage=no
+[ 43] content='' reasoning=Reasoning(content=' scattering') finish=None choices=1 usage=no
+[ 44] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[ 45] content='' reasoning=Reasoning(content=' and') finish=None choices=1 usage=no
+[ 46] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 47] content='' reasoning=Reasoning(content=' fact') finish=None choices=1 usage=no
+[ 48] content='' reasoning=Reasoning(content=' that') finish=None choices=1 usage=no
+[ 49] content='' reasoning=Reasoning(content=' blue') finish=None choices=1 usage=no
+[ 50] content='' reasoning=Reasoning(content=' light') finish=None choices=1 usage=no
+[ 51] content='' reasoning=Reasoning(content=' is') finish=None choices=1 usage=no
+[ 52] content='' reasoning=Reasoning(content=' in') finish=None choices=1 usage=no
+[ 53] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 54] content='' reasoning=Reasoning(content=' visible') finish=None choices=1 usage=no
+[ 55] content='' reasoning=Reasoning(content=' spectrum') finish=None choices=1 usage=no
+[ 56] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[ 57] content='' reasoning=Reasoning(content=' I') finish=None choices=1 usage=no
+[ 58] content='' reasoning=Reasoning(content=' need') finish=None choices=1 usage=no
+[ 59] content='' reasoning=Reasoning(content=' to') finish=None choices=1 usage=no
+[ 60] content='' reasoning=Reasoning(content=' make') finish=None choices=1 usage=no
+[ 61] content='' reasoning=Reasoning(content=' sure') finish=None choices=1 usage=no
+[ 62] content='' reasoning=Reasoning(content=' each') finish=None choices=1 usage=no
+[ 63] content='' reasoning=Reasoning(content=' sentence') finish=None choices=1 usage=no
+[ 64] content='' reasoning=Reasoning(content=' is') finish=None choices=1 usage=no
+[ 65] content='' reasoning=Reasoning(content=' concise') finish=None choices=1 usage=no
+[ 66] content='' reasoning=Reasoning(content=' and') finish=None choices=1 usage=no
+[ 67] content='' reasoning=Reasoning(content=' highlights') finish=None choices=1 usage=no
+[ 68] content='' reasoning=Reasoning(content=' a') finish=None choices=1 usage=no
+[ 69] content='' reasoning=Reasoning(content=' different') finish=None choices=1 usage=no
+[ 70] content='' reasoning=Reasoning(content=' aspect') finish=None choices=1 usage=no
+[ 71] content='' reasoning=Reasoning(content='.\n\n') finish=None choices=1 usage=no
+[ 72] content='' reasoning=Reasoning(content='First') finish=None choices=1 usage=no
+[ 73] content='' reasoning=Reasoning(content=' sentence') finish=None choices=1 usage=no
+[ 74] content='' reasoning=Reasoning(content=':') finish=None choices=1 usage=no
+[ 75] content='' reasoning=Reasoning(content=' The') finish=None choices=1 usage=no
+[ 76] content='' reasoning=Reasoning(content=' blue') finish=None choices=1 usage=no
+[ 77] content='' reasoning=Reasoning(content=' light') finish=None choices=1 usage=no
+[ 78] content='' reasoning=Reasoning(content=' is') finish=None choices=1 usage=no
+[ 79] content='' reasoning=Reasoning(content=' scattered') finish=None choices=1 usage=no
+[ 80] content='' reasoning=Reasoning(content=' by') finish=None choices=1 usage=no
+[ 81] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 82] content='' reasoning=Reasoning(content=' atmosphere') finish=None choices=1 usage=no
+[ 83] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[ 84] content='' reasoning=Reasoning(content=' which') finish=None choices=1 usage=no
+[ 85] content='' reasoning=Reasoning(content=' causes') finish=None choices=1 usage=no
+[ 86] content='' reasoning=Reasoning(content=' it') finish=None choices=1 usage=no
+[ 87] content='' reasoning=Reasoning(content=' to') finish=None choices=1 usage=no
+[ 88] content='' reasoning=Reasoning(content=' appear') finish=None choices=1 usage=no
+[ 89] content='' reasoning=Reasoning(content=' blue') finish=None choices=1 usage=no
+[ 90] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[ 91] content='' reasoning=Reasoning(content=' That') finish=None choices=1 usage=no
+[ 92] content='' reasoning=Reasoning(content="'s") finish=None choices=1 usage=no
+[ 93] content='' reasoning=Reasoning(content=' straightforward') finish=None choices=1 usage=no
+[ 94] content='' reasoning=Reasoning(content=' and') finish=None choices=1 usage=no
+[ 95] content='' reasoning=Reasoning(content=' covers') finish=None choices=1 usage=no
+[ 96] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 97] content='' reasoning=Reasoning(content=' main') finish=None choices=1 usage=no
+[ 98] content='' reasoning=Reasoning(content=' reason') finish=None choices=1 usage=no
+[ 99] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[100] content='' reasoning=Reasoning(content=' Second') finish=None choices=1 usage=no
+[101] content='' reasoning=Reasoning(content=' sentence') finish=None choices=1 usage=no
+[102] content='' reasoning=Reasoning(content=':') finish=None choices=1 usage=no
+[103] content='' reasoning=Reasoning(content=' The') finish=None choices=1 usage=no
+[104] content='' reasoning=Reasoning(content=' Earth') finish=None choices=1 usage=no
+[105] content='' reasoning=Reasoning(content="'s") finish=None choices=1 usage=no
+[106] content='' reasoning=Reasoning(content=' atmosphere') finish=None choices=1 usage=no
+[107] content='' reasoning=Reasoning(content=' causes') finish=None choices=1 usage=no
+[108] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[109] content='' reasoning=Reasoning(content=' blue') finish=None choices=1 usage=no
+[110] content='' reasoning=Reasoning(content=' light') finish=None choices=1 usage=no
+[111] content='' reasoning=Reasoning(content=' to') finish=None choices=1 usage=no
+[112] content='' reasoning=Reasoning(content=' be') finish=None choices=1 usage=no
+[113] content='' reasoning=Reasoning(content=' scattered') finish=None choices=1 usage=no
+[114] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[115] content='' reasoning=Reasoning(content=' making') finish=None choices=1 usage=no
+[116] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[117] content='' reasoning=Reasoning(content=' sky') finish=None choices=1 usage=no
+[118] content='' reasoning=Reasoning(content=' appear') finish=None choices=1 usage=no
+[119] content='' reasoning=Reasoning(content=' blue') finish=None choices=1 usage=no
+[120] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[121] content='' reasoning=Reasoning(content=' Hmm') finish=None choices=1 usage=no
+[122] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[123] content='' reasoning=Reasoning(content=' maybe') finish=None choices=1 usage=no
+[124] content='' reasoning=Reasoning(content=' re') finish=None choices=1 usage=no
+[125] content='' reasoning=Reasoning(content='phrase') finish=None choices=1 usage=no
+[126] content='' reasoning=Reasoning(content=' that') finish=None choices=1 usage=no
+[127] content='' reasoning=Reasoning(content=' for') finish=None choices=1 usage=no
+[128] content='' reasoning=Reasoning(content=' conc') finish=None choices=1 usage=no
+[129] content='' reasoning=Reasoning(content='isen') finish=None choices=1 usage=no
+[130] content='' reasoning=Reasoning(content='ess') finish=None choices=1 usage=no
+[131] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[132] content='' reasoning=Reasoning(content=' Third') finish=None choices=1 usage=no
+[133] content='' reasoning=Reasoning(content=' sentence') finish=None choices=1 usage=no
+[134] content='' reasoning=Reasoning(content=':') finish=None choices=1 usage=no
+[135] content='' reasoning=Reasoning(content=' The') finish=None choices=1 usage=no
+[136] content='' reasoning=Reasoning(content=' Ray') finish=None choices=1 usage=no
+[137] content='' reasoning=Reasoning(content='leigh') finish=None choices=1 usage=no
+[138] content='' reasoning=Reasoning(content=' scattering') finish=None choices=1 usage=no
+[139] content='' reasoning=Reasoning(content=' theory') finish=None choices=1 usage=no
+[140] content='' reasoning=Reasoning(content=' explains') finish=None choices=1 usage=no
+[141] content='' reasoning=Reasoning(content=' that') finish=None choices=1 usage=no
+[142] content='' reasoning=Reasoning(content=' blue') finish=None choices=1 usage=no
+[143] content='' reasoning=Reasoning(content=' light') finish=None choices=1 usage=no
+[144] content='' reasoning=Reasoning(content=' is') finish=None choices=1 usage=no
+[145] content='' reasoning=Reasoning(content=' scattered') finish=None choices=1 usage=no
+[146] content='' reasoning=Reasoning(content=' more') finish=None choices=1 usage=no
+[147] content='' reasoning=Reasoning(content=' than') finish=None choices=1 usage=no
+[148] content='' reasoning=Reasoning(content=' red') finish=None choices=1 usage=no
+[149] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[150] content='' reasoning=Reasoning(content=' resulting') finish=None choices=1 usage=no
+[151] content='' reasoning=Reasoning(content=' in') finish=None choices=1 usage=no
+[152] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[153] content='' reasoning=Reasoning(content=' sky') finish=None choices=1 usage=no
+[154] content='' reasoning=Reasoning(content="'s") finish=None choices=1 usage=no
+[155] content='' reasoning=Reasoning(content=' color') finish=None choices=1 usage=no
+[156] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[157] content='' reasoning=Reasoning(content=' Wait') finish=None choices=1 usage=no
+[158] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[159] content='' reasoning=Reasoning(content=' Ray') finish=None choices=1 usage=no
+[160] content='' reasoning=Reasoning(content='leigh') finish=None choices=1 usage=no
+[161] content='' reasoning=Reasoning(content=' scattering') finish=None choices=1 usage=no
+[162] content='' reasoning=Reasoning(content=' is') finish=None choices=1 usage=no
+[163] content='' reasoning=Reasoning(content=' a') finish=None choices=1 usage=no
+[164] content='' reasoning=Reasoning(content=' different') finish=None choices=1 usage=no
+[165] content='' reasoning=Reasoning(content=' concept') finish=None choices=1 usage=no
+[166] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[167] content='' reasoning=Reasoning(content=' Maybe') finish=None choices=1 usage=no
+[168] content='' reasoning=Reasoning(content=' use') finish=None choices=1 usage=no
+[169] content='' reasoning=Reasoning(content=' "') finish=None choices=1 usage=no
+[170] content='' reasoning=Reasoning(content='Ray') finish=None choices=1 usage=no
+[171] content='' reasoning=Reasoning(content='leigh') finish=None choices=1 usage=no
+[172] content='' reasoning=Reasoning(content=' scattering') finish=None choices=1 usage=no
+[173] content='' reasoning=Reasoning(content='"') finish=None choices=1 usage=no
+[174] content='' reasoning=Reasoning(content=' in') finish=None choices=1 usage=no
+[175] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[176] content='' reasoning=Reasoning(content=' third') finish=None choices=1 usage=no
+[177] content='' reasoning=Reasoning(content=' sentence') finish=None choices=1 usage=no
+[178] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[179] content='' reasoning=Reasoning(content=' Let') finish=None choices=1 usage=no
+[180] content='' reasoning=Reasoning(content=' me') finish=None choices=1 usage=no
+[181] content='' reasoning=Reasoning(content=' check') finish=None choices=1 usage=no
+[182] content='' reasoning=Reasoning(content=' if') finish=None choices=1 usage=no
+[183] content='' reasoning=Reasoning(content=' each') finish=None choices=1 usage=no
+[184] content='' reasoning=Reasoning(content=' sentence') finish=None choices=1 usage=no
+[185] content='' reasoning=Reasoning(content=' is') finish=None choices=1 usage=no
+[186] content='' reasoning=Reasoning(content=' a') finish=None choices=1 usage=no
+[187] content='' reasoning=Reasoning(content=' single') finish=None choices=1 usage=no
+[188] content='' reasoning=Reasoning(content=' sentence') finish=None choices=1 usage=no
+[189] content='' reasoning=Reasoning(content=' and') finish=None choices=1 usage=no
+[190] content='' reasoning=Reasoning(content=' all') finish=None choices=1 usage=no
+[191] content='' reasoning=Reasoning(content=' are') finish=None choices=1 usage=no
+[192] content='' reasoning=Reasoning(content=' short') finish=None choices=1 usage=no
+[193] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[194] content='' reasoning=Reasoning(content=' Yes') finish=None choices=1 usage=no
+[195] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[196] content='' reasoning=Reasoning(content=' each') finish=None choices=1 usage=no
+[197] content='' reasoning=Reasoning(content=' one') finish=None choices=1 usage=no
+[198] content='' reasoning=Reasoning(content=' is') finish=None choices=1 usage=no
+[199] content='' reasoning=Reasoning(content=' a') finish=None choices=1 usage=no
+[200] content='' reasoning=Reasoning(content=' sentence') finish=None choices=1 usage=no
+[201] content='' reasoning=Reasoning(content=',') finish=None choices=1 usage=no
+[202] content='' reasoning=Reasoning(content=' and') finish=None choices=1 usage=no
+[203] content='' reasoning=Reasoning(content=' they') finish=None choices=1 usage=no
+[204] content='' reasoning=Reasoning(content=' all') finish=None choices=1 usage=no
+[205] content='' reasoning=Reasoning(content=' explain') finish=None choices=1 usage=no
+[206] content='' reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[207] content='' reasoning=Reasoning(content=' same') finish=None choices=1 usage=no
+[208] content='' reasoning=Reasoning(content=' thing') finish=None choices=1 usage=no
+[209] content='' reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[210] content='' reasoning=Reasoning(content=' I') finish=None choices=1 usage=no
+[211] content='' reasoning=Reasoning(content=' think') finish=None choices=1 usage=no
+[212] content='' reasoning=Reasoning(content=' that') finish=None choices=1 usage=no
+[213] content='' reasoning=Reasoning(content=' works') finish=None choices=1 usage=no
+[214] content='' reasoning=Reasoning(content='.\n') finish=None choices=1 usage=no
+[215] content='1' reasoning=None finish=None choices=1 usage=no
+[216] content='.' reasoning=None finish=None choices=1 usage=no
+[217] content=' The' reasoning=None finish=None choices=1 usage=no
+[218] content=' sky' reasoning=None finish=None choices=1 usage=no
+[219] content=' appears' reasoning=None finish=None choices=1 usage=no
+[220] content=' blue' reasoning=None finish=None choices=1 usage=no
+[221] content=' because' reasoning=None finish=None choices=1 usage=no
+[222] content=' sunlight' reasoning=None finish=None choices=1 usage=no
+[223] content=' is' reasoning=None finish=None choices=1 usage=no
+[224] content=' scattered' reasoning=None finish=None choices=1 usage=no
+[225] content=' by' reasoning=None finish=None choices=1 usage=no
+[226] content=' Earth' reasoning=None finish=None choices=1 usage=no
+[227] content="'s" reasoning=None finish=None choices=1 usage=no
+[228] content=' atmosphere' reasoning=None finish=None choices=1 usage=no
+[229] content='.' reasoning=None finish=None choices=1 usage=no
+[230] content='  \n' reasoning=None finish=None choices=1 usage=no
+[231] content='2' reasoning=None finish=None choices=1 usage=no
+[232] content='.' reasoning=None finish=None choices=1 usage=no
+[233] content=' Ray' reasoning=None finish=None choices=1 usage=no
+[234] content='leigh' reasoning=None finish=None choices=1 usage=no
+[235] content=' scattering' reasoning=None finish=None choices=1 usage=no
+[236] content=' causes' reasoning=None finish=None choices=1 usage=no
+[237] content=' the' reasoning=None finish=None choices=1 usage=no
+[238] content=' blue' reasoning=None finish=None choices=1 usage=no
+[239] content=' light' reasoning=None finish=None choices=1 usage=no
+[240] content=' to' reasoning=None finish=None choices=1 usage=no
+[241] content=' be' reasoning=None finish=None choices=1 usage=no
+[242] content=' scattered' reasoning=None finish=None choices=1 usage=no
+[243] content=' more' reasoning=None finish=None choices=1 usage=no
+[244] content=' than' reasoning=None finish=None choices=1 usage=no
+[245] content=' red' reasoning=None finish=None choices=1 usage=no
+[246] content=',' reasoning=None finish=None choices=1 usage=no
+[247] content=' making' reasoning=None finish=None choices=1 usage=no
+[248] content=' the' reasoning=None finish=None choices=1 usage=no
+[249] content=' sky' reasoning=None finish=None choices=1 usage=no
+[250] content=' appear' reasoning=None finish=None choices=1 usage=no
+[251] content=' blue' reasoning=None finish=None choices=1 usage=no
+[252] content='.' reasoning=None finish=None choices=1 usage=no
+[253] content='  \n' reasoning=None finish=None choices=1 usage=no
+[254] content='3' reasoning=None finish=None choices=1 usage=no
+[255] content='.' reasoning=None finish=None choices=1 usage=no
+[256] content=' The' reasoning=None finish=None choices=1 usage=no
+[257] content=' blue' reasoning=None finish=None choices=1 usage=no
+[258] content=' light' reasoning=None finish=None choices=1 usage=no
+[259] content=' is' reasoning=None finish=None choices=1 usage=no
+[260] content=' scattered' reasoning=None finish=None choices=1 usage=no
+[261] content=' by' reasoning=None finish=None choices=1 usage=no
+[262] content=' the' reasoning=None finish=None choices=1 usage=no
+[263] content=' atmosphere' reasoning=None finish=None choices=1 usage=no
+[264] content=',' reasoning=None finish=None choices=1 usage=no
+[265] content=' creating' reasoning=None finish=None choices=1 usage=no
+[266] content=' the' reasoning=None finish=None choices=1 usage=no
+[267] content=' sky' reasoning=None finish=None choices=1 usage=no
+[268] content="'s" reasoning=None finish=None choices=1 usage=no
+[269] content=' color' reasoning=None finish=None choices=1 usage=no
+[270] content='.' reasoning=None finish=None choices=1 usage=no
+[271] content='' reasoning=None finish='stop' choices=1 usage=yes
+
+========================================================================
+### full chunk [0]  (first)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-5a2ea05d-cb28-4d33-ad1e-8d1a5d49b6f0",
+  "choices": [
+    {
+      "delta": {
+        "content": "",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": "Okay",
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358741,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-5a2ea05d-cb28-4d33-ad1e-8d1a5d49b6f0', choices=[ChunkChoice(delta=ChoiceDelta(content='', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=Reasoning(content='Okay'), extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358741, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [1]  (first)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-a6625206-bd75-4ed7-90e3-5a393befa9f8",
+  "choices": [
+    {
+      "delta": {
+        "content": "",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": ",",
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358741,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-a6625206-bd75-4ed7-90e3-5a393befa9f8', choices=[ChunkChoice(delta=ChoiceDelta(content='', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=Reasoning(content=','), extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358741, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [269]  (tail)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-5b7be01e-6a94-4944-96e4-52cd588f164c",
+  "choices": [
+    {
+      "delta": {
+        "content": " color",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358742,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-5b7be01e-6a94-4944-96e4-52cd588f164c', choices=[ChunkChoice(delta=ChoiceDelta(content=' color', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=None, extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358742, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [270]  (tail)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-20e6fe48-7200-40c7-81fb-fecf8fa5abb1",
+  "choices": [
+    {
+      "delta": {
+        "content": ".",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358742,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-20e6fe48-7200-40c7-81fb-fecf8fa5abb1', choices=[ChunkChoice(delta=ChoiceDelta(content='.', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=None, extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358742, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [271]  (tail)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-13f1a012-05d5-4892-9bbb-d72091ae003a",
+  "choices": [
+    {
+      "delta": {
+        "content": "",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358742,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 276,
+    "prompt_tokens": 21,
+    "total_tokens": 297,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "total_duration": 1095137600,
+    "load_duration": 3927600,
+    "prompt_eval_duration": 10062000,
+    "eval_duration": 1052751000
+  }
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-13f1a012-05d5-4892-9bbb-d72091ae003a', choices=[ChunkChoice(delta=ChoiceDelta(content='', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=None, extra_content=None), finish_reason='stop', index=0, logprobs=None)], created=1788358742, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=276, prompt_tokens=21, total_tokens=297, completion_tokens_details=None, prompt_tokens_details=None, total_duration=1095137600, load_duration=3927600, prompt_eval_duration=10062000, eval_duration=1052751000))

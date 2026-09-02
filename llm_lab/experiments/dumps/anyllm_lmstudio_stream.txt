@@ -1,0 +1,296 @@
+provider: lmstudio
+model: lmstudio:llama-3.2-3b-instruct
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:19:21+00:00
+prompt: Write three short sentences about why the sky is blue.
+chunk_count: 105
+lib_model: lmstudio:llama-3.2-3b-instruct
+op: stream
+========================================================================
+# every chunk (compact):
+[  0] content='Here' reasoning=None finish=None choices=1 usage=no
+[  1] content=' are' reasoning=None finish=None choices=1 usage=no
+[  2] content=' three' reasoning=None finish=None choices=1 usage=no
+[  3] content=' short' reasoning=None finish=None choices=1 usage=no
+[  4] content=' sentences' reasoning=None finish=None choices=1 usage=no
+[  5] content=' explaining' reasoning=None finish=None choices=1 usage=no
+[  6] content=' why' reasoning=None finish=None choices=1 usage=no
+[  7] content=' the' reasoning=None finish=None choices=1 usage=no
+[  8] content=' sky' reasoning=None finish=None choices=1 usage=no
+[  9] content=' appears' reasoning=None finish=None choices=1 usage=no
+[ 10] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 11] content=':\n\n' reasoning=None finish=None choices=1 usage=no
+[ 12] content='The' reasoning=None finish=None choices=1 usage=no
+[ 13] content=' sky' reasoning=None finish=None choices=1 usage=no
+[ 14] content=' appears' reasoning=None finish=None choices=1 usage=no
+[ 15] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 16] content=' due' reasoning=None finish=None choices=1 usage=no
+[ 17] content=' to' reasoning=None finish=None choices=1 usage=no
+[ 18] content=' a' reasoning=None finish=None choices=1 usage=no
+[ 19] content=' phenomenon' reasoning=None finish=None choices=1 usage=no
+[ 20] content=' called' reasoning=None finish=None choices=1 usage=no
+[ 21] content=' Ray' reasoning=None finish=None choices=1 usage=no
+[ 22] content='leigh' reasoning=None finish=None choices=1 usage=no
+[ 23] content=' scattering' reasoning=None finish=None choices=1 usage=no
+[ 24] content=',' reasoning=None finish=None choices=1 usage=no
+[ 25] content=' where' reasoning=None finish=None choices=1 usage=no
+[ 26] content=' shorter' reasoning=None finish=None choices=1 usage=no
+[ 27] content=' wavelengths' reasoning=None finish=None choices=1 usage=no
+[ 28] content=' of' reasoning=None finish=None choices=1 usage=no
+[ 29] content=' light' reasoning=None finish=None choices=1 usage=no
+[ 30] content=' (' reasoning=None finish=None choices=1 usage=no
+[ 31] content='like' reasoning=None finish=None choices=1 usage=no
+[ 32] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 33] content=' and' reasoning=None finish=None choices=1 usage=no
+[ 34] content=' violet' reasoning=None finish=None choices=1 usage=no
+[ 35] content=')' reasoning=None finish=None choices=1 usage=no
+[ 36] content=' scatter' reasoning=None finish=None choices=1 usage=no
+[ 37] content=' more' reasoning=None finish=None choices=1 usage=no
+[ 38] content=' than' reasoning=None finish=None choices=1 usage=no
+[ 39] content=' longer' reasoning=None finish=None choices=1 usage=no
+[ 40] content=' wavelengths' reasoning=None finish=None choices=1 usage=no
+[ 41] content=' in' reasoning=None finish=None choices=1 usage=no
+[ 42] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 43] content=' Earth' reasoning=None finish=None choices=1 usage=no
+[ 44] content="'s" reasoning=None finish=None choices=1 usage=no
+[ 45] content=' atmosphere' reasoning=None finish=None choices=1 usage=no
+[ 46] content='.' reasoning=None finish=None choices=1 usage=no
+[ 47] content=' When' reasoning=None finish=None choices=1 usage=no
+[ 48] content=' sunlight' reasoning=None finish=None choices=1 usage=no
+[ 49] content=' enters' reasoning=None finish=None choices=1 usage=no
+[ 50] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 51] content=' atmosphere' reasoning=None finish=None choices=1 usage=no
+[ 52] content=',' reasoning=None finish=None choices=1 usage=no
+[ 53] content=' these' reasoning=None finish=None choices=1 usage=no
+[ 54] content=' scattered' reasoning=None finish=None choices=1 usage=no
+[ 55] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 56] content=' lights' reasoning=None finish=None choices=1 usage=no
+[ 57] content=' are' reasoning=None finish=None choices=1 usage=no
+[ 58] content=' what' reasoning=None finish=None choices=1 usage=no
+[ 59] content=' we' reasoning=None finish=None choices=1 usage=no
+[ 60] content=' see' reasoning=None finish=None choices=1 usage=no
+[ 61] content=' as' reasoning=None finish=None choices=1 usage=no
+[ 62] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 63] content=' sky' reasoning=None finish=None choices=1 usage=no
+[ 64] content=' from' reasoning=None finish=None choices=1 usage=no
+[ 65] content=' our' reasoning=None finish=None choices=1 usage=no
+[ 66] content=' v' reasoning=None finish=None choices=1 usage=no
+[ 67] content='antage' reasoning=None finish=None choices=1 usage=no
+[ 68] content=' point' reasoning=None finish=None choices=1 usage=no
+[ 69] content=' on' reasoning=None finish=None choices=1 usage=no
+[ 70] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 71] content=' ground' reasoning=None finish=None choices=1 usage=no
+[ 72] content='.' reasoning=None finish=None choices=1 usage=no
+[ 73] content=' The' reasoning=None finish=None choices=1 usage=no
+[ 74] content=' combination' reasoning=None finish=None choices=1 usage=no
+[ 75] content=' of' reasoning=None finish=None choices=1 usage=no
+[ 76] content=' this' reasoning=None finish=None choices=1 usage=no
+[ 77] content=' scattering' reasoning=None finish=None choices=1 usage=no
+[ 78] content=' effect' reasoning=None finish=None choices=1 usage=no
+[ 79] content=' and' reasoning=None finish=None choices=1 usage=no
+[ 80] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 81] content=' Earth' reasoning=None finish=None choices=1 usage=no
+[ 82] content="'s" reasoning=None finish=None choices=1 usage=no
+[ 83] content=' atmospheric' reasoning=None finish=None choices=1 usage=no
+[ 84] content=' gases' reasoning=None finish=None choices=1 usage=no
+[ 85] content=' absorbs' reasoning=None finish=None choices=1 usage=no
+[ 86] content=' and' reasoning=None finish=None choices=1 usage=no
+[ 87] content=' sc' reasoning=None finish=None choices=1 usage=no
+[ 88] content='atters' reasoning=None finish=None choices=1 usage=no
+[ 89] content=' other' reasoning=None finish=None choices=1 usage=no
+[ 90] content=' colors' reasoning=None finish=None choices=1 usage=no
+[ 91] content=',' reasoning=None finish=None choices=1 usage=no
+[ 92] content=' leaving' reasoning=None finish=None choices=1 usage=no
+[ 93] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 94] content=' as' reasoning=None finish=None choices=1 usage=no
+[ 95] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 96] content=' dominant' reasoning=None finish=None choices=1 usage=no
+[ 97] content=' color' reasoning=None finish=None choices=1 usage=no
+[ 98] content=' visible' reasoning=None finish=None choices=1 usage=no
+[ 99] content=' to' reasoning=None finish=None choices=1 usage=no
+[100] content=' the' reasoning=None finish=None choices=1 usage=no
+[101] content=' human' reasoning=None finish=None choices=1 usage=no
+[102] content=' eye' reasoning=None finish=None choices=1 usage=no
+[103] content='.' reasoning=None finish=None choices=1 usage=no
+[104] content=None reasoning=None finish='stop' choices=1 usage=yes
+
+========================================================================
+### full chunk [0]  (first)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1",
+  "choices": [
+    {
+      "delta": {
+        "content": "Here",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358759,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1', choices=[ChunkChoice(delta=ChoiceDelta(content='Here', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=None, extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358759, model='llama-3.2-3b-instruct', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [1]  (first)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1",
+  "choices": [
+    {
+      "delta": {
+        "content": " are",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358759,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1', choices=[ChunkChoice(delta=ChoiceDelta(content=' are', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=None, extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358759, model='llama-3.2-3b-instruct', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [102]  (tail)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1",
+  "choices": [
+    {
+      "delta": {
+        "content": " eye",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358761,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1', choices=[ChunkChoice(delta=ChoiceDelta(content=' eye', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=None, extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358761, model='llama-3.2-3b-instruct', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [103]  (tail)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1",
+  "choices": [
+    {
+      "delta": {
+        "content": ".",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358761,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1', choices=[ChunkChoice(delta=ChoiceDelta(content='.', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=None, extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358761, model='llama-3.2-3b-instruct', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [104]  (tail)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1",
+  "choices": [
+    {
+      "delta": {
+        "content": null,
+        "function_call": null,
+        "refusal": null,
+        "role": null,
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358761,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 105,
+    "prompt_tokens": 46,
+    "total_tokens": 151,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-f10b01df-7e30-4578-b865-ffcb0b293ec1', choices=[ChunkChoice(delta=ChoiceDelta(content=None, function_call=None, refusal=None, role=None, tool_calls=None, reasoning=None, extra_content=None), finish_reason='stop', index=0, logprobs=None)], created=1788358761, model='llama-3.2-3b-instruct', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=105, prompt_tokens=46, total_tokens=151, completion_tokens_details=None, prompt_tokens_details=None))

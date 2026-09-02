@@ -1,0 +1,61 @@
+provider: ollama
+model: ollama:qwen3:0.6b
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:19:01+00:00
+prompt: [{'role': 'user', 'content': 'What is the current weather in Paris? You must call the get_weather tool.'}]
+lib_model: ollama:qwen3:0.6b
+op: tools
+========================================================================
+type: any_llm.types.completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-9e1f90ae-6a94-4363-8ddf-01c8d975595f",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "30f1035e-0a5d-4f6d-a19a-924d87bebc86",
+            "function": {
+              "arguments": "{\"city\": \"Paris\"}",
+              "name": "get_weather"
+            },
+            "type": "function"
+          }
+        ],
+        "reasoning": "Okay, the user is asking for the current weather in Paris. I need to use the get_weather tool. Let me check the function parameters. The function takes a city parameter, which is a string like \"Paris\". So I should call the function with {\"city\": \"Paris\"} as the arguments. That should retrieve the weather data for Paris. No other functions are needed here. Just make sure to format the tool call correctly within the specified XML tags.\n",
+        "extra_content": null
+      }
+    }
+  ],
+  "created": 1788358741,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 160,
+    "total_tokens": 276,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "total_duration": 497238600,
+    "load_duration": 6516000,
+    "prompt_eval_duration": 13843000,
+    "eval_duration": 449475000
+  }
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-9e1f90ae-6a94-4363-8ddf-01c8d975595f', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content='', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='30f1035e-0a5d-4f6d-a19a-924d87bebc86', function=Function(arguments='{"city": "Paris"}', name='get_weather'), type='function', extra_content=None)], reasoning=Reasoning(content='Okay, the user is asking for the current weather in Paris. I need to use the get_weather tool. Let me check the function parameters. The function takes a city parameter, which is a string like "Paris". So I should call the function with {"city": "Paris"} as the arguments. That should retrieve the weather data for Paris. No other functions are needed here. Just make sure to format the tool call correctly within the specified XML tags.\n'), extra_content=None))], created=1788358741, model='qwen3:0.6b', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=116, prompt_tokens=160, total_tokens=276, completion_tokens_details=None, prompt_tokens_details=None, total_duration=497238600, load_duration=6516000, prompt_eval_duration=13843000, eval_duration=449475000))

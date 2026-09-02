@@ -1,0 +1,64 @@
+provider: groq
+model: groq/openai/gpt-oss-120b
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:33+00:00
+prompt: [{'role': 'user', 'content': 'What is the current weather in Paris? You must call the get_weather tool.'}]
+lib_model: groq/openai/gpt-oss-120b
+op: tools
+litellm_response_cost: 5.4300000000000005e-05
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,litellm_call_id,litellm_model_name,model_id,response_cost
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-ee24bd7d-9ed6-4474-9b5b-ba6d0f8eccdd",
+  "created": 1788360693,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_dc4ca88fa4",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "message": {
+        "content": null,
+        "role": "assistant",
+        "tool_calls": [
+          {
+            "function": {
+              "arguments": "{\"city\":\"Paris\"}",
+              "name": "get_weather"
+            },
+            "id": "fc_63fec57f-1a14-48b0-b6bb-f158383233d6",
+            "type": "function"
+          }
+        ],
+        "function_call": null,
+        "reasoning": "The user asks for current weather in Paris and explicitly says must call the get_weather tool. So we need to call that function."
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 54,
+    "prompt_tokens": 146,
+    "total_tokens": 200,
+    "completion_tokens_details": {
+      "reasoning_tokens": 27
+    },
+    "prompt_tokens_details": null,
+    "queue_time": 0.125138573,
+    "prompt_time": 0.006049683,
+    "completion_time": 0.117791689,
+    "total_time": 0.123841372
+  },
+  "usage_breakdown": null,
+  "x_groq": {
+    "id": "req_01m1h9n57de69vy9csyzmgjxts",
+    "seed": 869336232
+  },
+  "service_tier": "auto"
+}
+
+# repr():
+ModelResponse(id='chatcmpl-ee24bd7d-9ed6-4474-9b5b-ba6d0f8eccdd', created=1788360693, model='openai/gpt-oss-120b', object='chat.completion', system_fingerprint='fp_dc4ca88fa4', choices=[Choices(finish_reason='tool_calls', index=0, message=Message(content=None, role='assistant', tool_calls=[ChatCompletionMessageToolCall(function=Function(arguments='{"city":"Paris"}', name='get_weather'), id='fc_63fec57f-1a14-48b0-b6bb-f158383233d6', type='function')], function_call=None, provider_specific_fields=None, reasoning='The user asks for current weather in Paris and explicitly says must call the get_weather tool. So we need to call that function.'))], usage=Usage(completion_tokens=54, prompt_tokens=146, total_tokens=200, completion_tokens_details=CompletionTokensDetailsWrapper(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=27, rejected_prediction_tokens=None, text_tokens=None, image_tokens=None, video_tokens=None), prompt_tokens_details=None, queue_time=0.125138573, prompt_time=0.006049683, completion_time=0.117791689, total_time=0.123841372), usage_breakdown=None, x_groq={'id': 'req_01m1h9n57de69vy9csyzmgjxts', 'seed': 869336232}, service_tier='auto')

@@ -1,0 +1,302 @@
+provider: groq
+model: groq:openai/gpt-oss-120b
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:20:57+00:00
+prompt: Write three short sentences about why the sky is blue.
+chunk_count: 107
+lib_model: groq:openai/gpt-oss-120b
+op: stream
+========================================================================
+# every chunk (compact):
+[  0] content='' reasoning=None finish=None choices=1 usage=no
+[  1] content=None reasoning=Reasoning(content='The') finish=None choices=1 usage=no
+[  2] content=None reasoning=Reasoning(content=' user') finish=None choices=1 usage=no
+[  3] content=None reasoning=Reasoning(content=' asks') finish=None choices=1 usage=no
+[  4] content=None reasoning=Reasoning(content=':') finish=None choices=1 usage=no
+[  5] content=None reasoning=Reasoning(content=' "') finish=None choices=1 usage=no
+[  6] content=None reasoning=Reasoning(content='Write') finish=None choices=1 usage=no
+[  7] content=None reasoning=Reasoning(content=' three') finish=None choices=1 usage=no
+[  8] content=None reasoning=Reasoning(content=' short') finish=None choices=1 usage=no
+[  9] content=None reasoning=Reasoning(content=' sentences') finish=None choices=1 usage=no
+[ 10] content=None reasoning=Reasoning(content=' about') finish=None choices=1 usage=no
+[ 11] content=None reasoning=Reasoning(content=' why') finish=None choices=1 usage=no
+[ 12] content=None reasoning=Reasoning(content=' the') finish=None choices=1 usage=no
+[ 13] content=None reasoning=Reasoning(content=' sky') finish=None choices=1 usage=no
+[ 14] content=None reasoning=Reasoning(content=' is') finish=None choices=1 usage=no
+[ 15] content=None reasoning=Reasoning(content=' blue') finish=None choices=1 usage=no
+[ 16] content=None reasoning=Reasoning(content='."') finish=None choices=1 usage=no
+[ 17] content=None reasoning=Reasoning(content=' Straight') finish=None choices=1 usage=no
+[ 18] content=None reasoning=Reasoning(content='forward') finish=None choices=1 usage=no
+[ 19] content=None reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[ 20] content=None reasoning=Reasoning(content=' Provide') finish=None choices=1 usage=no
+[ 21] content=None reasoning=Reasoning(content=' three') finish=None choices=1 usage=no
+[ 22] content=None reasoning=Reasoning(content=' short') finish=None choices=1 usage=no
+[ 23] content=None reasoning=Reasoning(content=' sentences') finish=None choices=1 usage=no
+[ 24] content=None reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[ 25] content=None reasoning=Reasoning(content=' No') finish=None choices=1 usage=no
+[ 26] content=None reasoning=Reasoning(content=' dis') finish=None choices=1 usage=no
+[ 27] content=None reasoning=Reasoning(content='allowed') finish=None choices=1 usage=no
+[ 28] content=None reasoning=Reasoning(content=' content') finish=None choices=1 usage=no
+[ 29] content=None reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[ 30] content=None reasoning=Reasoning(content=' Provide') finish=None choices=1 usage=no
+[ 31] content=None reasoning=Reasoning(content=' answer') finish=None choices=1 usage=no
+[ 32] content=None reasoning=Reasoning(content='.') finish=None choices=1 usage=no
+[ 33] content='The' reasoning=None finish=None choices=1 usage=no
+[ 34] content=' sky' reasoning=None finish=None choices=1 usage=no
+[ 35] content=' appears' reasoning=None finish=None choices=1 usage=no
+[ 36] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 37] content=' because' reasoning=None finish=None choices=1 usage=no
+[ 38] content=' molecules' reasoning=None finish=None choices=1 usage=no
+[ 39] content=' in' reasoning=None finish=None choices=1 usage=no
+[ 40] content=' Earth' reasoning=None finish=None choices=1 usage=no
+[ 41] content='’s' reasoning=None finish=None choices=1 usage=no
+[ 42] content=' atmosphere' reasoning=None finish=None choices=1 usage=no
+[ 43] content=' scatter' reasoning=None finish=None choices=1 usage=no
+[ 44] content=' shorter' reasoning=None finish=None choices=1 usage=no
+[ 45] content=' (' reasoning=None finish=None choices=1 usage=no
+[ 46] content='blue' reasoning=None finish=None choices=1 usage=no
+[ 47] content=')' reasoning=None finish=None choices=1 usage=no
+[ 48] content=' wavelengths' reasoning=None finish=None choices=1 usage=no
+[ 49] content=' of' reasoning=None finish=None choices=1 usage=no
+[ 50] content=' sunlight' reasoning=None finish=None choices=1 usage=no
+[ 51] content=' more' reasoning=None finish=None choices=1 usage=no
+[ 52] content=' than' reasoning=None finish=None choices=1 usage=no
+[ 53] content=' longer' reasoning=None finish=None choices=1 usage=no
+[ 54] content=' (' reasoning=None finish=None choices=1 usage=no
+[ 55] content='red' reasoning=None finish=None choices=1 usage=no
+[ 56] content=')' reasoning=None finish=None choices=1 usage=no
+[ 57] content=' wavelengths' reasoning=None finish=None choices=1 usage=no
+[ 58] content='.' reasoning=None finish=None choices=1 usage=no
+[ 59] content=' This' reasoning=None finish=None choices=1 usage=no
+[ 60] content=' scattering' reasoning=None finish=None choices=1 usage=no
+[ 61] content=',' reasoning=None finish=None choices=1 usage=no
+[ 62] content=' known' reasoning=None finish=None choices=1 usage=no
+[ 63] content=' as' reasoning=None finish=None choices=1 usage=no
+[ 64] content=' Ray' reasoning=None finish=None choices=1 usage=no
+[ 65] content='leigh' reasoning=None finish=None choices=1 usage=no
+[ 66] content=' scattering' reasoning=None finish=None choices=1 usage=no
+[ 67] content=',' reasoning=None finish=None choices=1 usage=no
+[ 68] content=' redirects' reasoning=None finish=None choices=1 usage=no
+[ 69] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 70] content=' light' reasoning=None finish=None choices=1 usage=no
+[ 71] content=' in' reasoning=None finish=None choices=1 usage=no
+[ 72] content=' all' reasoning=None finish=None choices=1 usage=no
+[ 73] content=' directions' reasoning=None finish=None choices=1 usage=no
+[ 74] content=',' reasoning=None finish=None choices=1 usage=no
+[ 75] content=' filling' reasoning=None finish=None choices=1 usage=no
+[ 76] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 77] content=' sky' reasoning=None finish=None choices=1 usage=no
+[ 78] content=' with' reasoning=None finish=None choices=1 usage=no
+[ 79] content=' a' reasoning=None finish=None choices=1 usage=no
+[ 80] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 81] content=' hue' reasoning=None finish=None choices=1 usage=no
+[ 82] content='.' reasoning=None finish=None choices=1 usage=no
+[ 83] content=' At' reasoning=None finish=None choices=1 usage=no
+[ 84] content=' sunrise' reasoning=None finish=None choices=1 usage=no
+[ 85] content=' and' reasoning=None finish=None choices=1 usage=no
+[ 86] content=' sunset' reasoning=None finish=None choices=1 usage=no
+[ 87] content=',' reasoning=None finish=None choices=1 usage=no
+[ 88] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 89] content=' light' reasoning=None finish=None choices=1 usage=no
+[ 90] content=' travels' reasoning=None finish=None choices=1 usage=no
+[ 91] content=' through' reasoning=None finish=None choices=1 usage=no
+[ 92] content=' more' reasoning=None finish=None choices=1 usage=no
+[ 93] content=' atmosphere' reasoning=None finish=None choices=1 usage=no
+[ 94] content=',' reasoning=None finish=None choices=1 usage=no
+[ 95] content=' scattering' reasoning=None finish=None choices=1 usage=no
+[ 96] content=' away' reasoning=None finish=None choices=1 usage=no
+[ 97] content=' the' reasoning=None finish=None choices=1 usage=no
+[ 98] content=' blue' reasoning=None finish=None choices=1 usage=no
+[ 99] content=' and' reasoning=None finish=None choices=1 usage=no
+[100] content=' letting' reasoning=None finish=None choices=1 usage=no
+[101] content=' reds' reasoning=None finish=None choices=1 usage=no
+[102] content=' and' reasoning=None finish=None choices=1 usage=no
+[103] content=' oranges' reasoning=None finish=None choices=1 usage=no
+[104] content=' dominate' reasoning=None finish=None choices=1 usage=no
+[105] content='.' reasoning=None finish=None choices=1 usage=no
+[106] content=None reasoning=None finish='stop' choices=1 usage=yes
+
+========================================================================
+### full chunk [0]  (first)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433",
+  "choices": [
+    {
+      "delta": {
+        "content": "",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358857,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433', choices=[ChunkChoice(delta=ChoiceDelta(content='', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning=None, extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358857, model='openai/gpt-oss-120b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [1]  (first)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433",
+  "choices": [
+    {
+      "delta": {
+        "content": null,
+        "function_call": null,
+        "refusal": null,
+        "role": null,
+        "tool_calls": null,
+        "reasoning": "The",
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358857,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433', choices=[ChunkChoice(delta=ChoiceDelta(content=None, function_call=None, refusal=None, role=None, tool_calls=None, reasoning=Reasoning(content='The'), extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358857, model='openai/gpt-oss-120b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [104]  (tail)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433",
+  "choices": [
+    {
+      "delta": {
+        "content": " dominate",
+        "function_call": null,
+        "refusal": null,
+        "role": null,
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358857,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433', choices=[ChunkChoice(delta=ChoiceDelta(content=' dominate', function_call=None, refusal=None, role=None, tool_calls=None, reasoning=None, extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358857, model='openai/gpt-oss-120b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [105]  (tail)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433",
+  "choices": [
+    {
+      "delta": {
+        "content": ".",
+        "function_call": null,
+        "refusal": null,
+        "role": null,
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358857,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433', choices=[ChunkChoice(delta=ChoiceDelta(content='.', function_call=None, refusal=None, role=None, tool_calls=None, reasoning=None, extra_content=None), finish_reason=None, index=0, logprobs=None)], created=1788358857, model='openai/gpt-oss-120b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=None)
+
+========================================================================
+### full chunk [106]  (tail)
+type: any_llm.types.completion.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433",
+  "choices": [
+    {
+      "delta": {
+        "content": null,
+        "function_call": null,
+        "refusal": null,
+        "role": null,
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      },
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788358857,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 82,
+    "total_tokens": 197,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "queue_time": 0.202547058,
+    "prompt_time": 0.00346095,
+    "completion_time": 0.239536718,
+    "total_time": 0.242997668
+  }
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-71def5f8-e3a9-4292-9083-ab4a1e2e9433', choices=[ChunkChoice(delta=ChoiceDelta(content=None, function_call=None, refusal=None, role=None, tool_calls=None, reasoning=None, extra_content=None), finish_reason='stop', index=0, logprobs=None)], created=1788358857, model='openai/gpt-oss-120b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=115, prompt_tokens=82, total_tokens=197, completion_tokens_details=None, prompt_tokens_details=None, queue_time=0.202547058, prompt_time=0.00346095, completion_time=0.239536718, total_time=0.242997668))

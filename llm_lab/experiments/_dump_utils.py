@@ -156,3 +156,54 @@ def write_sections_dump(
     path = DUMPS_DIR / filename
     path.write_text("\n".join(parts) + "\n", encoding="utf-8")
     return path
+
+
+def write_stream_dump(
+    filename: str,
+    *,
+    provider: str,
+    model: str,
+    sdk: str,
+    prompt: str,
+    chunks: list[Any],
+    line: Any,  # Callable[[chunk], str]
+    note: str = "",
+    full_head: int = 2,
+    full_tail: int = 3,
+    extra_header: dict[str, str] | None = None,
+) -> Path:
+    """Dump a streamed response: one compact `line(chunk)` per chunk, then
+    the full object for the first `full_head` and last `full_tail` chunks."""
+    DUMPS_DIR.mkdir(parents=True, exist_ok=True)
+    head = {
+        "provider": provider,
+        "model": model,
+        "sdk": sdk,
+        "generated_utc": _dt.datetime.now(_dt.UTC).isoformat(timespec="seconds"),
+        "prompt": prompt,
+        "chunk_count": len(chunks),
+        **(extra_header or {}),
+    }
+    if note:
+        head["note"] = note
+    parts = ["\n".join(f"{k}: {v}" for k, v in head.items())]
+    parts.append("=" * 72)
+    parts.append("# every chunk (compact):")
+    for i, ch in enumerate(chunks):
+        try:
+            parts.append(f"[{i:3}] {line(ch)}")
+        except Exception as exc:  # noqa: BLE001
+            parts.append(f"[{i:3}] <line() failed: {type(exc).__name__}: {exc}>")
+
+    n = len(chunks)
+    idxs = sorted(set(range(min(full_head, n))) | set(range(max(0, n - full_tail), n)))
+    for i in idxs:
+        parts.append("")
+        parts.append("=" * 72)
+        tag = "first" if i < full_head else "tail"
+        parts.append(f"### full chunk [{i}]  ({tag})")
+        parts.append(render_object(chunks[i]))
+
+    path = DUMPS_DIR / filename
+    path.write_text("\n".join(parts) + "\n", encoding="utf-8")
+    return path

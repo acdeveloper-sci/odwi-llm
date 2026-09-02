@@ -1,0 +1,57 @@
+provider: gemini
+model: gemini:gemini-3.5-flash-lite
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:20:38+00:00
+prompt: [{'role': 'user', 'content': 'Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.'}]
+lib_model: gemini:gemini-3.5-flash-lite
+op: structured
+========================================================================
+type: any_llm.types.completion.ParsedChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "google_genai_response",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "{\n  \"title\": \"Review the Q3 budget\",\n  \"priority\": \"high\",\n  \"assignee\": {\n    \"name\": \"Dana Lee\",\n    \"email\": \"dana@example.com\"\n  },\n  \"done\": false\n}",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null,
+        "parsed": {
+          "title": "Review the Q3 budget",
+          "priority": "high",
+          "assignee": {
+            "name": "Dana Lee",
+            "email": "dana@example.com"
+          },
+          "done": false
+        }
+      }
+    }
+  ],
+  "created": 0,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 60,
+    "prompt_tokens": 35,
+    "total_tokens": 95,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ParsedChatCompletion(id='google_genai_response', choices=[ParsedChoice(finish_reason='stop', index=0, logprobs=None, message=ParsedChatCompletionMessage(content='{\n  "title": "Review the Q3 budget",\n  "priority": "high",\n  "assignee": {\n    "name": "Dana Lee",\n    "email": "dana@example.com"\n  },\n  "done": false\n}', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning=None, extra_content=None, parsed=TaskItem(title='Review the Q3 budget', priority=<Priority.HIGH: 'high'>, assignee=Assignee(name='Dana Lee', email='dana@example.com'), done=False)))], created=0, model='gemini-3.5-flash-lite', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=60, prompt_tokens=35, total_tokens=95, completion_tokens_details=None, prompt_tokens_details=None))

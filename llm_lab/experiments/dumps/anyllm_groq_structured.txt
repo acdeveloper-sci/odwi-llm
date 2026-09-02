@@ -1,0 +1,61 @@
+provider: groq
+model: groq:openai/gpt-oss-120b
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:20:55+00:00
+prompt: [{'role': 'user', 'content': 'Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.'}]
+lib_model: groq:openai/gpt-oss-120b
+op: structured
+========================================================================
+type: any_llm.types.completion.ParsedChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-83356538-f257-40ff-8712-588c2c19e70b",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "{\"title\":\"Reviewing the Q3 budget\",\"priority\":\"high\",\"assignee\":{\"name\":\"Dana Lee\",\"email\":\"dana@example.com\"},\"done\":false}",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null,
+        "reasoning": "We need to output JSON matching the TaskItem schema.\n\nFields required: title, priority, assignee, done.\n\nAssignee is object with name and email.\n\nTitle: \"Reviewing the Q3 budget\" maybe.\n\nPriority: \"high\".\n\nDone: false.\n\nAssignee: name \"Dana Lee\", email \"dana@example.com\".\n\nMake compact JSON (no spaces). Ensure all fields present.\n\nOutput only JSON.\n\nThus:\n\n{\"title\":\"Reviewing the Q3 budget\",\"priority\":\"high\",\"assignee\":{\"name\":\"Dana Lee\",\"email\":\"dana@example.com\"},\"done\":false}\n\nCheck order not important.\n\nProvide exactly that.",
+        "extra_content": null,
+        "parsed": {
+          "title": "Reviewing the Q3 budget",
+          "priority": "high",
+          "assignee": {
+            "name": "Dana Lee",
+            "email": "dana@example.com"
+          },
+          "done": false
+        }
+      }
+    }
+  ],
+  "created": 1788358855,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 177,
+    "prompt_tokens": 302,
+    "total_tokens": 479,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "queue_time": 0.05646051,
+    "prompt_time": 0.01367622,
+    "completion_time": 0.375272375,
+    "total_time": 0.388948595
+  }
+}
+
+# repr():
+ParsedChatCompletion(id='chatcmpl-83356538-f257-40ff-8712-588c2c19e70b', choices=[ParsedChoice(finish_reason='stop', index=0, logprobs=None, message=ParsedChatCompletionMessage(content='{"title":"Reviewing the Q3 budget","priority":"high","assignee":{"name":"Dana Lee","email":"dana@example.com"},"done":false}', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning=Reasoning(content='We need to output JSON matching the TaskItem schema.\n\nFields required: title, priority, assignee, done.\n\nAssignee is object with name and email.\n\nTitle: "Reviewing the Q3 budget" maybe.\n\nPriority: "high".\n\nDone: false.\n\nAssignee: name "Dana Lee", email "dana@example.com".\n\nMake compact JSON (no spaces). Ensure all fields present.\n\nOutput only JSON.\n\nThus:\n\n{"title":"Reviewing the Q3 budget","priority":"high","assignee":{"name":"Dana Lee","email":"dana@example.com"},"done":false}\n\nCheck order not important.\n\nProvide exactly that.'), extra_content=None, parsed=TaskItem(title='Reviewing the Q3 budget', priority=<Priority.HIGH: 'high'>, assignee=Assignee(name='Dana Lee', email='dana@example.com'), done=False)))], created=1788358855, model='openai/gpt-oss-120b', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=177, prompt_tokens=302, total_tokens=479, completion_tokens_details=None, prompt_tokens_details=None, queue_time=0.05646051, prompt_time=0.01367622, completion_time=0.375272375, total_time=0.388948595))

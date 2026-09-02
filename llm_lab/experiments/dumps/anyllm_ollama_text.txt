@@ -1,0 +1,52 @@
+provider: ollama
+model: ollama:qwen3:0.6b
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:18:58+00:00
+prompt: [{'role': 'user', 'content': 'In one sentence, list the three primary colors of light in the additive model.'}]
+lib_model: ollama:qwen3:0.6b
+op: text
+========================================================================
+type: any_llm.types.completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-8fe07c18-2abf-4dd4-b9b2-10ea3ff55d8f",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "In the additive model, the three primary colors of light are red, blue, and yellow.",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null,
+        "reasoning": "Okay, the user is asking me to list the three primary colors of light in the additive model in one sentence. Let me start by recalling what I know about the additive model of light. From what I remember, the primary colors in the additive model are red, blue, and yellow. Wait, but I'm a bit fuzzy on the details. Let me think. In the additive model, light is composed of visible light wavelengths, and the primary colors are those that combine to produce a spectrum. So red, blue, and yellow are the three. But wait, I think there's another color, green, which is also used. Hmm, maybe I'm mixing up the visible spectrum. The primary colors in the additive model are red, blue, and yellow. Yes, that's correct. So the sentence should be straightforward. Let me check again. Yes, three colors: red, blue, yellow. No other colors. So the answer should be red, blue, and yellow.\n",
+        "extra_content": null
+      }
+    }
+  ],
+  "created": 1788358738,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 223,
+    "prompt_tokens": 26,
+    "total_tokens": 249,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "total_duration": 4237184900,
+    "load_duration": 3232748800,
+    "prompt_eval_duration": 120673000,
+    "eval_duration": 872883000
+  }
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-8fe07c18-2abf-4dd4-b9b2-10ea3ff55d8f', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='In the additive model, the three primary colors of light are red, blue, and yellow.', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning=Reasoning(content="Okay, the user is asking me to list the three primary colors of light in the additive model in one sentence. Let me start by recalling what I know about the additive model of light. From what I remember, the primary colors in the additive model are red, blue, and yellow. Wait, but I'm a bit fuzzy on the details. Let me think. In the additive model, light is composed of visible light wavelengths, and the primary colors are those that combine to produce a spectrum. So red, blue, and yellow are the three. But wait, I think there's another color, green, which is also used. Hmm, maybe I'm mixing up the visible spectrum. The primary colors in the additive model are red, blue, and yellow. Yes, that's correct. So the sentence should be straightforward. Let me check again. Yes, three colors: red, blue, yellow. No other colors. So the answer should be red, blue, and yellow.\n"), extra_content=None))], created=1788358738, model='qwen3:0.6b', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=223, prompt_tokens=26, total_tokens=249, completion_tokens_details=None, prompt_tokens_details=None, total_duration=4237184900, load_duration=3232748800, prompt_eval_duration=120673000, eval_duration=872883000))

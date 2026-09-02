@@ -1,0 +1,48 @@
+provider: lmstudio
+model: lmstudio:llama-3.2-3b-instruct
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:19:11+00:00
+prompt: [{'role': 'user', 'content': 'In one sentence, list the three primary colors of light in the additive model.'}]
+lib_model: lmstudio:llama-3.2-3b-instruct
+op: text
+========================================================================
+type: any_llm.types.completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-3c3cf618-e48a-404c-92b7-3e648a8adbcf",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "The three primary colors of light in the additive model are red, green, and blue (often referred to as RGB).",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null
+      }
+    }
+  ],
+  "created": 1788358751,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 25,
+    "prompt_tokens": 51,
+    "total_tokens": 76,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-3c3cf618-e48a-404c-92b7-3e648a8adbcf', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='The three primary colors of light in the additive model are red, green, and blue (often referred to as RGB).', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning=None, extra_content=None))], created=1788358751, model='llama-3.2-3b-instruct', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=25, prompt_tokens=51, total_tokens=76, completion_tokens_details=None, prompt_tokens_details=None))

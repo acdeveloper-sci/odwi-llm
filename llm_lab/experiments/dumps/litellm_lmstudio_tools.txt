@@ -1,0 +1,64 @@
+provider: lmstudio
+model: lm_studio/llama-3.2-3b-instruct
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:52+00:00
+prompt: [{'role': 'user', 'content': 'What is the current weather in Paris? You must call the get_weather tool.'}]
+lib_model: lm_studio/llama-3.2-3b-instruct
+op: tools
+litellm_response_cost: None
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,custom_llm_provider,litellm_call_id,litellm_model_name,litellm_overhead_time_ms,model_id,optional_params,region_name,response_cost
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-offzs3z911okssuenx58",
+  "created": 1788360711,
+  "model": "lm_studio/llama-3.2-3b-instruct",
+  "object": "chat.completion",
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "message": {
+        "content": "",
+        "role": "assistant",
+        "tool_calls": [
+          {
+            "function": {
+              "arguments": "{\"city\":\"Paris\"}",
+              "name": "get_weather"
+            },
+            "id": "6mG9drIZolP1UUjNk4Tp0iUOIgCdwfPD",
+            "type": "function"
+          }
+        ],
+        "function_call": null,
+        "reasoning_content": "",
+        "provider_specific_fields": {
+          "refusal": null
+        }
+      },
+      "provider_specific_fields": {}
+    }
+  ],
+  "usage": {
+    "completion_tokens": 17,
+    "prompt_tokens": 204,
+    "total_tokens": 221,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "moderation": null,
+  "service_tier": null,
+  "stats": {}
+}
+
+# repr():
+ModelResponse(id='chatcmpl-offzs3z911okssuenx58', created=1788360711, model='lm_studio/llama-3.2-3b-instruct', object='chat.completion', system_fingerprint='llama-3.2-3b-instruct', choices=[Choices(finish_reason='tool_calls', index=0, message=Message(content='', role='assistant', tool_calls=[ChatCompletionMessageToolCall(function=Function(arguments='{"city":"Paris"}', name='get_weather'), id='6mG9drIZolP1UUjNk4Tp0iUOIgCdwfPD', type='function')], function_call=None, reasoning_content='', provider_specific_fields={'refusal': None}), provider_specific_fields={})], usage=Usage(completion_tokens=17, prompt_tokens=204, total_tokens=221, completion_tokens_details=CompletionTokensDetailsWrapper(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=0, rejected_prediction_tokens=None, text_tokens=None, image_tokens=None, video_tokens=None), prompt_tokens_details=None), moderation=None, service_tier=None, stats={})

@@ -1,0 +1,376 @@
+provider: ollama
+model: ollama_chat/qwen3:0.6b
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:47+00:00
+prompt: Write three short sentences about why the sky is blue.
+chunk_count: 201
+lib_model: ollama_chat/qwen3:0.6b
+op: stream
+========================================================================
+# every chunk (compact):
+[  0] content=None reasoning='Okay' finish=None choices=1 usage=no
+[  1] content=None reasoning=',' finish=None choices=1 usage=no
+[  2] content=None reasoning=' the' finish=None choices=1 usage=no
+[  3] content=None reasoning=' user' finish=None choices=1 usage=no
+[  4] content=None reasoning=' wants' finish=None choices=1 usage=no
+[  5] content=None reasoning=' three' finish=None choices=1 usage=no
+[  6] content=None reasoning=' short' finish=None choices=1 usage=no
+[  7] content=None reasoning=' sentences' finish=None choices=1 usage=no
+[  8] content=None reasoning=' about' finish=None choices=1 usage=no
+[  9] content=None reasoning=' why' finish=None choices=1 usage=no
+[ 10] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 11] content=None reasoning=' sky' finish=None choices=1 usage=no
+[ 12] content=None reasoning=' is' finish=None choices=1 usage=no
+[ 13] content=None reasoning=' blue' finish=None choices=1 usage=no
+[ 14] content=None reasoning='.' finish=None choices=1 usage=no
+[ 15] content=None reasoning=' Let' finish=None choices=1 usage=no
+[ 16] content=None reasoning=' me' finish=None choices=1 usage=no
+[ 17] content=None reasoning=' start' finish=None choices=1 usage=no
+[ 18] content=None reasoning=' by' finish=None choices=1 usage=no
+[ 19] content=None reasoning=' recalling' finish=None choices=1 usage=no
+[ 20] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 21] content=None reasoning=' basic' finish=None choices=1 usage=no
+[ 22] content=None reasoning=' reasons' finish=None choices=1 usage=no
+[ 23] content=None reasoning='.' finish=None choices=1 usage=no
+[ 24] content=None reasoning=' The' finish=None choices=1 usage=no
+[ 25] content=None reasoning=' most' finish=None choices=1 usage=no
+[ 26] content=None reasoning=' obvious' finish=None choices=1 usage=no
+[ 27] content=None reasoning=' is' finish=None choices=1 usage=no
+[ 28] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 29] content=None reasoning=' scattering' finish=None choices=1 usage=no
+[ 30] content=None reasoning=' of' finish=None choices=1 usage=no
+[ 31] content=None reasoning=' sunlight' finish=None choices=1 usage=no
+[ 32] content=None reasoning=' by' finish=None choices=1 usage=no
+[ 33] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 34] content=None reasoning=' Earth' finish=None choices=1 usage=no
+[ 35] content=None reasoning="'s" finish=None choices=1 usage=no
+[ 36] content=None reasoning=' atmosphere' finish=None choices=1 usage=no
+[ 37] content=None reasoning='.' finish=None choices=1 usage=no
+[ 38] content=None reasoning=' I' finish=None choices=1 usage=no
+[ 39] content=None reasoning=' should' finish=None choices=1 usage=no
+[ 40] content=None reasoning=' mention' finish=None choices=1 usage=no
+[ 41] content=None reasoning=' that' finish=None choices=1 usage=no
+[ 42] content=None reasoning=',' finish=None choices=1 usage=no
+[ 43] content=None reasoning=' but' finish=None choices=1 usage=no
+[ 44] content=None reasoning=' also' finish=None choices=1 usage=no
+[ 45] content=None reasoning=' think' finish=None choices=1 usage=no
+[ 46] content=None reasoning=' about' finish=None choices=1 usage=no
+[ 47] content=None reasoning=' other' finish=None choices=1 usage=no
+[ 48] content=None reasoning=' factors' finish=None choices=1 usage=no
+[ 49] content=None reasoning='.' finish=None choices=1 usage=no
+[ 50] content=None reasoning=' Maybe' finish=None choices=1 usage=no
+[ 51] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 52] content=None reasoning=' water' finish=None choices=1 usage=no
+[ 53] content=None reasoning=' vapor' finish=None choices=1 usage=no
+[ 54] content=None reasoning=' in' finish=None choices=1 usage=no
+[ 55] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 56] content=None reasoning=' atmosphere' finish=None choices=1 usage=no
+[ 57] content=None reasoning='?' finish=None choices=1 usage=no
+[ 58] content=None reasoning=' Or' finish=None choices=1 usage=no
+[ 59] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 60] content=None reasoning=' angle' finish=None choices=1 usage=no
+[ 61] content=None reasoning=' of' finish=None choices=1 usage=no
+[ 62] content=None reasoning=' sunlight' finish=None choices=1 usage=no
+[ 63] content=None reasoning=',' finish=None choices=1 usage=no
+[ 64] content=None reasoning=' making' finish=None choices=1 usage=no
+[ 65] content=None reasoning=' it' finish=None choices=1 usage=no
+[ 66] content=None reasoning=' spread' finish=None choices=1 usage=no
+[ 67] content=None reasoning=' out' finish=None choices=1 usage=no
+[ 68] content=None reasoning='.' finish=None choices=1 usage=no
+[ 69] content=None reasoning=' Oh' finish=None choices=1 usage=no
+[ 70] content=None reasoning=',' finish=None choices=1 usage=no
+[ 71] content=None reasoning=' right' finish=None choices=1 usage=no
+[ 72] content=None reasoning=',' finish=None choices=1 usage=no
+[ 73] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 74] content=None reasoning=' Ray' finish=None choices=1 usage=no
+[ 75] content=None reasoning='leigh' finish=None choices=1 usage=no
+[ 76] content=None reasoning=' scattering' finish=None choices=1 usage=no
+[ 77] content=None reasoning=' theory' finish=None choices=1 usage=no
+[ 78] content=None reasoning='.' finish=None choices=1 usage=no
+[ 79] content=None reasoning=' That' finish=None choices=1 usage=no
+[ 80] content=None reasoning="'s" finish=None choices=1 usage=no
+[ 81] content=None reasoning=' a' finish=None choices=1 usage=no
+[ 82] content=None reasoning=' key' finish=None choices=1 usage=no
+[ 83] content=None reasoning=' point' finish=None choices=1 usage=no
+[ 84] content=None reasoning='.' finish=None choices=1 usage=no
+[ 85] content=None reasoning=' Also' finish=None choices=1 usage=no
+[ 86] content=None reasoning=',' finish=None choices=1 usage=no
+[ 87] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 88] content=None reasoning=' color' finish=None choices=1 usage=no
+[ 89] content=None reasoning=' of' finish=None choices=1 usage=no
+[ 90] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 91] content=None reasoning=' sky' finish=None choices=1 usage=no
+[ 92] content=None reasoning=' is' finish=None choices=1 usage=no
+[ 93] content=None reasoning=' due' finish=None choices=1 usage=no
+[ 94] content=None reasoning=' to' finish=None choices=1 usage=no
+[ 95] content=None reasoning=' the' finish=None choices=1 usage=no
+[ 96] content=None reasoning=' way' finish=None choices=1 usage=no
+[ 97] content=None reasoning=' light' finish=None choices=1 usage=no
+[ 98] content=None reasoning=' is' finish=None choices=1 usage=no
+[ 99] content=None reasoning=' scattered' finish=None choices=1 usage=no
+[100] content=None reasoning='.' finish=None choices=1 usage=no
+[101] content=None reasoning=' Need' finish=None choices=1 usage=no
+[102] content=None reasoning=' to' finish=None choices=1 usage=no
+[103] content=None reasoning=' make' finish=None choices=1 usage=no
+[104] content=None reasoning=' sure' finish=None choices=1 usage=no
+[105] content=None reasoning=' each' finish=None choices=1 usage=no
+[106] content=None reasoning=' sentence' finish=None choices=1 usage=no
+[107] content=None reasoning=' is' finish=None choices=1 usage=no
+[108] content=None reasoning=' concise' finish=None choices=1 usage=no
+[109] content=None reasoning='.' finish=None choices=1 usage=no
+[110] content=None reasoning=' Let' finish=None choices=1 usage=no
+[111] content=None reasoning=' me' finish=None choices=1 usage=no
+[112] content=None reasoning=' check' finish=None choices=1 usage=no
+[113] content=None reasoning=' each' finish=None choices=1 usage=no
+[114] content=None reasoning=' one' finish=None choices=1 usage=no
+[115] content=None reasoning=' for' finish=None choices=1 usage=no
+[116] content=None reasoning=' clarity' finish=None choices=1 usage=no
+[117] content=None reasoning=' and' finish=None choices=1 usage=no
+[118] content=None reasoning=' correctness' finish=None choices=1 usage=no
+[119] content=None reasoning='.' finish=None choices=1 usage=no
+[120] content=None reasoning=' Alright' finish=None choices=1 usage=no
+[121] content=None reasoning=',' finish=None choices=1 usage=no
+[122] content=None reasoning=' three' finish=None choices=1 usage=no
+[123] content=None reasoning=' sentences' finish=None choices=1 usage=no
+[124] content=None reasoning=' should' finish=None choices=1 usage=no
+[125] content=None reasoning=' cover' finish=None choices=1 usage=no
+[126] content=None reasoning=' the' finish=None choices=1 usage=no
+[127] content=None reasoning=' main' finish=None choices=1 usage=no
+[128] content=None reasoning=' reasons' finish=None choices=1 usage=no
+[129] content=None reasoning='.\n' finish=None choices=1 usage=no
+[130] content='1' reasoning=None finish=None choices=1 usage=no
+[131] content='.' reasoning=None finish=None choices=1 usage=no
+[132] content=' The' reasoning=None finish=None choices=1 usage=no
+[133] content=' sky' reasoning=None finish=None choices=1 usage=no
+[134] content=' appears' reasoning=None finish=None choices=1 usage=no
+[135] content=' blue' reasoning=None finish=None choices=1 usage=no
+[136] content=' because' reasoning=None finish=None choices=1 usage=no
+[137] content=' sunlight' reasoning=None finish=None choices=1 usage=no
+[138] content=' is' reasoning=None finish=None choices=1 usage=no
+[139] content=' scattered' reasoning=None finish=None choices=1 usage=no
+[140] content=' by' reasoning=None finish=None choices=1 usage=no
+[141] content=' Earth' reasoning=None finish=None choices=1 usage=no
+[142] content="'s" reasoning=None finish=None choices=1 usage=no
+[143] content=' atmosphere' reasoning=None finish=None choices=1 usage=no
+[144] content=',' reasoning=None finish=None choices=1 usage=no
+[145] content=' dispers' reasoning=None finish=None choices=1 usage=no
+[146] content='ing' reasoning=None finish=None choices=1 usage=no
+[147] content=' the' reasoning=None finish=None choices=1 usage=no
+[148] content=' color' reasoning=None finish=None choices=1 usage=no
+[149] content=' of' reasoning=None finish=None choices=1 usage=no
+[150] content=' light' reasoning=None finish=None choices=1 usage=no
+[151] content='.' reasoning=None finish=None choices=1 usage=no
+[152] content='  \n' reasoning=None finish=None choices=1 usage=no
+[153] content='2' reasoning=None finish=None choices=1 usage=no
+[154] content='.' reasoning=None finish=None choices=1 usage=no
+[155] content=' The' reasoning=None finish=None choices=1 usage=no
+[156] content=' color' reasoning=None finish=None choices=1 usage=no
+[157] content=' of' reasoning=None finish=None choices=1 usage=no
+[158] content=' the' reasoning=None finish=None choices=1 usage=no
+[159] content=' sky' reasoning=None finish=None choices=1 usage=no
+[160] content=' comes' reasoning=None finish=None choices=1 usage=no
+[161] content=' from' reasoning=None finish=None choices=1 usage=no
+[162] content=' the' reasoning=None finish=None choices=1 usage=no
+[163] content=' scattering' reasoning=None finish=None choices=1 usage=no
+[164] content=' of' reasoning=None finish=None choices=1 usage=no
+[165] content=' light' reasoning=None finish=None choices=1 usage=no
+[166] content=' by' reasoning=None finish=None choices=1 usage=no
+[167] content=' water' reasoning=None finish=None choices=1 usage=no
+[168] content=' vapor' reasoning=None finish=None choices=1 usage=no
+[169] content=',' reasoning=None finish=None choices=1 usage=no
+[170] content=' creating' reasoning=None finish=None choices=1 usage=no
+[171] content=' a' reasoning=None finish=None choices=1 usage=no
+[172] content=' spread' reasoning=None finish=None choices=1 usage=no
+[173] content=' of' reasoning=None finish=None choices=1 usage=no
+[174] content=' color' reasoning=None finish=None choices=1 usage=no
+[175] content='.' reasoning=None finish=None choices=1 usage=no
+[176] content='  \n' reasoning=None finish=None choices=1 usage=no
+[177] content='3' reasoning=None finish=None choices=1 usage=no
+[178] content='.' reasoning=None finish=None choices=1 usage=no
+[179] content=' Blue' reasoning=None finish=None choices=1 usage=no
+[180] content=' light' reasoning=None finish=None choices=1 usage=no
+[181] content=' is' reasoning=None finish=None choices=1 usage=no
+[182] content=' scattered' reasoning=None finish=None choices=1 usage=no
+[183] content=' the' reasoning=None finish=None choices=1 usage=no
+[184] content=' most' reasoning=None finish=None choices=1 usage=no
+[185] content=' by' reasoning=None finish=None choices=1 usage=no
+[186] content=' the' reasoning=None finish=None choices=1 usage=no
+[187] content=' Earth' reasoning=None finish=None choices=1 usage=no
+[188] content="'s" reasoning=None finish=None choices=1 usage=no
+[189] content=' atmosphere' reasoning=None finish=None choices=1 usage=no
+[190] content=',' reasoning=None finish=None choices=1 usage=no
+[191] content=' making' reasoning=None finish=None choices=1 usage=no
+[192] content=' the' reasoning=None finish=None choices=1 usage=no
+[193] content=' sky' reasoning=None finish=None choices=1 usage=no
+[194] content=' appear' reasoning=None finish=None choices=1 usage=no
+[195] content=' as' reasoning=None finish=None choices=1 usage=no
+[196] content=' a' reasoning=None finish=None choices=1 usage=no
+[197] content=' deep' reasoning=None finish=None choices=1 usage=no
+[198] content=' blue' reasoning=None finish=None choices=1 usage=no
+[199] content='.' reasoning=None finish=None choices=1 usage=no
+[200] content=None reasoning=None finish='stop' choices=1 usage=no
+
+========================================================================
+### full chunk [0]  (first)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "429eca02-bd06-4281-bd9a-f104a4cbd1b3",
+  "created": 1788360707,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "reasoning_content": "Okay",
+        "provider_specific_fields": null,
+        "content": null,
+        "role": "assistant",
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null
+}
+
+# repr():
+ModelResponseStream(id='429eca02-bd06-4281-bd9a-f104a4cbd1b3', created=1788360707, model='qwen3:0.6b', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(reasoning_content='Okay', provider_specific_fields=None, content=None, role='assistant', function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None)
+
+========================================================================
+### full chunk [1]  (first)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "14d0d437-30bf-4378-8c0a-01d8cbbaa0cf",
+  "created": 1788360707,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "reasoning_content": ",",
+        "provider_specific_fields": null,
+        "content": null,
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null
+}
+
+# repr():
+ModelResponseStream(id='14d0d437-30bf-4378-8c0a-01d8cbbaa0cf', created=1788360707, model='qwen3:0.6b', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(reasoning_content=',', provider_specific_fields=None, content=None, role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None)
+
+========================================================================
+### full chunk [198]  (tail)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "56d5e5e6-81b1-4ab4-87e1-080f90efba4d",
+  "created": 1788360707,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "provider_specific_fields": null,
+        "content": " blue",
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null
+}
+
+# repr():
+ModelResponseStream(id='56d5e5e6-81b1-4ab4-87e1-080f90efba4d', created=1788360707, model='qwen3:0.6b', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields=None, content=' blue', role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None)
+
+========================================================================
+### full chunk [199]  (tail)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "a1013b3b-641c-4903-b9ff-5721ec596620",
+  "created": 1788360707,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "delta": {
+        "provider_specific_fields": null,
+        "content": ".",
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null,
+  "citations": null
+}
+
+# repr():
+ModelResponseStream(id='a1013b3b-641c-4903-b9ff-5721ec596620', created=1788360707, model='qwen3:0.6b', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason=None, index=0, delta=Delta(provider_specific_fields=None, content='.', role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None, citations=None)
+
+========================================================================
+### full chunk [200]  (tail)
+type: litellm.types.utils.ModelResponseStream
+
+# structured view (model_dump / to_dict):
+{
+  "id": "c7524e9a-e8ac-4146-a9bc-5285931faf23",
+  "created": 1788360707,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "delta": {
+        "content": null,
+        "role": null,
+        "function_call": null,
+        "tool_calls": null,
+        "audio": null
+      },
+      "logprobs": null
+    }
+  ],
+  "provider_specific_fields": null
+}
+
+# repr():
+ModelResponseStream(id='c7524e9a-e8ac-4146-a9bc-5285931faf23', created=1788360707, model='qwen3:0.6b', object='chat.completion.chunk', system_fingerprint=None, choices=[StreamingChoices(finish_reason='stop', index=0, delta=Delta(provider_specific_fields=None, content=None, role=None, function_call=None, tool_calls=None, audio=None), logprobs=None)], provider_specific_fields=None)

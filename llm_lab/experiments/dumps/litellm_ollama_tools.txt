@@ -1,0 +1,52 @@
+provider: ollama
+model: ollama_chat/qwen3:0.6b
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:47+00:00
+prompt: [{'role': 'user', 'content': 'What is the current weather in Paris? You must call the get_weather tool.'}]
+lib_model: ollama_chat/qwen3:0.6b
+op: tools
+litellm_response_cost: 0.0
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,custom_llm_provider,litellm_call_id,litellm_model_name,model_id,optional_params,region_name,response_cost
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-7475a107-e85c-4245-96f7-a874dfc9fd5e",
+  "created": 1788360707,
+  "model": "ollama_chat/qwen3:0.6b",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "message": {
+        "content": "",
+        "role": "assistant",
+        "tool_calls": [
+          {
+            "function": {
+              "arguments": "{\"city\": \"Paris\"}",
+              "name": "get_weather"
+            },
+            "id": "call_m0kgv4fq",
+            "type": "function"
+          }
+        ],
+        "function_call": null,
+        "reasoning_content": "Okay, the user is asking for the current weather in Paris. I need to use the get_weather function provided. Let me check the tool's parameters. The function requires a city name, so I'll set the city to \"Paris\". I'll make sure to format the tool call correctly in JSON within the specified XML tags.\n"
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 90,
+    "prompt_tokens": 160,
+    "total_tokens": 250,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ModelResponse(id='chatcmpl-7475a107-e85c-4245-96f7-a874dfc9fd5e', created=1788360707, model='ollama_chat/qwen3:0.6b', object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='tool_calls', index=0, message=Message(content='', role='assistant', tool_calls=[ChatCompletionMessageToolCall(function=Function(arguments='{"city": "Paris"}', name='get_weather'), id='call_m0kgv4fq', type='function')], function_call=None, reasoning_content='Okay, the user is asking for the current weather in Paris. I need to use the get_weather function provided. Let me check the tool\'s parameters. The function requires a city name, so I\'ll set the city to "Paris". I\'ll make sure to format the tool call correctly in JSON within the specified XML tags.\n', provider_specific_fields=None))], usage=Usage(completion_tokens=90, prompt_tokens=160, total_tokens=250, completion_tokens_details=None, prompt_tokens_details=None))

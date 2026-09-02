@@ -1,0 +1,57 @@
+provider: lmstudio
+model: lmstudio:llama-3.2-3b-instruct
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:19:16+00:00
+prompt: [{'role': 'user', 'content': 'Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.'}]
+lib_model: lmstudio:llama-3.2-3b-instruct
+op: structured
+========================================================================
+type: any_llm.types.completion.ParsedChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-833e5e04-3b97-48a5-b751-86843913a900",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "{\"assignee\": {\"email\": \"dana@example.com\", \"name\": \"Dana Lee\"}, \"done\": false, \"priority\": \"high\", \"title\": \"Review Q3 Budget\"}",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null,
+        "reasoning": null,
+        "extra_content": null,
+        "parsed": {
+          "title": "Review Q3 Budget",
+          "priority": "high",
+          "assignee": {
+            "name": "Dana Lee",
+            "email": "dana@example.com"
+          },
+          "done": false
+        }
+      }
+    }
+  ],
+  "created": 1788358756,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 41,
+    "prompt_tokens": 67,
+    "total_tokens": 108,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ParsedChatCompletion(id='chatcmpl-833e5e04-3b97-48a5-b751-86843913a900', choices=[ParsedChoice(finish_reason='stop', index=0, logprobs=None, message=ParsedChatCompletionMessage(content='{"assignee": {"email": "dana@example.com", "name": "Dana Lee"}, "done": false, "priority": "high", "title": "Review Q3 Budget"}', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning=None, extra_content=None, parsed=TaskItem(title='Review Q3 Budget', priority=<Priority.HIGH: 'high'>, assignee=Assignee(name='Dana Lee', email='dana@example.com'), done=False)))], created=1788358756, model='llama-3.2-3b-instruct', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=41, prompt_tokens=67, total_tokens=108, completion_tokens_details=None, prompt_tokens_details=None))

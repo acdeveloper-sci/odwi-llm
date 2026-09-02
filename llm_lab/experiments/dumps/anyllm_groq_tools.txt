@@ -1,0 +1,61 @@
+provider: groq
+model: groq:openai/gpt-oss-120b
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:20:56+00:00
+prompt: [{'role': 'user', 'content': 'What is the current weather in Paris? You must call the get_weather tool.'}]
+lib_model: groq:openai/gpt-oss-120b
+op: tools
+========================================================================
+type: any_llm.types.completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-0dfe28dd-41b4-476b-b66c-db54e51bd31f",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "fc_85572109-7b7f-4fd2-bf70-934f9611a143",
+            "function": {
+              "arguments": "{\"city\":\"Paris\"}",
+              "name": "get_weather"
+            },
+            "type": "function"
+          }
+        ],
+        "reasoning": "The user asks for current weather in Paris and explicitly says \"You must call the get_weather tool.\" So we need to call the function.",
+        "extra_content": null
+      }
+    }
+  ],
+  "created": 1788358856,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 56,
+    "prompt_tokens": 152,
+    "total_tokens": 208,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "queue_time": 0.075064534,
+    "prompt_time": 0.006940381,
+    "completion_time": 0.119666026,
+    "total_time": 0.126606407
+  }
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-0dfe28dd-41b4-476b-b66c-db54e51bd31f', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='fc_85572109-7b7f-4fd2-bf70-934f9611a143', function=Function(arguments='{"city":"Paris"}', name='get_weather'), type='function', extra_content=None)], reasoning=Reasoning(content='The user asks for current weather in Paris and explicitly says "You must call the get_weather tool." So we need to call the function.'), extra_content=None))], created=1788358856, model='openai/gpt-oss-120b', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=56, prompt_tokens=152, total_tokens=208, completion_tokens_details=None, prompt_tokens_details=None, queue_time=0.075064534, prompt_time=0.006940381, completion_time=0.119666026, total_time=0.126606407))

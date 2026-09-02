@@ -1,0 +1,61 @@
+provider: ollama
+model: ollama:qwen3:0.6b
+sdk: any-llm-sdk (1.26.0)
+generated_utc: 2026-09-02T14:18:59+00:00
+prompt: [{'role': 'user', 'content': 'Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.'}]
+lib_model: ollama:qwen3:0.6b
+op: structured
+========================================================================
+type: any_llm.types.completion.ParsedChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-e26d811b-a279-43f0-82ac-39f0f801c37d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "{\"title\": \"Q3 Budget Review\", \"priority\": \"high\", \"assignee\": {\"name\": \"Dana Lee\", \"email\": \"dana@example.com\"}, \"done\": false}",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null,
+        "reasoning": "Okay, let's see. The user wants me to create a task item for reviewing the Q3 budget, assigned to Dana Lee, with high priority, not done yet. And they need it in JSON only.\n\nFirst, I need to structure the JSON correctly. The key should be \"task\" and the value is an array. Each element in the array represents a task. The user specified Dana Lee as the assignee, so that's the first task. High priority means the priority is set to \"High\", and the status is \"Not Done Yet\". I should make sure all the fields are present and correctly formatted. Let me double-check the JSON syntax to avoid errors. Alright, that should do it.\n",
+        "extra_content": null,
+        "parsed": {
+          "title": "Q3 Budget Review",
+          "priority": "high",
+          "assignee": {
+            "name": "Dana Lee",
+            "email": "dana@example.com"
+          },
+          "done": false
+        }
+      }
+    }
+  ],
+  "created": 1788358739,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 41,
+    "prompt_tokens": 189,
+    "total_tokens": 230,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "total_duration": 1016893000,
+    "load_duration": 7220300,
+    "prompt_eval_duration": 14009000,
+    "eval_duration": 347019000
+  }
+}
+
+# repr():
+ParsedChatCompletion(id='chatcmpl-e26d811b-a279-43f0-82ac-39f0f801c37d', choices=[ParsedChoice(finish_reason='stop', index=0, logprobs=None, message=ParsedChatCompletionMessage(content='{"title": "Q3 Budget Review", "priority": "high", "assignee": {"name": "Dana Lee", "email": "dana@example.com"}, "done": false}', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None, reasoning=Reasoning(content='Okay, let\'s see. The user wants me to create a task item for reviewing the Q3 budget, assigned to Dana Lee, with high priority, not done yet. And they need it in JSON only.\n\nFirst, I need to structure the JSON correctly. The key should be "task" and the value is an array. Each element in the array represents a task. The user specified Dana Lee as the assignee, so that\'s the first task. High priority means the priority is set to "High", and the status is "Not Done Yet". I should make sure all the fields are present and correctly formatted. Let me double-check the JSON syntax to avoid errors. Alright, that should do it.\n'), extra_content=None, parsed=TaskItem(title='Q3 Budget Review', priority=<Priority.HIGH: 'high'>, assignee=Assignee(name='Dana Lee', email='dana@example.com'), done=False)))], created=1788358739, model='qwen3:0.6b', object='chat.completion', moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=41, prompt_tokens=189, total_tokens=230, completion_tokens_details=None, prompt_tokens_details=None, total_duration=1016893000, load_duration=7220300, prompt_eval_duration=14009000, eval_duration=347019000))

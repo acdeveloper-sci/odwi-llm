@@ -1,0 +1,63 @@
+provider: gemini
+model: gemini/gemini-3.5-flash-lite
+sdk: litellm (1.99.0)
+generated_utc: 2026-09-02T14:51:29+00:00
+prompt: [{'role': 'user', 'content': 'Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.'}]
+lib_model: gemini/gemini-3.5-flash-lite
+op: structured
+litellm_response_cost: 0.00016050000000000003
+litellm_hidden_params_keys: _response_ms,additional_headers,api_base,callback_duration_ms,custom_llm_provider,litellm_call_id,litellm_model_name,model_id,optional_params,region_name,response_cost,vertex_ai_citation_metadata,vertex_ai_grounding_metadata,vertex_ai_safety_results,vertex_ai_url_context_metadata
+========================================================================
+type: litellm.types.utils.ModelResponse
+
+# structured view (model_dump / to_dict):
+{
+  "id": "8DeYavCXHfWnmtkP8NbD6Qw",
+  "created": 1788360688,
+  "model": "gemini-3.5-flash-lite",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"title\": \"Review the Q3 budget\",\n  \"priority\": \"high\",\n  \"assignee\": {\n    \"name\": \"Dana Lee\",\n    \"email\": \"dana@example.com\"\n  },\n  \"done\": false\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "images": [],
+        "thinking_blocks": [],
+        "provider_specific_fields": {
+          "thought_signatures": [
+            "El4KXAERTTIPP5a9CvvsbkZnaRXB2X7hUfr58LdkAVz768DQnTHaykudmUNvAJ4eLMKFnM/IXi4xeXtgoue8Go881rgEnVwyI9a0kNCf/0Uc8Ar4wL7dTXhw8UnBUj7Z"
+          ]
+        }
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 60,
+    "prompt_tokens": 35,
+    "total_tokens": 95,
+    "completion_tokens_details": {
+      "text_tokens": 60
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": null,
+      "text_tokens": 35,
+      "image_tokens": null,
+      "video_tokens": null
+    },
+    "cache_read_input_tokens": null
+  },
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_url_context_metadata": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": [],
+  "service_tier": "default"
+}
+
+# repr():
+ModelResponse(id='8DeYavCXHfWnmtkP8NbD6Qw', created=1788360688, model='gemini-3.5-flash-lite', object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='stop', index=0, message=Message(content='{\n  "title": "Review the Q3 budget",\n  "priority": "high",\n  "assignee": {\n    "name": "Dana Lee",\n    "email": "dana@example.com"\n  },\n  "done": false\n}', role='assistant', tool_calls=None, function_call=None, images=[], thinking_blocks=[], provider_specific_fields={'thought_signatures': ['El4KXAERTTIPP5a9CvvsbkZnaRXB2X7hUfr58LdkAVz768DQnTHaykudmUNvAJ4eLMKFnM/IXi4xeXtgoue8Go881rgEnVwyI9a0kNCf/0Uc8Ar4wL7dTXhw8UnBUj7Z']}))], usage=Usage(completion_tokens=60, prompt_tokens=35, total_tokens=95, completion_tokens_details=CompletionTokensDetailsWrapper(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=None, rejected_prediction_tokens=None, text_tokens=60, image_tokens=None, video_tokens=None), prompt_tokens_details=PromptTokensDetailsWrapper(audio_tokens=None, cached_tokens=None, text_tokens=35, image_tokens=None, video_tokens=None), cache_read_input_tokens=None), vertex_ai_grounding_metadata=[], vertex_ai_url_context_metadata=[], vertex_ai_safety_results=[], vertex_ai_citation_metadata=[], service_tier='default')
