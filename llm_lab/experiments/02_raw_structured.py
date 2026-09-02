@@ -25,7 +25,7 @@ from enum import Enum
 from pydantic import BaseModel, ValidationError
 
 import _config as cfg
-from _dump_utils import pkg_version, write_dump
+from _dump_utils import call_with_retry, pkg_version, write_dump
 
 
 # --- test schema: 4 fields, one nested model, one enum ------------------
@@ -70,7 +70,6 @@ def _validate(text: str | None) -> str:
 # --- Gemini -----------------------------------------------------------
 def run_gemini() -> dict:
     import logging
-    import time
 
     logging.getLogger("google_genai").setLevel(logging.ERROR)
     from google import genai
@@ -82,21 +81,14 @@ def run_gemini() -> dict:
         response_mime_type="application/json",
         response_schema=TaskItem,
     )
-    # Free tier throws transient 503 UNAVAILABLE ("high demand"); retry a few
-    # times before giving up. This is the adapter-level technical retry from
-    # design 5.3, kept small.
-    resp = None
-    for attempt, delay in enumerate((3, 8, 20, 45), start=1):
-        try:
-            resp = client.models.generate_content(
-                model=cfg.GEMINI_MODEL, contents=PROMPT, config=cfg_obj
-            )
-            break
-        except genai_errors.ServerError as exc:
-            if attempt == 4:
-                raise
-            print(f"  gemini {exc.code} on attempt {attempt}, retrying in {delay}s...")
-            time.sleep(delay)
+    # Free tier throws transient 503 UNAVAILABLE ("high demand").
+    resp = call_with_retry(
+        lambda: client.models.generate_content(
+            model=cfg.GEMINI_MODEL, contents=PROMPT, config=cfg_obj
+        ),
+        retry_on=(genai_errors.ServerError,),
+        label="gemini",
+    )
     parsed = getattr(resp, "parsed", None)
     return {
         "sdk": f"google-genai ({pkg_version('google-genai')})",
@@ -255,5 +247,6 @@ if __name__ == "__main__":
 #     it emitted - token accounting under thinking is unreliable there.
 #
 # Operational note: gemini-3.5-flash-lite free tier intermittently returns
-# 503 UNAVAILABLE ("high demand"); run_gemini() retries up to 4x with
-# backoff. That is design 5.3 technical retry, not a schema issue.
+# 503 UNAVAILABLE ("high demand"); run_gemini() wraps the call in
+# _dump_utils.call_with_retry (backoff 3/8/20/45s). That is design 5.3
+# technical retry, not a schema issue.

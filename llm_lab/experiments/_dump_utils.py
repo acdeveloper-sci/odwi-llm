@@ -9,11 +9,15 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
+import time
+from collections.abc import Callable
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
-from typing import Any
+from typing import Any, TypeVar
 
 DUMPS_DIR = Path(__file__).resolve().parent / "dumps"
+
+_T = TypeVar("_T")
 
 
 def pkg_version(name: str) -> str:
@@ -21,6 +25,36 @@ def pkg_version(name: str) -> str:
         return version(name)
     except PackageNotFoundError:
         return "unknown"
+
+
+def call_with_retry(
+    fn: Callable[[], _T],
+    *,
+    retry_on: tuple[type[BaseException], ...],
+    delays: tuple[int, ...] = (3, 8, 20, 45),
+    label: str = "",
+) -> _T:
+    """Call fn() and retry on the given exception types with fixed backoff.
+
+    len(delays) + 1 attempts total; the exception from the last attempt is
+    re-raised. This is the design 5.3 "technical retry" (5xx / transient),
+    kept deliberately small - the free Gemini tier throws 503 UNAVAILABLE
+    under load and every Fase B script needs to ride through it.
+    """
+    tag = f"{label} " if label else ""
+    for attempt, delay in enumerate((*delays, None), start=1):
+        try:
+            return fn()
+        except retry_on as exc:  # noqa: PERF203
+            if delay is None:
+                raise
+            code = getattr(exc, "code", None) or getattr(exc, "status_code", "")
+            print(
+                f"  {tag}{type(exc).__name__} {code} on attempt {attempt}, "
+                f"retrying in {delay}s..."
+            )
+            time.sleep(delay)
+    raise AssertionError("unreachable")
 
 
 def _to_jsonable(obj: Any) -> Any:
@@ -82,4 +116,43 @@ def write_dump(
 
     path = DUMPS_DIR / filename
     path.write_text(body, encoding="utf-8")
+    return path
+
+
+def write_sections_dump(
+    filename: str,
+    *,
+    provider: str,
+    model: str,
+    sdk: str,
+    sections: list[dict[str, Any]],
+    extra_header: dict[str, str] | None = None,
+) -> Path:
+    """Like write_dump but for several scenarios in one file.
+
+    Each section is a dict with keys: label, prompt (optional), note
+    (optional), obj.
+    """
+    DUMPS_DIR.mkdir(parents=True, exist_ok=True)
+    header = {
+        "provider": provider,
+        "model": model,
+        "sdk": sdk,
+        "generated_utc": _dt.datetime.now(_dt.UTC).isoformat(timespec="seconds"),
+        **(extra_header or {}),
+    }
+    parts = ["\n".join(f"{k}: {v}" for k, v in header.items())]
+    for sec in sections:
+        parts.append("=" * 72)
+        parts.append(f"### {sec['label']}")
+        if sec.get("prompt"):
+            parts.append(f"prompt: {sec['prompt']}")
+        if sec.get("note"):
+            parts.append(f"note: {sec['note']}")
+        parts.append("-" * 72)
+        parts.append(render_object(sec["obj"]))
+        parts.append("")
+
+    path = DUMPS_DIR / filename
+    path.write_text("\n".join(parts) + "\n", encoding="utf-8")
     return path
