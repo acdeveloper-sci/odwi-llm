@@ -1,0 +1,53 @@
+provider: lmstudio
+model: llama-3.2-3b-instruct
+sdk: openai (2.54.0)
+generated_utc: 2026-09-02T05:39:25+00:00
+prompt: Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.
+mechanism: response_format={"type":"json_schema", ...}
+validation: OK (validated against TaskItem, no retry)
+========================================================================
+type: openai.types.chat.chat_completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-v7zpbutas7iqzx5k9t83dp",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "{\"title\": \"Review Q3 Budget\", \"priority\": \"high\", \"assignee\": {\"name\": \"Dana Lee\", \"email\": \"dana@example.com\"}, \"done\": false}",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning_content": ""
+      }
+    }
+  ],
+  "created": 1788327564,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "usage": {
+    "completion_tokens": 41,
+    "prompt_tokens": 67,
+    "total_tokens": 108,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "stats": {}
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-v7zpbutas7iqzx5k9t83dp', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"title": "Review Q3 Budget", "priority": "high", "assignee": {"name": "Dana Lee", "email": "dana@example.com"}, "done": false}', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[], reasoning_content=''))], created=1788327564, model='llama-3.2-3b-instruct', object='chat.completion', moderation=None, service_tier=None, system_fingerprint='llama-3.2-3b-instruct', usage=CompletionUsage(completion_tokens=41, prompt_tokens=67, total_tokens=108, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=0, rejected_prediction_tokens=None), prompt_tokens_details=None), stats={})

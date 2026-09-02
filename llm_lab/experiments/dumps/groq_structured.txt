@@ -1,0 +1,59 @@
+provider: groq
+model: openai/gpt-oss-120b
+sdk: groq (1.7.0)
+generated_utc: 2026-09-02T05:39:14+00:00
+prompt: Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.
+mechanism: response_format={"type":"json_schema", ...}
+validation: OK (validated against TaskItem, no retry)
+========================================================================
+type: groq.types.chat.chat_completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-aa101bd9-5a97-418e-b2d3-cb8e4e560564",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "{\"title\":\"Reviewing the Q3 budget\",\"priority\":\"high\",\"assignee\":{\"name\":\"Dana Lee\",\"email\":\"dana@example.com\"},\"done\":false}",
+        "role": "assistant",
+        "annotations": null,
+        "executed_tools": null,
+        "function_call": null,
+        "reasoning": "We need to output JSON that matches the schema defined in task_item. Let's decode schema:\n\nTop-level object has properties: title (string), priority (enum low/medium/high), assignee (object with name and email strings), done (boolean). All required.\n\nWe need title: \"Reviewing the Q3 budget\" maybe \"Review Q3 budget\". Provide priority: \"high\". assignee: name \"Dana Lee\", email \"dana@example.com\". done: false.\n\nMake sure JSON compact (no whitespace? but can have spaces). Provide exactly the object, not the schema.\n\nThus output:\n\n{\n  \"title\":\"Reviewing the Q3 budget\",\n  \"priority\":\"high\",\n  \"assignee\":{\"name\":\"Dana Lee\",\"email\":\"dana@example.com\"},\n  \"done\":false\n}\n\nCheck schema: all required fields present. Should be fine.\n\nWe must output ONLY the final JSON object.",
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1788327554,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion",
+  "mcp_list_tools": null,
+  "service_tier": "on_demand",
+  "system_fingerprint": "fp_6c36ac20de",
+  "usage": {
+    "completion_tokens": 233,
+    "prompt_tokens": 302,
+    "total_tokens": 535,
+    "completion_time": 0.487847292,
+    "completion_tokens_details": {
+      "reasoning_tokens": 186
+    },
+    "prompt_time": 0.01520834,
+    "prompt_tokens_details": null,
+    "queue_time": 0.035264878,
+    "total_time": 0.503055632
+  },
+  "usage_breakdown": null,
+  "x_groq": {
+    "id": "req_01m1ga1vb4e50aw4b8jm8gnzp3",
+    "debug": null,
+    "seed": 1520583465,
+    "usage": null
+  }
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-aa101bd9-5a97-418e-b2d3-cb8e4e560564', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='{"title":"Reviewing the Q3 budget","priority":"high","assignee":{"name":"Dana Lee","email":"dana@example.com"},"done":false}', role='assistant', annotations=None, executed_tools=None, function_call=None, reasoning='We need to output JSON that matches the schema defined in task_item. Let\'s decode schema:\n\nTop-level object has properties: title (string), priority (enum low/medium/high), assignee (object with name and email strings), done (boolean). All required.\n\nWe need title: "Reviewing the Q3 budget" maybe "Review Q3 budget". Provide priority: "high". assignee: name "Dana Lee", email "dana@example.com". done: false.\n\nMake sure JSON compact (no whitespace? but can have spaces). Provide exactly the object, not the schema.\n\nThus output:\n\n{\n  "title":"Reviewing the Q3 budget",\n  "priority":"high",\n  "assignee":{"name":"Dana Lee","email":"dana@example.com"},\n  "done":false\n}\n\nCheck schema: all required fields present. Should be fine.\n\nWe must output ONLY the final JSON object.', tool_calls=None))], created=1788327554, model='openai/gpt-oss-120b', object='chat.completion', mcp_list_tools=None, service_tier='on_demand', system_fingerprint='fp_6c36ac20de', usage=CompletionUsage(completion_tokens=233, prompt_tokens=302, total_tokens=535, completion_time=0.487847292, completion_tokens_details=CompletionTokensDetails(reasoning_tokens=186), prompt_time=0.01520834, prompt_tokens_details=None, queue_time=0.035264878, total_time=0.503055632), usage_breakdown=None, x_groq=XGroq(id='req_01m1ga1vb4e50aw4b8jm8gnzp3', debug=None, seed=1520583465, usage=None))

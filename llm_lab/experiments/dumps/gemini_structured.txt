@@ -1,0 +1,153 @@
+provider: gemini
+model: gemini-3.5-flash-lite
+sdk: google-genai (2.21.0)
+generated_utc: 2026-09-02T05:39:13+00:00
+prompt: Create a task item for reviewing the Q3 budget, assigned to Dana Lee (dana@example.com), high priority, not done yet. Respond with JSON only.
+mechanism: GenerateContentConfig(response_schema=TaskItem)
+validation: resp.parsed -> TaskItem: TaskItem(title='Review the Q3 budget', priority=<Priority.HIGH: 'high'>, assignee=Assignee(name='Dana Lee', email='dana@example.com'), done=False)
+========================================================================
+type: google.genai.types.GenerateContentResponse
+
+# structured view (model_dump / to_dict):
+{
+  "sdk_http_response": {
+    "headers": {
+      "x-gemini-service-tier": "standard",
+      "content-type": "application/json; charset=UTF-8",
+      "vary": "Origin, X-Origin, Referer",
+      "content-encoding": "gzip",
+      "date": "Wed, 02 Sep 2026 05:39:13 GMT",
+      "server": "scaffolding on HTTPServer2",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "server-timing": "gfet4t7; dur=11406",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+      "transfer-encoding": "chunked"
+    },
+    "body": null
+  },
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": null,
+            "function_response": null,
+            "inline_data": null,
+            "text": "{\n  \"title\": \"Review the Q3 budget\",\n  \"priority\": \"high\",\n  \"assignee\": {\n    \"name\": \"Dana Lee\",\n    \"email\": \"dana@example.com\"\n  },\n  \"done\": false\n}",
+            "thought": null,
+            "thought_signature": "El4KXAERTTIPIgCHMlbQhvQaP6bUipSBsXaEpITXuceANxTP6lX0KbtSkW7MGrC-NslTyKLfTS7Ry1QffIk00ssDD_8HhsCoJ_VYYkyGjlevnqpsqdRkD9UU1X4kDwO3",
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null
+          }
+        ],
+        "role": "model"
+      },
+      "citation_metadata": null,
+      "finish_message": null,
+      "token_count": null,
+      "finish_reason": "STOP",
+      "grounding_metadata": null,
+      "avg_logprobs": null,
+      "index": 0,
+      "logprobs_result": null,
+      "safety_ratings": null,
+      "url_context_metadata": null
+    }
+  ],
+  "create_time": null,
+  "model_version": "gemini-3.5-flash-lite",
+  "prompt_feedback": null,
+  "response_id": "draXavqFGNK1qtsP8cvYwQ8",
+  "usage_metadata": {
+    "cache_tokens_details": null,
+    "cached_content_token_count": null,
+    "candidates_token_count": 60,
+    "candidates_tokens_details": null,
+    "prompt_token_count": 35,
+    "prompt_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 35
+      }
+    ],
+    "thoughts_token_count": null,
+    "tool_use_prompt_token_count": null,
+    "tool_use_prompt_tokens_details": null,
+    "total_token_count": 95,
+    "traffic_type": null
+  },
+  "model_status": null,
+  "automatic_function_calling_history": [],
+  "parsed": {
+    "title": "Review the Q3 budget",
+    "priority": "high",
+    "assignee": {
+      "name": "Dana Lee",
+      "email": "dana@example.com"
+    },
+    "done": false
+  }
+}
+
+# repr():
+GenerateContentResponse(
+  automatic_function_calling_history=[],
+  candidates=[
+    Candidate(
+      content=Content(
+        parts=[
+          Part(
+            text="""{
+  "title": "Review the Q3 budget",
+  "priority": "high",
+  "assignee": {
+    "name": "Dana Lee",
+    "email": "dana@example.com"
+  },
+  "done": false
+}""",
+            thought_signature=b'\x12^\n\\\x01\x11M2\x0f"\x00\x872V\xd0\x86\xf4\x1a?\xa6\xd4\x8a\x94\x81\xb1v\x84\xa4\x84\xd7\xb9\xc7\x807\x14\xcf\xeaU\xf4)\xbbR\x91n\xcc\x1a\xb0\xbe6\xc9S\xc8\xa2\xdfM.\xd1\xcbT\x1f|\x894\xd2\xcb\x03\x0f\xff\x07\x86\xc0\xa8\'\xf5XbL\x86\x8eW\xaf\x9e\xaal\xa9\xd4d\x0f\xd5\x14\xd5~$\x0f\x03\xb7'
+          ),
+        ],
+        role='model'
+      ),
+      finish_reason=<FinishReason.STOP: 'STOP'>,
+      index=0
+    ),
+  ],
+  model_version='gemini-3.5-flash-lite',
+  parsed=TaskItem(
+    assignee=Assignee(
+      email='dana@example.com',
+      name='Dana Lee'
+    ),
+    done=False,
+    priority=<Priority.HIGH: 'high'>,
+    title='Review the Q3 budget'
+  ),
+  response_id='draXavqFGNK1qtsP8cvYwQ8',
+  sdk_http_response=HttpResponse(
+    headers=<dict len=12>
+  ),
+  usage_metadata=GenerateContentResponseUsageMetadata(
+    candidates_token_count=60,
+    prompt_token_count=35,
+    prompt_tokens_details=[
+      ModalityTokenCount(
+        modality=<MediaModality.TEXT: 'TEXT'>,
+        token_count=35
+      ),
+    ],
+    total_token_count=95
+  )
+)
