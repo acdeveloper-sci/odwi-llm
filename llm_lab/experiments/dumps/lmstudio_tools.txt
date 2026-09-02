@@ -1,0 +1,75 @@
+provider: lmstudio
+model: llama-3.2-3b-instruct
+sdk: openai (2.54.0)
+generated_utc: 2026-09-02T05:57:17+00:00
+tool: get_weather(city: str)
+========================================================================
+### single
+prompt: What is the current weather in Paris? You must call the get_weather tool.
+note: 1 tool_call(s): get_weather(args='{"city":"Paris"}', type=str)
+------------------------------------------------------------------------
+type: openai.types.chat.chat_completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-9eznzsqp3jftjc5phzut4c",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "9Y3WJTXxWBtI0Sn8fwzF4eEPbfUGFVQ6",
+            "function": {
+              "arguments": "{\"city\":\"Paris\"}",
+              "name": "get_weather"
+            },
+            "type": "function"
+          }
+        ],
+        "reasoning_content": ""
+      }
+    }
+  ],
+  "created": 1788328635,
+  "model": "llama-3.2-3b-instruct",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "llama-3.2-3b-instruct",
+  "usage": {
+    "completion_tokens": 17,
+    "prompt_tokens": 211,
+    "total_tokens": 228,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": null
+  },
+  "stats": {}
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-9eznzsqp3jftjc5phzut4c', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content='', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='9Y3WJTXxWBtI0Sn8fwzF4eEPbfUGFVQ6', function=Function(arguments='{"city":"Paris"}', name='get_weather'), type='function')], reasoning_content=''))], created=1788328635, model='llama-3.2-3b-instruct', object='chat.completion', moderation=None, service_tier=None, system_fingerprint='llama-3.2-3b-instruct', usage=CompletionUsage(completion_tokens=17, prompt_tokens=211, total_tokens=228, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=0, rejected_prediction_tokens=None), prompt_tokens_details=None), stats={})
+
+========================================================================
+### parallel
+prompt: Get the current weather in Paris and in Tokyo. Call get_weather once for each city, in this same turn.
+note: ERROR raised: BadRequestError: Error code: 400 - {'error': 'Engine protocol predict stream returned an error: {"code":500,"message":"The model produced output that does not match the expected peg-native format","type":"server_error"}'}
+------------------------------------------------------------------------
+type: builtins.dict
+
+# repr():
+{'error': 'BadRequestError: Error code: 400 - {\'error\': \'Engine protocol predict stream returned an error: {"code":500,"message":"The model produced output that does not match the expected peg-native format","type":"server_error"}\'}'}
+

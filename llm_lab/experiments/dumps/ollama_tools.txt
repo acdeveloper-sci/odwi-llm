@@ -1,0 +1,124 @@
+provider: ollama
+model: qwen3:0.6b
+sdk: openai (2.54.0)
+generated_utc: 2026-09-02T05:57:13+00:00
+tool: get_weather(city: str)
+========================================================================
+### single
+prompt: What is the current weather in Paris? You must call the get_weather tool.
+note: 1 tool_call(s): get_weather(args='{"city":"Paris"}', type=str)
+------------------------------------------------------------------------
+type: openai.types.chat.chat_completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-504",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_1j8xc1st",
+            "function": {
+              "arguments": "{\"city\":\"Paris\"}",
+              "name": "get_weather"
+            },
+            "type": "function",
+            "index": 0
+          }
+        ],
+        "reasoning": "Okay, the user is asking about the current weather in Paris. I need to use the get_weather function for that. Let me check the tool's parameters. The function requires a city name as an argument. So I should format the city as \"Paris\" inside the JSON object. Wait, the example shows \"Paris\" as a string, so I'll use that exactly. No other parameters are needed. Alright, I'll return the function call with the city name set to Paris.\n"
+      }
+    }
+  ],
+  "created": 1788328633,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "fp_ollama",
+  "usage": {
+    "completion_tokens": 122,
+    "prompt_tokens": 160,
+    "total_tokens": 282,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-504', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content='', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_1j8xc1st', function=Function(arguments='{"city":"Paris"}', name='get_weather'), type='function', index=0)], reasoning='Okay, the user is asking about the current weather in Paris. I need to use the get_weather function for that. Let me check the tool\'s parameters. The function requires a city name as an argument. So I should format the city as "Paris" inside the JSON object. Wait, the example shows "Paris" as a string, so I\'ll use that exactly. No other parameters are needed. Alright, I\'ll return the function call with the city name set to Paris.\n'))], created=1788328633, model='qwen3:0.6b', object='chat.completion', moderation=None, service_tier=None, system_fingerprint='fp_ollama', usage=CompletionUsage(completion_tokens=122, prompt_tokens=160, total_tokens=282, completion_tokens_details=None, prompt_tokens_details=None))
+
+========================================================================
+### parallel
+prompt: Get the current weather in Paris and in Tokyo. Call get_weather once for each city, in this same turn.
+note: 2 tool_call(s): get_weather(args='{"city":"Paris"}', type=str) | get_weather(args='{"city":"Tokyo"}', type=str)
+------------------------------------------------------------------------
+type: openai.types.chat.chat_completion.ChatCompletion
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-576",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_p6ept5wf",
+            "function": {
+              "arguments": "{\"city\":\"Paris\"}",
+              "name": "get_weather"
+            },
+            "type": "function",
+            "index": 0
+          },
+          {
+            "id": "call_vb2mwyzi",
+            "function": {
+              "arguments": "{\"city\":\"Tokyo\"}",
+              "name": "get_weather"
+            },
+            "type": "function",
+            "index": 1
+          }
+        ],
+        "reasoning": "Okay, the user wants the current weather in Paris and Tokyo. I need to call get_weather twice, once for each city. Let me check the function parameters. The function takes a city name as a string. So first, I'll make a get_weather function call with city as \"Paris\". Then, another call with city set to \"Tokyo\". I should return both tool calls in the specified XML tags.\n"
+      }
+    }
+  ],
+  "created": 1788328633,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "fp_ollama",
+  "usage": {
+    "completion_tokens": 129,
+    "prompt_tokens": 167,
+    "total_tokens": 296,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ChatCompletion(id='chatcmpl-576', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content='', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_p6ept5wf', function=Function(arguments='{"city":"Paris"}', name='get_weather'), type='function', index=0), ChatCompletionMessageFunctionToolCall(id='call_vb2mwyzi', function=Function(arguments='{"city":"Tokyo"}', name='get_weather'), type='function', index=1)], reasoning='Okay, the user wants the current weather in Paris and Tokyo. I need to call get_weather twice, once for each city. Let me check the function parameters. The function takes a city name as a string. So first, I\'ll make a get_weather function call with city as "Paris". Then, another call with city set to "Tokyo". I should return both tool calls in the specified XML tags.\n'))], created=1788328633, model='qwen3:0.6b', object='chat.completion', moderation=None, service_tier=None, system_fingerprint='fp_ollama', usage=CompletionUsage(completion_tokens=129, prompt_tokens=167, total_tokens=296, completion_tokens_details=None, prompt_tokens_details=None))
+

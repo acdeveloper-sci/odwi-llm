@@ -1,0 +1,312 @@
+provider: gemini
+model: gemini-3.5-flash-lite
+sdk: google-genai (2.21.0)
+generated_utc: 2026-09-02T05:57:07+00:00
+tool: get_weather(city: str)
+========================================================================
+### single
+prompt: What is the current weather in Paris? You must call the get_weather tool.
+note: 1 function_call(s): get_weather(args={'city': 'Paris'}, type=dict)
+------------------------------------------------------------------------
+type: google.genai.types.GenerateContentResponse
+
+# structured view (model_dump / to_dict):
+{
+  "sdk_http_response": {
+    "headers": {
+      "x-gemini-service-tier": "standard",
+      "content-type": "application/json; charset=UTF-8",
+      "vary": "Origin, X-Origin, Referer",
+      "content-encoding": "gzip",
+      "date": "Wed, 02 Sep 2026 05:57:06 GMT",
+      "server": "scaffolding on HTTPServer2",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "server-timing": "gfet4t7; dur=52629",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+      "transfer-encoding": "chunked"
+    },
+    "body": null
+  },
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "call_1022777",
+              "args": {
+                "city": "Paris"
+              },
+              "name": "get_weather",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": "El4KXAERTTIPLZF-zK7tjmuNVkQmoQ7DPom_i9RJlGiakyqu_YPaboOE0m4UsZLPqne0lZgY85VsGL8F2bks0O7UB6vYGahafOiZgx_-WH04UsFQxZmKIDJJRnOnlGzL",
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null
+          }
+        ],
+        "role": "model"
+      },
+      "citation_metadata": null,
+      "finish_message": null,
+      "token_count": null,
+      "finish_reason": "STOP",
+      "grounding_metadata": null,
+      "avg_logprobs": null,
+      "index": 0,
+      "logprobs_result": null,
+      "safety_ratings": null,
+      "url_context_metadata": null
+    }
+  ],
+  "create_time": null,
+  "model_version": "gemini-3.5-flash-lite",
+  "prompt_feedback": null,
+  "response_id": "frqXapbbEueGz7IP6-XAaA",
+  "usage_metadata": {
+    "cache_tokens_details": null,
+    "cached_content_token_count": null,
+    "candidates_token_count": 16,
+    "candidates_tokens_details": null,
+    "prompt_token_count": 70,
+    "prompt_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 70
+      }
+    ],
+    "thoughts_token_count": null,
+    "tool_use_prompt_token_count": null,
+    "tool_use_prompt_tokens_details": null,
+    "total_token_count": 86,
+    "traffic_type": null
+  },
+  "model_status": null,
+  "automatic_function_calling_history": null,
+  "parsed": null
+}
+
+# repr():
+GenerateContentResponse(
+  candidates=[
+    Candidate(
+      content=Content(
+        parts=[
+          Part(
+            function_call=FunctionCall(
+              args=<... Max depth ...>,
+              id=<... Max depth ...>,
+              name=<... Max depth ...>
+            ),
+            thought_signature=b'\x12^\n\\\x01\x11M2\x0f-\x91~\xcc\xae\xed\x8ek\x8dVD&\xa1\x0e\xc3>\x89\xbf\x8b\xd4I\x94h\x9a\x93*\xae\xfd\x83\xdan\x83\x84\xd2n\x14\xb1\x92\xcf\xaaw\xb4\x95\x98\x18\xf3\x95l\x18\xbf\x05\xd9\xb9,\xd0\xee\xd4\x07\xab\xd8\x19\xa8Z|\xe8\x99\x83\x1f\xfeX}8R\xc1P\xc5\x99\x8a 2IFs\xa7\x94l\xcb'
+          ),
+        ],
+        role='model'
+      ),
+      finish_reason=<FinishReason.STOP: 'STOP'>,
+      index=0
+    ),
+  ],
+  model_version='gemini-3.5-flash-lite',
+  response_id='frqXapbbEueGz7IP6-XAaA',
+  sdk_http_response=HttpResponse(
+    headers=<dict len=12>
+  ),
+  usage_metadata=GenerateContentResponseUsageMetadata(
+    candidates_token_count=16,
+    prompt_token_count=70,
+    prompt_tokens_details=[
+      ModalityTokenCount(
+        modality=<MediaModality.TEXT: 'TEXT'>,
+        token_count=70
+      ),
+    ],
+    total_token_count=86
+  )
+)
+
+========================================================================
+### parallel
+prompt: Get the current weather in Paris and in Tokyo. Call get_weather once for each city, in this same turn.
+note: 2 function_call(s): get_weather(args={'city': 'Paris'}, type=dict) | get_weather(args={'city': 'Tokyo'}, type=dict)
+------------------------------------------------------------------------
+type: google.genai.types.GenerateContentResponse
+
+# structured view (model_dump / to_dict):
+{
+  "sdk_http_response": {
+    "headers": {
+      "x-gemini-service-tier": "standard",
+      "content-type": "application/json; charset=UTF-8",
+      "vary": "Origin, X-Origin, Referer",
+      "content-encoding": "gzip",
+      "date": "Wed, 02 Sep 2026 05:57:07 GMT",
+      "server": "scaffolding on HTTPServer2",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "server-timing": "gfet4t7; dur=467",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+      "transfer-encoding": "chunked"
+    },
+    "body": null
+  },
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "call_1144332",
+              "args": {
+                "city": "Paris"
+              },
+              "name": "get_weather",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": "El4KXAERTTIPK6kU8kDFdSnNxO26i55_tVUgk0ifs-NWvaTIxoZY5eVZmz2GIXsHaMxhfcMUL2iC3F97bsDZTLnbJSrkhRsIUv5mklaLofm2H4rR-qI34w8WEigPRwEo",
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null
+          },
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "call_1144333",
+              "args": {
+                "city": "Tokyo"
+              },
+              "name": "get_weather",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null
+          }
+        ],
+        "role": "model"
+      },
+      "citation_metadata": null,
+      "finish_message": null,
+      "token_count": null,
+      "finish_reason": "STOP",
+      "grounding_metadata": null,
+      "avg_logprobs": null,
+      "index": 0,
+      "logprobs_result": null,
+      "safety_ratings": null,
+      "url_context_metadata": null
+    }
+  ],
+  "create_time": null,
+  "model_version": "gemini-3.5-flash-lite",
+  "prompt_feedback": null,
+  "response_id": "srqXapz1OsnVz7IPg7raiQo",
+  "usage_metadata": {
+    "cache_tokens_details": null,
+    "cached_content_token_count": null,
+    "candidates_token_count": 32,
+    "candidates_tokens_details": null,
+    "prompt_token_count": 77,
+    "prompt_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 77
+      }
+    ],
+    "thoughts_token_count": null,
+    "tool_use_prompt_token_count": null,
+    "tool_use_prompt_tokens_details": null,
+    "total_token_count": 109,
+    "traffic_type": null
+  },
+  "model_status": null,
+  "automatic_function_calling_history": null,
+  "parsed": null
+}
+
+# repr():
+GenerateContentResponse(
+  candidates=[
+    Candidate(
+      content=Content(
+        parts=[
+          Part(
+            function_call=FunctionCall(
+              args=<... Max depth ...>,
+              id=<... Max depth ...>,
+              name=<... Max depth ...>
+            ),
+            thought_signature=b'\x12^\n\\\x01\x11M2\x0f+\xa9\x14\xf2@\xc5u)\xcd\xc4\xed\xba\x8b\x9e\x7f\xb5U \x93H\x9f\xb3\xe3V\xbd\xa4\xc8\xc6\x86X\xe5\xe5Y\x9b=\x86!{\x07h\xcca}\xc3\x14/h\x82\xdc_{n\xc0\xd9L\xb9\xdb%*\xe4\x85\x1b\x08R\xfef\x92V\x8b\xa1\xf9\xb6\x1f\x8a\xd1\xfa\xa27\xe3\x0f\x16\x12(\x0fG\x01('
+          ),
+          Part(
+            function_call=FunctionCall(
+              args=<... Max depth ...>,
+              id=<... Max depth ...>,
+              name=<... Max depth ...>
+            )
+          ),
+        ],
+        role='model'
+      ),
+      finish_reason=<FinishReason.STOP: 'STOP'>,
+      index=0
+    ),
+  ],
+  model_version='gemini-3.5-flash-lite',
+  response_id='srqXapz1OsnVz7IPg7raiQo',
+  sdk_http_response=HttpResponse(
+    headers=<dict len=12>
+  ),
+  usage_metadata=GenerateContentResponseUsageMetadata(
+    candidates_token_count=32,
+    prompt_token_count=77,
+    prompt_tokens_details=[
+      ModalityTokenCount(
+        modality=<MediaModality.TEXT: 'TEXT'>,
+        token_count=77
+      ),
+    ],
+    total_token_count=109
+  )
+)
+
