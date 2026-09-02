@@ -11,21 +11,11 @@ Done when: all four calls print text without an exception.
 
 from __future__ import annotations
 
-import os
 import sys
-from pathlib import Path
 
-from dotenv import load_dotenv
-
-load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+import _config as cfg
 
 PROMPT = "Reply with exactly one word: hola"
-
-# Models per odwi_llm_experiments_task_plan.md (proveedores table).
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
-GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3:0.6b")
-LMSTUDIO_MODEL = os.environ.get("LMSTUDIO_MODEL", "llama-3.2-3b-instruct")
 
 
 def _one_line(text: str | None) -> str:
@@ -35,17 +25,17 @@ def _one_line(text: str | None) -> str:
 def gemini() -> str:
     from google import genai
 
-    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    resp = client.models.generate_content(model=GEMINI_MODEL, contents=PROMPT)
+    client = genai.Client(api_key=cfg.GEMINI_API_KEY)
+    resp = client.models.generate_content(model=cfg.GEMINI_MODEL, contents=PROMPT)
     return _one_line(resp.text)
 
 
 def groq() -> str:
     from groq import Groq
 
-    client = Groq(api_key=os.environ["GROQ_API_KEY"], timeout=60.0)
+    client = Groq(api_key=cfg.GROQ_API_KEY, timeout=60.0)
     resp = client.chat.completions.create(
-        model=GROQ_MODEL,
+        model=cfg.GROQ_MODEL,
         messages=[{"role": "user", "content": PROMPT}],
     )
     return _one_line(resp.choices[0].message.content)
@@ -63,18 +53,18 @@ def _openai_compat(base_url: str, model: str, api_key: str) -> str:
 
 
 def ollama() -> str:
-    return _openai_compat(os.environ["OLLAMA_BASE_URL"], OLLAMA_MODEL, "ollama")
+    return _openai_compat(cfg.OLLAMA_BASE_URL, cfg.OLLAMA_MODEL, "ollama")
 
 
 def lmstudio() -> str:
-    return _openai_compat(os.environ["LMSTUDIO_BASE_URL"], LMSTUDIO_MODEL, "lm-studio")
+    return _openai_compat(cfg.LMSTUDIO_BASE_URL, cfg.LMSTUDIO_MODEL, "lm-studio")
 
 
 PROVIDERS = (
-    ("gemini", GEMINI_MODEL, gemini),
-    ("groq", GROQ_MODEL, groq),
-    ("ollama", OLLAMA_MODEL, ollama),
-    ("lmstudio", LMSTUDIO_MODEL, lmstudio),
+    ("gemini", cfg.GEMINI_MODEL, gemini),
+    ("groq", cfg.GROQ_MODEL, groq),
+    ("ollama", cfg.OLLAMA_MODEL, ollama),
+    ("lmstudio", cfg.LMSTUDIO_MODEL, lmstudio),
 )
 
 
