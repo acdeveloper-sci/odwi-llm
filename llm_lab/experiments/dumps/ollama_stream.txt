@@ -1,0 +1,388 @@
+provider: ollama
+model: qwen3:0.6b
+sdk: openai (2.54.0)
+generated_utc: 2026-09-02T12:23:44+00:00
+prompt: Write three short sentences about why the sky is blue.
+chunk_count: 219
+note: 219 chunks; 57 carry text; first finish_reason at chunk 217; usage present on chunk(s) [218]; 160 carry reasoning deltas
+========================================================================
+# every chunk (compact):
+[  0] delta.content='' delta.reasoning='Okay' finish=None choices=1 usage=no
+[  1] delta.content='' delta.reasoning=',' finish=None choices=1 usage=no
+[  2] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[  3] delta.content='' delta.reasoning=' user' finish=None choices=1 usage=no
+[  4] delta.content='' delta.reasoning=' wants' finish=None choices=1 usage=no
+[  5] delta.content='' delta.reasoning=' three' finish=None choices=1 usage=no
+[  6] delta.content='' delta.reasoning=' short' finish=None choices=1 usage=no
+[  7] delta.content='' delta.reasoning=' sentences' finish=None choices=1 usage=no
+[  8] delta.content='' delta.reasoning=' about' finish=None choices=1 usage=no
+[  9] delta.content='' delta.reasoning=' why' finish=None choices=1 usage=no
+[ 10] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[ 11] delta.content='' delta.reasoning=' sky' finish=None choices=1 usage=no
+[ 12] delta.content='' delta.reasoning=' is' finish=None choices=1 usage=no
+[ 13] delta.content='' delta.reasoning=' blue' finish=None choices=1 usage=no
+[ 14] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[ 15] delta.content='' delta.reasoning=' Let' finish=None choices=1 usage=no
+[ 16] delta.content='' delta.reasoning=' me' finish=None choices=1 usage=no
+[ 17] delta.content='' delta.reasoning=' start' finish=None choices=1 usage=no
+[ 18] delta.content='' delta.reasoning=' by' finish=None choices=1 usage=no
+[ 19] delta.content='' delta.reasoning=' recalling' finish=None choices=1 usage=no
+[ 20] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[ 21] delta.content='' delta.reasoning=' reasons' finish=None choices=1 usage=no
+[ 22] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[ 23] delta.content='' delta.reasoning=' The' finish=None choices=1 usage=no
+[ 24] delta.content='' delta.reasoning=' obvious' finish=None choices=1 usage=no
+[ 25] delta.content='' delta.reasoning=' answer' finish=None choices=1 usage=no
+[ 26] delta.content='' delta.reasoning=' is' finish=None choices=1 usage=no
+[ 27] delta.content='' delta.reasoning=' that' finish=None choices=1 usage=no
+[ 28] delta.content='' delta.reasoning=' it' finish=None choices=1 usage=no
+[ 29] delta.content='' delta.reasoning="'s" finish=None choices=1 usage=no
+[ 30] delta.content='' delta.reasoning=' because' finish=None choices=1 usage=no
+[ 31] delta.content='' delta.reasoning=' of' finish=None choices=1 usage=no
+[ 32] delta.content='' delta.reasoning=' scattering' finish=None choices=1 usage=no
+[ 33] delta.content='' delta.reasoning=' of' finish=None choices=1 usage=no
+[ 34] delta.content='' delta.reasoning=' light' finish=None choices=1 usage=no
+[ 35] delta.content='' delta.reasoning=' in' finish=None choices=1 usage=no
+[ 36] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[ 37] delta.content='' delta.reasoning=' atmosphere' finish=None choices=1 usage=no
+[ 38] delta.content='' delta.reasoning=',' finish=None choices=1 usage=no
+[ 39] delta.content='' delta.reasoning=' like' finish=None choices=1 usage=no
+[ 40] delta.content='' delta.reasoning=' Ray' finish=None choices=1 usage=no
+[ 41] delta.content='' delta.reasoning='leigh' finish=None choices=1 usage=no
+[ 42] delta.content='' delta.reasoning=' scattering' finish=None choices=1 usage=no
+[ 43] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[ 44] delta.content='' delta.reasoning=' Then' finish=None choices=1 usage=no
+[ 45] delta.content='' delta.reasoning=' there' finish=None choices=1 usage=no
+[ 46] delta.content='' delta.reasoning="'s" finish=None choices=1 usage=no
+[ 47] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[ 48] delta.content='' delta.reasoning=' fact' finish=None choices=1 usage=no
+[ 49] delta.content='' delta.reasoning=' that' finish=None choices=1 usage=no
+[ 50] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[ 51] delta.content='' delta.reasoning=' sky' finish=None choices=1 usage=no
+[ 52] delta.content='' delta.reasoning=' appears' finish=None choices=1 usage=no
+[ 53] delta.content='' delta.reasoning=' blue' finish=None choices=1 usage=no
+[ 54] delta.content='' delta.reasoning=' even' finish=None choices=1 usage=no
+[ 55] delta.content='' delta.reasoning=' after' finish=None choices=1 usage=no
+[ 56] delta.content='' delta.reasoning=' noon' finish=None choices=1 usage=no
+[ 57] delta.content='' delta.reasoning=' when' finish=None choices=1 usage=no
+[ 58] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[ 59] delta.content='' delta.reasoning=' sun' finish=None choices=1 usage=no
+[ 60] delta.content='' delta.reasoning=' is' finish=None choices=1 usage=no
+[ 61] delta.content='' delta.reasoning=' at' finish=None choices=1 usage=no
+[ 62] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[ 63] delta.content='' delta.reasoning=' highest' finish=None choices=1 usage=no
+[ 64] delta.content='' delta.reasoning=' point' finish=None choices=1 usage=no
+[ 65] delta.content='' delta.reasoning=',' finish=None choices=1 usage=no
+[ 66] delta.content='' delta.reasoning=' so' finish=None choices=1 usage=no
+[ 67] delta.content='' delta.reasoning=' there' finish=None choices=1 usage=no
+[ 68] delta.content='' delta.reasoning="'s" finish=None choices=1 usage=no
+[ 69] delta.content='' delta.reasoning=' less' finish=None choices=1 usage=no
+[ 70] delta.content='' delta.reasoning=' sunlight' finish=None choices=1 usage=no
+[ 71] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[ 72] delta.content='' delta.reasoning=' And' finish=None choices=1 usage=no
+[ 73] delta.content='' delta.reasoning=' maybe' finish=None choices=1 usage=no
+[ 74] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[ 75] delta.content='' delta.reasoning=' different' finish=None choices=1 usage=no
+[ 76] delta.content='' delta.reasoning=' wavelengths' finish=None choices=1 usage=no
+[ 77] delta.content='' delta.reasoning=' of' finish=None choices=1 usage=no
+[ 78] delta.content='' delta.reasoning=' light' finish=None choices=1 usage=no
+[ 79] delta.content='' delta.reasoning=',' finish=None choices=1 usage=no
+[ 80] delta.content='' delta.reasoning=' like' finish=None choices=1 usage=no
+[ 81] delta.content='' delta.reasoning=' green' finish=None choices=1 usage=no
+[ 82] delta.content='' delta.reasoning=' is' finish=None choices=1 usage=no
+[ 83] delta.content='' delta.reasoning=' shorter' finish=None choices=1 usage=no
+[ 84] delta.content='' delta.reasoning=' than' finish=None choices=1 usage=no
+[ 85] delta.content='' delta.reasoning=' blue' finish=None choices=1 usage=no
+[ 86] delta.content='' delta.reasoning=',' finish=None choices=1 usage=no
+[ 87] delta.content='' delta.reasoning=' which' finish=None choices=1 usage=no
+[ 88] delta.content='' delta.reasoning=' is' finish=None choices=1 usage=no
+[ 89] delta.content='' delta.reasoning=' scattered' finish=None choices=1 usage=no
+[ 90] delta.content='' delta.reasoning=' more' finish=None choices=1 usage=no
+[ 91] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[ 92] delta.content='' delta.reasoning=' Wait' finish=None choices=1 usage=no
+[ 93] delta.content='' delta.reasoning=',' finish=None choices=1 usage=no
+[ 94] delta.content='' delta.reasoning=' but' finish=None choices=1 usage=no
+[ 95] delta.content='' delta.reasoning=' Ray' finish=None choices=1 usage=no
+[ 96] delta.content='' delta.reasoning='leigh' finish=None choices=1 usage=no
+[ 97] delta.content='' delta.reasoning=' scattering' finish=None choices=1 usage=no
+[ 98] delta.content='' delta.reasoning=' is' finish=None choices=1 usage=no
+[ 99] delta.content='' delta.reasoning=' a' finish=None choices=1 usage=no
+[100] delta.content='' delta.reasoning=' key' finish=None choices=1 usage=no
+[101] delta.content='' delta.reasoning=' point' finish=None choices=1 usage=no
+[102] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[103] delta.content='' delta.reasoning=' Let' finish=None choices=1 usage=no
+[104] delta.content='' delta.reasoning=' me' finish=None choices=1 usage=no
+[105] delta.content='' delta.reasoning=' make' finish=None choices=1 usage=no
+[106] delta.content='' delta.reasoning=' sure' finish=None choices=1 usage=no
+[107] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[108] delta.content='' delta.reasoning=' sentences' finish=None choices=1 usage=no
+[109] delta.content='' delta.reasoning=' are' finish=None choices=1 usage=no
+[110] delta.content='' delta.reasoning=' concise' finish=None choices=1 usage=no
+[111] delta.content='' delta.reasoning=' and' finish=None choices=1 usage=no
+[112] delta.content='' delta.reasoning=' accurate' finish=None choices=1 usage=no
+[113] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[114] delta.content='' delta.reasoning=' First' finish=None choices=1 usage=no
+[115] delta.content='' delta.reasoning=' sentence' finish=None choices=1 usage=no
+[116] delta.content='' delta.reasoning=':' finish=None choices=1 usage=no
+[117] delta.content='' delta.reasoning=' Ray' finish=None choices=1 usage=no
+[118] delta.content='' delta.reasoning='leigh' finish=None choices=1 usage=no
+[119] delta.content='' delta.reasoning=' scattering' finish=None choices=1 usage=no
+[120] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[121] delta.content='' delta.reasoning=' Second' finish=None choices=1 usage=no
+[122] delta.content='' delta.reasoning=':' finish=None choices=1 usage=no
+[123] delta.content='' delta.reasoning=' Blue' finish=None choices=1 usage=no
+[124] delta.content='' delta.reasoning=' light' finish=None choices=1 usage=no
+[125] delta.content='' delta.reasoning=' after' finish=None choices=1 usage=no
+[126] delta.content='' delta.reasoning=' noon' finish=None choices=1 usage=no
+[127] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[128] delta.content='' delta.reasoning=' Third' finish=None choices=1 usage=no
+[129] delta.content='' delta.reasoning=':' finish=None choices=1 usage=no
+[130] delta.content='' delta.reasoning=' Different' finish=None choices=1 usage=no
+[131] delta.content='' delta.reasoning=' color' finish=None choices=1 usage=no
+[132] delta.content='' delta.reasoning=' wavelengths' finish=None choices=1 usage=no
+[133] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[134] delta.content='' delta.reasoning=' Yeah' finish=None choices=1 usage=no
+[135] delta.content='' delta.reasoning=',' finish=None choices=1 usage=no
+[136] delta.content='' delta.reasoning=' that' finish=None choices=1 usage=no
+[137] delta.content='' delta.reasoning=' should' finish=None choices=1 usage=no
+[138] delta.content='' delta.reasoning=' cover' finish=None choices=1 usage=no
+[139] delta.content='' delta.reasoning=' it' finish=None choices=1 usage=no
+[140] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[141] delta.content='' delta.reasoning=' Let' finish=None choices=1 usage=no
+[142] delta.content='' delta.reasoning=' me' finish=None choices=1 usage=no
+[143] delta.content='' delta.reasoning=' check' finish=None choices=1 usage=no
+[144] delta.content='' delta.reasoning=' the' finish=None choices=1 usage=no
+[145] delta.content='' delta.reasoning=' flow' finish=None choices=1 usage=no
+[146] delta.content='' delta.reasoning=' and' finish=None choices=1 usage=no
+[147] delta.content='' delta.reasoning=' make' finish=None choices=1 usage=no
+[148] delta.content='' delta.reasoning=' sure' finish=None choices=1 usage=no
+[149] delta.content='' delta.reasoning=' they' finish=None choices=1 usage=no
+[150] delta.content='' delta.reasoning="'re" finish=None choices=1 usage=no
+[151] delta.content='' delta.reasoning=' short' finish=None choices=1 usage=no
+[152] delta.content='' delta.reasoning=' enough' finish=None choices=1 usage=no
+[153] delta.content='' delta.reasoning='.' finish=None choices=1 usage=no
+[154] delta.content='' delta.reasoning=' Yep' finish=None choices=1 usage=no
+[155] delta.content='' delta.reasoning=',' finish=None choices=1 usage=no
+[156] delta.content='' delta.reasoning=' that' finish=None choices=1 usage=no
+[157] delta.content='' delta.reasoning=' should' finish=None choices=1 usage=no
+[158] delta.content='' delta.reasoning=' work' finish=None choices=1 usage=no
+[159] delta.content='' delta.reasoning='.\n' finish=None choices=1 usage=no
+[160] delta.content='1' delta.reasoning=None finish=None choices=1 usage=no
+[161] delta.content='.' delta.reasoning=None finish=None choices=1 usage=no
+[162] delta.content=' The' delta.reasoning=None finish=None choices=1 usage=no
+[163] delta.content=' sky' delta.reasoning=None finish=None choices=1 usage=no
+[164] delta.content=' appears' delta.reasoning=None finish=None choices=1 usage=no
+[165] delta.content=' blue' delta.reasoning=None finish=None choices=1 usage=no
+[166] delta.content=' because' delta.reasoning=None finish=None choices=1 usage=no
+[167] delta.content=' sunlight' delta.reasoning=None finish=None choices=1 usage=no
+[168] delta.content=' is' delta.reasoning=None finish=None choices=1 usage=no
+[169] delta.content=' scattered' delta.reasoning=None finish=None choices=1 usage=no
+[170] delta.content=' by' delta.reasoning=None finish=None choices=1 usage=no
+[171] delta.content=' air' delta.reasoning=None finish=None choices=1 usage=no
+[172] delta.content=' molecules' delta.reasoning=None finish=None choices=1 usage=no
+[173] delta.content=' in' delta.reasoning=None finish=None choices=1 usage=no
+[174] delta.content=' different' delta.reasoning=None finish=None choices=1 usage=no
+[175] delta.content=' colors' delta.reasoning=None finish=None choices=1 usage=no
+[176] delta.content='.' delta.reasoning=None finish=None choices=1 usage=no
+[177] delta.content='  \n' delta.reasoning=None finish=None choices=1 usage=no
+[178] delta.content='2' delta.reasoning=None finish=None choices=1 usage=no
+[179] delta.content='.' delta.reasoning=None finish=None choices=1 usage=no
+[180] delta.content=' Blue' delta.reasoning=None finish=None choices=1 usage=no
+[181] delta.content=' light' delta.reasoning=None finish=None choices=1 usage=no
+[182] delta.content=' is' delta.reasoning=None finish=None choices=1 usage=no
+[183] delta.content=' scattered' delta.reasoning=None finish=None choices=1 usage=no
+[184] delta.content=' more' delta.reasoning=None finish=None choices=1 usage=no
+[185] delta.content=' than' delta.reasoning=None finish=None choices=1 usage=no
+[186] delta.content=' other' delta.reasoning=None finish=None choices=1 usage=no
+[187] delta.content=' colors' delta.reasoning=None finish=None choices=1 usage=no
+[188] delta.content=',' delta.reasoning=None finish=None choices=1 usage=no
+[189] delta.content=' making' delta.reasoning=None finish=None choices=1 usage=no
+[190] delta.content=' the' delta.reasoning=None finish=None choices=1 usage=no
+[191] delta.content=' atmosphere' delta.reasoning=None finish=None choices=1 usage=no
+[192] delta.content=' appear' delta.reasoning=None finish=None choices=1 usage=no
+[193] delta.content=' violet' delta.reasoning=None finish=None choices=1 usage=no
+[194] delta.content='.' delta.reasoning=None finish=None choices=1 usage=no
+[195] delta.content='  \n' delta.reasoning=None finish=None choices=1 usage=no
+[196] delta.content='3' delta.reasoning=None finish=None choices=1 usage=no
+[197] delta.content='.' delta.reasoning=None finish=None choices=1 usage=no
+[198] delta.content=' The' delta.reasoning=None finish=None choices=1 usage=no
+[199] delta.content=' sky' delta.reasoning=None finish=None choices=1 usage=no
+[200] delta.content=' is' delta.reasoning=None finish=None choices=1 usage=no
+[201] delta.content=' blue' delta.reasoning=None finish=None choices=1 usage=no
+[202] delta.content=' because' delta.reasoning=None finish=None choices=1 usage=no
+[203] delta.content=' the' delta.reasoning=None finish=None choices=1 usage=no
+[204] delta.content=' sunlight' delta.reasoning=None finish=None choices=1 usage=no
+[205] delta.content="'s" delta.reasoning=None finish=None choices=1 usage=no
+[206] delta.content=' shorter' delta.reasoning=None finish=None choices=1 usage=no
+[207] delta.content=' wavelengths' delta.reasoning=None finish=None choices=1 usage=no
+[208] delta.content=' pass' delta.reasoning=None finish=None choices=1 usage=no
+[209] delta.content=' through' delta.reasoning=None finish=None choices=1 usage=no
+[210] delta.content=' more' delta.reasoning=None finish=None choices=1 usage=no
+[211] delta.content=',' delta.reasoning=None finish=None choices=1 usage=no
+[212] delta.content=' creating' delta.reasoning=None finish=None choices=1 usage=no
+[213] delta.content=' the' delta.reasoning=None finish=None choices=1 usage=no
+[214] delta.content=' blue' delta.reasoning=None finish=None choices=1 usage=no
+[215] delta.content=' hue' delta.reasoning=None finish=None choices=1 usage=no
+[216] delta.content='.' delta.reasoning=None finish=None choices=1 usage=no
+[217] delta.content=None delta.reasoning=None finish=stop choices=1 usage=no
+[218] delta.content=None delta.reasoning=None finish=None choices=[] usage=yes
+
+========================================================================
+### full chunk [0]  (first)
+type: openai.types.chat.chat_completion_chunk.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-894",
+  "choices": [
+    {
+      "delta": {
+        "content": "",
+        "function_call": null,
+        "refusal": null,
+        "role": "assistant",
+        "tool_calls": null,
+        "reasoning": "Okay"
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788351823,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "fp_ollama",
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-894', choices=[Choice(delta=ChoiceDelta(content='', function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning='Okay'), finish_reason=None, index=0, logprobs=None)], created=1788351823, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint='fp_ollama', usage=None)
+
+========================================================================
+### full chunk [1]  (first)
+type: openai.types.chat.chat_completion_chunk.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-894",
+  "choices": [
+    {
+      "delta": {
+        "content": "",
+        "function_call": null,
+        "refusal": null,
+        "role": null,
+        "tool_calls": null,
+        "reasoning": ","
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788351823,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "fp_ollama",
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-894', choices=[Choice(delta=ChoiceDelta(content='', function_call=None, refusal=None, role=None, tool_calls=None, reasoning=','), finish_reason=None, index=0, logprobs=None)], created=1788351823, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint='fp_ollama', usage=None)
+
+========================================================================
+### full chunk [216]  (tail)
+type: openai.types.chat.chat_completion_chunk.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-894",
+  "choices": [
+    {
+      "delta": {
+        "content": ".",
+        "function_call": null,
+        "refusal": null,
+        "role": null,
+        "tool_calls": null
+      },
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788351823,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "fp_ollama",
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-894', choices=[Choice(delta=ChoiceDelta(content='.', function_call=None, refusal=None, role=None, tool_calls=None), finish_reason=None, index=0, logprobs=None)], created=1788351823, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint='fp_ollama', usage=None)
+
+========================================================================
+### full chunk [217]  (tail)
+type: openai.types.chat.chat_completion_chunk.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-894",
+  "choices": [
+    {
+      "delta": {
+        "content": null,
+        "function_call": null,
+        "refusal": null,
+        "role": null,
+        "tool_calls": null
+      },
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null
+    }
+  ],
+  "created": 1788351823,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "fp_ollama",
+  "usage": null
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-894', choices=[Choice(delta=ChoiceDelta(content=None, function_call=None, refusal=None, role=None, tool_calls=None), finish_reason='stop', index=0, logprobs=None)], created=1788351823, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint='fp_ollama', usage=None)
+
+========================================================================
+### full chunk [218]  (tail)
+type: openai.types.chat.chat_completion_chunk.ChatCompletionChunk
+
+# structured view (model_dump / to_dict):
+{
+  "id": "chatcmpl-894",
+  "choices": [],
+  "created": 1788351823,
+  "model": "qwen3:0.6b",
+  "object": "chat.completion.chunk",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "fp_ollama",
+  "usage": {
+    "completion_tokens": 222,
+    "prompt_tokens": 21,
+    "total_tokens": 243,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
+
+# repr():
+ChatCompletionChunk(id='chatcmpl-894', choices=[], created=1788351823, model='qwen3:0.6b', object='chat.completion.chunk', moderation=None, service_tier=None, system_fingerprint='fp_ollama', usage=CompletionUsage(completion_tokens=222, prompt_tokens=21, total_tokens=243, completion_tokens_details=None, prompt_tokens_details=None))
