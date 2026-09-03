@@ -15,3 +15,10 @@ def pytest_addoption(parser: pytest.Parser) -> None:
         default=False,
         help="run tests/contract_shape/ against real providers instead of the fake",
     )
+    parser.addoption(
+        "--adapter",
+        action="store",
+        default="litellm",
+        choices=("litellm", "anyllm"),
+        help="which real adapter tests/contract_shape/ --live exercises",
+    )

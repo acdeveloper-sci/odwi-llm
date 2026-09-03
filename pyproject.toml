@@ -5,6 +5,7 @@ description = "Provider-agnostic LLM access layer: a thin port (LLMPort) plus in
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "any-llm-sdk[gemini,groq,lmstudio,ollama]>=1.26.0",
     "litellm>=1.99.0",
     "pydantic>=2",
 ]

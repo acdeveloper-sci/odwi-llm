@@ -25,6 +25,12 @@ from typing import Any
 import litellm
 from pydantic import ValidationError
 
+from odwi_llm.adapters._shared import (
+    map_finish_reason,
+    message_to_dict,
+    retry_after_seconds,
+    unmet_requirements,
+)
 from odwi_llm.adapters.config import ProviderConfig
 from odwi_llm.adapters.pricing import estimate_cost_usd
 from odwi_llm.core.errors import (
@@ -48,7 +54,6 @@ from odwi_llm.core.types import (
     Intent,
     LLMRequest,
     LLMResponse,
-    Message,
     StreamChunk,
     StructuredResponse,
     T,
@@ -110,57 +115,6 @@ _KNOWN_CAPS: dict[tuple[str, str], LLMCapabilities] = {
 _DEFAULT_CAPS = LLMCapabilities(**_OPS, context_tokens=None)
 
 
-def _map_finish(raw: str | None) -> FinishReason:
-    return {
-        "stop": FinishReason.STOP,
-        "length": FinishReason.LENGTH,
-        "max_tokens": FinishReason.LENGTH,
-        "tool_calls": FinishReason.TOOL_CALLS,
-        "function_call": FinishReason.TOOL_CALLS,
-        "content_filter": FinishReason.CONTENT_FILTER,
-    }.get((raw or "").lower(), FinishReason.OTHER if raw else FinishReason.STOP)
-
-
-def _retry_after_seconds(exc: BaseException) -> float | None:
-    headers = getattr(exc, "headers", None)
-    if not isinstance(headers, dict):
-        resp = getattr(exc, "response", None)
-        headers = getattr(resp, "headers", None)
-    if headers is None:
-        return None
-    value = headers.get("retry-after") or headers.get("Retry-After")
-    try:
-        return float(value) if value is not None else None
-    except (TypeError, ValueError):
-        return None
-
-
-def _message_dict(message: Message) -> dict[str, Any]:
-    out: dict[str, Any] = {"role": message.role.value, "content": message.content}
-    if message.tool_call_id is not None:
-        out["tool_call_id"] = message.tool_call_id
-    if message.name is not None:
-        out["name"] = message.name
-    return out
-
-
-def _unmet(req: LLMRequirements, caps: LLMCapabilities) -> list[str]:
-    missing: list[str] = []
-    if req.structured_output and not caps.structured_output:
-        missing.append("structured_output")
-    if req.tool_calling and not caps.tool_calling:
-        missing.append("tool_calling")
-    if req.streaming and not caps.streaming:
-        missing.append("streaming")
-    if req.vision and not caps.vision:
-        missing.append("vision")
-    if req.min_context_tokens is not None and (
-        caps.context_tokens is None or caps.context_tokens < req.min_context_tokens
-    ):
-        missing.append("min_context_tokens")
-    return missing
-
-
 class LiteLLMAdapter(LLMPort):
     def __init__(
         self,
@@ -193,7 +147,7 @@ class LiteLLMAdapter(LLMPort):
             )
         self._config = cfg
 
-        unmet = _unmet(requirements, self._caps)
+        unmet = unmet_requirements(requirements, self._caps)
         if unmet:
             raise CapabilityError(
                 f"{provider}/{model} does not meet requirements: {', '.join(unmet)}"
@@ -207,7 +161,7 @@ class LiteLLMAdapter(LLMPort):
     def _kwargs(self, request: LLMRequest, **extra: Any) -> dict[str, Any]:
         kwargs: dict[str, Any] = {
             "model": self._litellm_model,
-            "messages": [_message_dict(m) for m in request.messages],
+            "messages": [message_to_dict(m) for m in request.messages],
             "timeout": self._config.timeout_s,
         }
         temperature = _INTENT_TEMPERATURE.get(request.intent)
@@ -249,7 +203,7 @@ class LiteLLMAdapter(LLMPort):
             text=choice.message.content or "",
             model=getattr(resp, "model", None) or self._model,
             provider=self._provider,
-            finish_reason=_map_finish(choice.finish_reason),
+            finish_reason=map_finish_reason(choice.finish_reason),
             usage=self._usage(resp),
         )
 
@@ -287,7 +241,7 @@ class LiteLLMAdapter(LLMPort):
                 text=text,
                 model=getattr(resp, "model", None) or self._model,
                 provider=self._provider,
-                finish_reason=_map_finish(resp.choices[0].finish_reason),
+                finish_reason=map_finish_reason(resp.choices[0].finish_reason),
                 usage=self._usage(resp),
                 data=data,
             )
@@ -318,7 +272,7 @@ class LiteLLMAdapter(LLMPort):
             text=choice.message.content or "",
             model=getattr(resp, "model", None) or self._model,
             provider=self._provider,
-            finish_reason=_map_finish(choice.finish_reason),
+            finish_reason=map_finish_reason(choice.finish_reason),
             usage=self._usage(resp),
             tool_calls=calls,
         )
@@ -341,7 +295,7 @@ class LiteLLMAdapter(LLMPort):
                         yield StreamChunk(kind="text_delta", text=content)
                     raw_finish = choices[0].finish_reason
                     if raw_finish is not None:
-                        final_finish = _map_finish(raw_finish)
+                        final_finish = map_finish_reason(raw_finish)
                 raw_usage = getattr(chunk, "usage", None)
                 if raw_usage is not None:
                     inp = int(getattr(raw_usage, "prompt_tokens", 0) or 0)
@@ -369,10 +323,29 @@ class LiteLLMAdapter(LLMPort):
         msg = str(exc)
         low = msg.lower()
 
+        _capability_markers = (
+            "function calling",
+            "tool",
+            "vision",
+            "image",
+            "response_format",
+            "json schema",
+        )
+        if isinstance(exc, NotImplementedError) or (
+            name in {"UnsupportedParamsError", "UnsupportedParams"}
+            and any(m in low for m in _capability_markers)
+        ):
+            # An operation the model/provider cannot do. Same cause as the
+            # construction fail-fast, so the same error type — whether the
+            # (provider, model) is catalogued in _KNOWN_CAPS or not.
+            raise CapabilityError(
+                f"{self._provider}/{self._model}: operation not supported: {msg}"
+            ) from exc
+
         if name == "AuthenticationError":
             return LLMAuthError(msg)
         if name == "RateLimitError":
-            return LLMRateLimitError(msg, retry_after_seconds=_retry_after_seconds(exc))
+            return LLMRateLimitError(msg, retry_after_seconds=retry_after_seconds(exc))
         if name == "ContextWindowExceededError":
             return LLMContextLengthError(msg)
         if name == "ContentPolicyViolationError":
