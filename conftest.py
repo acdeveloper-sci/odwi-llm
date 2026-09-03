@@ -22,3 +22,9 @@ def pytest_addoption(parser: pytest.Parser) -> None:
         choices=("litellm", "anyllm"),
         help="which real adapter tests/contract_shape/ --live exercises",
     )
+    parser.addoption(
+        "--record",
+        action="store_true",
+        default=False,
+        help="with --live: (re)record tests/cassettes/ for the selected --adapter",
+    )

@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:41:10+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "scenario": "tools"
+  },
+  "kind": "ChatTurnResponse",
+  "payload": {
+    "text": "",
+    "model": "openai/gpt-oss-120b",
+    "provider": "groq",
+    "finish_reason": "tool_calls",
+    "usage": {
+      "input_tokens": 136,
+      "output_tokens": 53,
+      "estimated_cost_usd": 5.2199999999999995e-05
+    },
+    "tool_calls": [
+      {
+        "id": "fc_10c48bfc-85fb-4617-b785-644ce8b9828a",
+        "name": "get_weather",
+        "arguments": {
+          "city": "Paris"
+        }
+      }
+    ]
+  }
+}

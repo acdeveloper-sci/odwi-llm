@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:42:08+00:00",
+    "adapter": "anyllm",
+    "adapter_lib": "any-llm-sdk",
+    "adapter_lib_version": "1.26.0",
+    "provider": "lmstudio",
+    "model": "llama-3.2-3b-instruct",
+    "scenario": "stream"
+  },
+  "kind": "stream",
+  "payload": [
+    {
+      "kind": "text_delta",
+      "text": "Hello",
+      "tool_call": null,
+      "usage": null,
+      "finish_reason": null
+    },
+    {
+      "kind": "text_delta",
+      "text": "!",
+      "tool_call": null,
+      "usage": null,
+      "finish_reason": null
+    },
+    {
+      "kind": "usage",
+      "text": null,
+      "tool_call": null,
+      "usage": {
+        "input_tokens": 42,
+        "output_tokens": 3,
+        "estimated_cost_usd": 0.0
+      },
+      "finish_reason": null
+    },
+    {
+      "kind": "done",
+      "text": null,
+      "tool_call": null,
+      "usage": null,
+      "finish_reason": "stop"
+    }
+  ]
+}

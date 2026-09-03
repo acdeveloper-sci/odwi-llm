@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:41:13+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "ollama",
+    "model": "qwen3:0.6b",
+    "scenario": "tools"
+  },
+  "kind": "ChatTurnResponse",
+  "payload": {
+    "text": "",
+    "model": "ollama_chat/qwen3:0.6b",
+    "provider": "ollama",
+    "finish_reason": "tool_calls",
+    "usage": {
+      "input_tokens": 147,
+      "output_tokens": 108,
+      "estimated_cost_usd": null
+    },
+    "tool_calls": [
+      {
+        "id": "call_ymlo9m6u",
+        "name": "get_weather",
+        "arguments": {
+          "city": "Paris"
+        }
+      }
+    ]
+  }
+}

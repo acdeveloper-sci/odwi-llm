@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:41:30+00:00",
+    "adapter": "anyllm",
+    "adapter_lib": "any-llm-sdk",
+    "adapter_lib_version": "1.26.0",
+    "provider": "ollama",
+    "model": "qwen3:0.6b",
+    "scenario": "generate"
+  },
+  "kind": "LLMResponse",
+  "payload": {
+    "text": "Hi there! 😊",
+    "model": "qwen3:0.6b",
+    "provider": "ollama",
+    "finish_reason": "stop",
+    "usage": {
+      "input_tokens": 16,
+      "output_tokens": 100,
+      "estimated_cost_usd": 0.0
+    }
+  }
+}

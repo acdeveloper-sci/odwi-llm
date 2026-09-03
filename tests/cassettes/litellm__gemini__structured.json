@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:40:58+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "scenario": "structured"
+  },
+  "kind": "StructuredResponse",
+  "payload": {
+    "text": "{\n  \"city\": \"Paris\",\n  \"temperature_c\": 15.5\n}",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "gemini",
+    "finish_reason": "stop",
+    "usage": {
+      "input_tokens": 26,
+      "output_tokens": 23,
+      "estimated_cost_usd": 6.53e-05
+    },
+    "data": {
+      "city": "Paris",
+      "temperature_c": 15.5
+    }
+  }
+}

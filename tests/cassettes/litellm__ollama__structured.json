@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:41:02+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "ollama",
+    "model": "qwen3:0.6b",
+    "scenario": "structured"
+  },
+  "kind": "StructuredResponse",
+  "payload": {
+    "text": "{\n  \"city\": \"Paris\",\n  \"temperature_c\": 16.2\n}",
+    "model": "ollama_chat/qwen3:0.6b",
+    "provider": "ollama",
+    "finish_reason": "stop",
+    "usage": {
+      "input_tokens": 234,
+      "output_tokens": 21,
+      "estimated_cost_usd": null
+    },
+    "data": {
+      "city": "Paris",
+      "temperature_c": 16.2
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:41:09+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "scenario": "tools"
+  },
+  "kind": "ChatTurnResponse",
+  "payload": {
+    "text": "",
+    "model": "gemini-3.5-flash-lite",
+    "provider": "gemini",
+    "finish_reason": "tool_calls",
+    "usage": {
+      "input_tokens": 62,
+      "output_tokens": 16,
+      "estimated_cost_usd": 5.8599999999999995e-05
+    },
+    "tool_calls": [
+      {
+        "id": "call_327934",
+        "name": "get_weather",
+        "arguments": {
+          "city": "Paris"
+        }
+      }
+    ]
+  }
+}

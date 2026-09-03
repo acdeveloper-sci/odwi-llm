@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:40:44+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "scenario": "stream"
+  },
+  "kind": "stream",
+  "payload": [
+    {
+      "kind": "text_delta",
+      "text": "Hello and",
+      "tool_call": null,
+      "usage": null,
+      "finish_reason": null
+    },
+    {
+      "kind": "text_delta",
+      "text": " welcome!",
+      "tool_call": null,
+      "usage": null,
+      "finish_reason": null
+    },
+    {
+      "kind": "usage",
+      "text": null,
+      "tool_call": null,
+      "usage": {
+        "input_tokens": 8,
+        "output_tokens": 4,
+        "estimated_cost_usd": 1.24e-05
+      },
+      "finish_reason": null
+    },
+    {
+      "kind": "done",
+      "text": null,
+      "tool_call": null,
+      "usage": null,
+      "finish_reason": "stop"
+    }
+  ]
+}

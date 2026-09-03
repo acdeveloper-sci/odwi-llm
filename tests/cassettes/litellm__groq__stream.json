@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:40:44+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "scenario": "stream"
+  },
+  "kind": "stream",
+  "payload": [
+    {
+      "kind": "text_delta",
+      "text": "Hello",
+      "tool_call": null,
+      "usage": null,
+      "finish_reason": null
+    },
+    {
+      "kind": "text_delta",
+      "text": "!",
+      "tool_call": null,
+      "usage": null,
+      "finish_reason": null
+    },
+    {
+      "kind": "usage",
+      "text": null,
+      "tool_call": null,
+      "usage": {
+        "input_tokens": 78,
+        "output_tokens": 48,
+        "estimated_cost_usd": 4.05e-05
+      },
+      "finish_reason": null
+    },
+    {
+      "kind": "done",
+      "text": null,
+      "tool_call": null,
+      "usage": null,
+      "finish_reason": "stop"
+    }
+  ]
+}

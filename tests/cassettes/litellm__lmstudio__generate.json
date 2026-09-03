@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:40:04+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "lmstudio",
+    "model": "llama-3.2-3b-instruct",
+    "scenario": "generate"
+  },
+  "kind": "LLMResponse",
+  "payload": {
+    "text": "Hello!",
+    "model": "lm_studio/llama-3.2-3b-instruct",
+    "provider": "lmstudio",
+    "finish_reason": "stop",
+    "usage": {
+      "input_tokens": 41,
+      "output_tokens": 3,
+      "estimated_cost_usd": null
+    }
+  }
+}

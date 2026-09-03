@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:39:57+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "ollama",
+    "model": "qwen3:0.6b",
+    "scenario": "generate"
+  },
+  "kind": "LLMResponse",
+  "payload": {
+    "text": "Hi there! 😊",
+    "model": "ollama_chat/qwen3:0.6b",
+    "provider": "ollama",
+    "finish_reason": "stop",
+    "usage": {
+      "input_tokens": 16,
+      "output_tokens": 100,
+      "estimated_cost_usd": null
+    }
+  }
+}

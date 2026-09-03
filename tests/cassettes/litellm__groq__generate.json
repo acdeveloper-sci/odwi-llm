@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "recorded_utc": "2026-09-03T12:39:51+00:00",
+    "adapter": "litellm",
+    "adapter_lib": "litellm",
+    "adapter_lib_version": "1.99.0",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "scenario": "generate"
+  },
+  "kind": "LLMResponse",
+  "payload": {
+    "text": "Hello!",
+    "model": "openai/gpt-oss-120b",
+    "provider": "groq",
+    "finish_reason": "stop",
+    "usage": {
+      "input_tokens": 77,
+      "output_tokens": 33,
+      "estimated_cost_usd": 3.135e-05
+    }
+  }
+}
