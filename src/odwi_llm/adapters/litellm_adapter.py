@@ -26,9 +26,13 @@ import litellm
 from pydantic import ValidationError
 
 from odwi_llm.adapters._shared import (
+    MAX_RETRY_ATTEMPTS,
+    RETRYABLE_ERRORS,
+    call_with_retry,
     map_finish_reason,
     message_to_dict,
     retry_after_seconds,
+    retry_sleep,
     unmet_requirements,
 )
 from odwi_llm.adapters.config import ProviderConfig
@@ -178,12 +182,15 @@ class LiteLLMAdapter(LLMPort):
         return kwargs
 
     async def _acompletion(self, request: LLMRequest, **extra: Any) -> Any:
-        try:
-            return await litellm.acompletion(**self._kwargs(request, **extra))
-        except LLMError:
-            raise
-        except Exception as exc:  # noqa: BLE001 - the domain must not see raw provider errors
-            raise self._map_error(exc) from exc
+        async def _call() -> Any:
+            try:
+                return await litellm.acompletion(**self._kwargs(request, **extra))
+            except LLMError:
+                raise
+            except Exception as exc:  # noqa: BLE001 - the domain must not see raw provider errors
+                raise self._map_error(exc) from exc
+
+        return await call_with_retry(_call)
 
     def _usage(self, resp: Any) -> Usage:
         raw = getattr(resp, "usage", None)
@@ -281,35 +288,57 @@ class LiteLLMAdapter(LLMPort):
         kwargs = self._kwargs(
             request, stream=True, stream_options={"include_usage": True}
         )
+        emitted = False
         final_finish: FinishReason | None = None
         final_usage: Usage | None = None
-        try:
-            response = await litellm.acompletion(**kwargs)
-            async for chunk in response:
-                choices = getattr(chunk, "choices", None) or []
-                if choices:
-                    delta = choices[0].delta
-                    # delta.reasoning / delta.reasoning_content are ignored.
-                    content = getattr(delta, "content", None)
-                    if content:
-                        yield StreamChunk(kind="text_delta", text=content)
-                    raw_finish = choices[0].finish_reason
-                    if raw_finish is not None:
-                        final_finish = map_finish_reason(raw_finish)
-                raw_usage = getattr(chunk, "usage", None)
-                if raw_usage is not None:
-                    inp = int(getattr(raw_usage, "prompt_tokens", 0) or 0)
-                    out = int(getattr(raw_usage, "completion_tokens", 0) or 0)
-                    model = getattr(chunk, "model", None) or self._model
-                    final_usage = Usage(
-                        input_tokens=inp,
-                        output_tokens=out,
-                        estimated_cost_usd=estimate_cost_usd(model, inp, out),
-                    )
-        except LLMError:
-            raise
-        except Exception as exc:  # noqa: BLE001
-            raise self._map_error(exc) from exc
+        # retry only while nothing has been yielded yet (§5.3 + §5.4
+        # principle: once text is out to the caller, a retry would
+        # duplicate or corrupt the delivered output).
+        for attempt in range(1, MAX_RETRY_ATTEMPTS + 1):
+            final_finish = None
+            final_usage = None
+            try:
+                response = await litellm.acompletion(**kwargs)
+                async for chunk in response:
+                    choices = getattr(chunk, "choices", None) or []
+                    if choices:
+                        delta = choices[0].delta
+                        # delta.reasoning / delta.reasoning_content are ignored.
+                        content = getattr(delta, "content", None)
+                        if content:
+                            emitted = True
+                            yield StreamChunk(kind="text_delta", text=content)
+                        raw_finish = choices[0].finish_reason
+                        if raw_finish is not None:
+                            final_finish = map_finish_reason(raw_finish)
+                    raw_usage = getattr(chunk, "usage", None)
+                    if raw_usage is not None:
+                        inp = int(getattr(raw_usage, "prompt_tokens", 0) or 0)
+                        out = int(getattr(raw_usage, "completion_tokens", 0) or 0)
+                        model = getattr(chunk, "model", None) or self._model
+                        final_usage = Usage(
+                            input_tokens=inp,
+                            output_tokens=out,
+                            estimated_cost_usd=estimate_cost_usd(model, inp, out),
+                        )
+                break
+            except LLMError as exc:
+                if (
+                    emitted
+                    or not isinstance(exc, RETRYABLE_ERRORS)
+                    or attempt == MAX_RETRY_ATTEMPTS
+                ):
+                    raise
+                await retry_sleep(exc, attempt)
+            except Exception as exc:  # noqa: BLE001
+                mapped = self._map_error(exc)
+                if (
+                    emitted
+                    or not isinstance(mapped, RETRYABLE_ERRORS)
+                    or attempt == MAX_RETRY_ATTEMPTS
+                ):
+                    raise mapped from exc
+                await retry_sleep(mapped, attempt)
 
         if final_usage is not None:
             yield StreamChunk(kind="usage", usage=final_usage)
