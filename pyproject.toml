@@ -5,6 +5,7 @@ description = "Provider-agnostic LLM access layer: a thin port (LLMPort) plus in
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "litellm>=1.99.0",
     "pydantic>=2",
 ]
 
@@ -24,6 +25,11 @@ python_version = "3.13"
 plugins = ["pydantic.mypy"]
 strict = true
 files = ["src/odwi_llm"]
+
+[[tool.mypy.overrides]]
+# litellm ships no type information
+module = ["litellm", "litellm.*"]
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
