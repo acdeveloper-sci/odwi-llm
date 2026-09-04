@@ -6,11 +6,39 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.13"
+keywords = [
+    "llm",
+    "provider-agnostic",
+    "adapter",
+    "port",
+    "litellm",
+    "any-llm",
+    "gemini",
+    "groq",
+    "ollama",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
+    "Topic :: Software Development :: Libraries",
+    "Operating System :: OS Independent",
+]
 dependencies = [
     "any-llm-sdk[gemini,groq,lmstudio,ollama]>=1.26.0",
     "litellm>=1.99.0",
     "pydantic>=2",
 ]
+
+# Roadmap: PyPI. This metadata makes the package publishable, but there is
+# deliberately no publish workflow yet - publishing waits until a real
+# consumer (the AI Insights app) exercises the API. Not an oversight.
+[project.urls]
+Repository = "https://github.com/acdeveloper-sci/odwi-llm"
+Issues = "https://github.com/acdeveloper-sci/odwi-llm/issues"
 
 [build-system]
 requires = ["uv_build>=0.12.3,<0.13.0"]
