@@ -8,6 +8,8 @@ interchangeable adapters.
 
 - **Status & where to resume:** [`CHANGELOG.md`](CHANGELOG.md) — what's
   implemented (Stage 1), the public API, what's left for Stage 2.
+- Runnable examples: [`examples/`](examples/) — start at
+  `01_basic_generate.py`; no paid API keys, just a local Ollama.
 - Stage-1 lab (separate `uv` project): [`llm_lab/`](llm_lab/) — raw provider
   behaviour, `experiments/FINDINGS.md`, filled test matrix (§9.3).
 
