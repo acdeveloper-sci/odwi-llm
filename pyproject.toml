@@ -3,6 +3,8 @@ name = "odwi-llm"
 version = "0.1.0"
 description = "Provider-agnostic LLM access layer: a thin port (LLMPort) plus interchangeable adapters."
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.13"
 dependencies = [
     "any-llm-sdk[gemini,groq,lmstudio,ollama]>=1.26.0",
