@@ -19,3 +19,11 @@ wheels/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Private local notes — never committed (repo-hygiene plan, Task 3)
+.docs/
