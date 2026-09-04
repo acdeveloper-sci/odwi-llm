@@ -37,4 +37,3 @@ type: builtins.dict
 
 # repr():
 {'provider': 'lmstudio', 'model': 'llama-3.2-3b-instruct', 'temp0_accepted': True, 'temp0_deterministic': True, 'temp0_reply_1': 'Glowing jellyfish danced in synchronized underwater disco formation.', 'temp0_reply_2': 'Glowing jellyfish danced in synchronized underwater disco formation.', 'temp1_reply': 'Glowing jellyfish harmonize with a giant squid orchestra.', 'temp1_differs_from_temp0': True}
-

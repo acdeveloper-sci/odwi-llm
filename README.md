@@ -14,3 +14,6 @@ interchangeable adapters.
 
 Package manager: `uv`. Python: 3.13+. Tests: `uv run pytest` (offline,
 replays `tests/cassettes/`); `--live` hits real providers.
+
+Contributor setup: run `uv run pre-commit install` once after cloning so
+the formatting hooks and the `.docs/` guard run on every commit.

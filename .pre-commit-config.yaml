@@ -1,0 +1,23 @@
+# Run `uv run pre-commit install` once after cloning so these hooks fire on
+# every `git commit`. CI already covers mypy; mypy/ruff are kept out of
+# pre-commit for now (mypy is slow as a local hook, ruff is not a dependency).
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-toml
+
+  # Belt-and-suspenders with .gitignore: refuse any staged path under .docs/
+  # even if it was force-added (`git add -f`). .docs/ holds private local
+  # notes and must never reach the public repo (see AGENTS.md).
+  - repo: local
+    hooks:
+      - id: block-docs-dir
+        name: block files under .docs/
+        entry: ".docs/ is private local notes and must never be committed"
+        language: fail
+        files: '^\.docs/'
