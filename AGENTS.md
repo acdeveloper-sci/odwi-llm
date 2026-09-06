@@ -40,13 +40,20 @@ llm_lab/           separate uv project — Stage 1 exploration, kept in the repo
 ## Where the documentation lives
 
 Design and task plans are **private local notes under `.docs/`**, not part
-of this repository and not linkable from committed files. As of now there
-are four plans:
+of this repository and not linkable from committed files.
+
+Stage 1 (done):
 
 - `llm_agnostic_connector_design.md` — architecture, the §4 contract, closed decisions
 - `odwi_llm_experiments_task_plan.md` — Stage 1 lab (`llm_lab/experiments/`)
 - `odwi_llm_core_task_plan.md` — `core/` + adapters + contract tests
 - `odwi_llm_repo_hygiene_task_plan.md` — preparing the public repo
+
+Stage 2 — AI Core (`guardrails/`, `observability/`, `context/`, `orchestration/`):
+
+- `odwi_llm_etapa2_specify_v0.4.md` — what / why
+- `odwi_llm_etapa2_design_v0.4.md` — concrete types and structure
+- `odwi_llm_etapa2_ai_core_task_plan.md` — the AI Core task plan (16 tasks)
 
 If you do not have `.docs/` locally, ask the user for the relevant plan
 rather than guessing.
