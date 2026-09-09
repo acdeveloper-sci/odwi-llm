@@ -1,18 +1,27 @@
 """Task 8 — architecture boundaries (design §3.2).
 
-Two boundaries, scanned over `src/odwi_llm/` ONLY (never the whole repo):
+Three boundaries, scanned over `src/odwi_llm/` ONLY (never the whole repo):
 
 1. Provider libraries (`litellm`, `any_llm`, `openai`, `anthropic`,
    `google.genai`) may appear only under `odwi_llm/adapters/`.
 2. Application frameworks (`streamlit`, `reflex`, `flet`, `django`,
    `flask`, `fastapi`) may not appear anywhere under `odwi_llm/`.
+3. Agentic engines (`langgraph`, `langchain`, `crewai`, `llama_index`,
+   `pydantic_ai`) may not appear anywhere under `odwi_llm/` — design
+   §4/§9: a real agentic engine is a future, separate `Orchestrator`
+   adapter, not a Core import.
+
+The scan is recursive over the whole package, so the Stage 2 modules
+(`guardrails/`, `observability/`, `context/`, `orchestration/`) are held
+to the same boundary with no extra wiring (Stage 2 Task 15).
 
 `llm_lab/experiments/` is deliberately out of scope: it imports those
 libraries directly, by design (exploratory, not part of the package).
 `test_scanner_detects_violations_in_experiments` proves the scanner
 really works — pointed at `experiments/` with no allow-list it DOES
 fire — so a green result on `src/odwi_llm/` is a real pass, not a
-mis-built no-op.
+mis-built no-op. `test_scanner_fires_on_a_forbidden_import_in_a_stage2_module`
+does the same negative check specifically for the new modules.
 """
 
 import ast
@@ -30,6 +39,12 @@ PROVIDER_LIBS = frozenset(
 )
 FRAMEWORK_LIBS = frozenset(
     {"streamlit", "reflex", "flet", "django", "flask", "fastapi"}
+)
+# Agentic orchestration engines. Design §4/§9: a real agentic engine is a
+# future, separate adapter of the Orchestrator port — never imported into
+# the Core modules themselves.
+AGENT_ENGINE_LIBS = frozenset(
+    {"langgraph", "langchain", "langchain_core", "crewai", "llama_index", "pydantic_ai"}
 )
 
 _SKIP_DIRS = {".venv", "__pycache__", ".git", ".mypy_cache", ".pytest_cache"}
@@ -106,6 +121,15 @@ def test_no_framework_libs_anywhere_in_package() -> None:
     )
 
 
+def test_no_agent_engine_libs_anywhere_in_package() -> None:
+    bad = _violations(_PKG, AGENT_ENGINE_LIBS, allowed_dir=None)
+    assert bad == [], (
+        "agentic engine libraries imported inside odwi_llm/ (they belong "
+        "in a future separate Orchestrator adapter, not the Core):\n"
+        + "\n".join(f"  {p}: {sorted(h)}" for p, h in bad)
+    )
+
+
 def test_scanner_detects_violations_in_experiments() -> None:
     """Evidence the scanner is real: experiments/ imports provider libs."""
     if not _EXPERIMENTS.is_dir():
@@ -115,3 +139,42 @@ def test_scanner_detects_violations_in_experiments() -> None:
         "scanner found no provider-lib imports under experiments/ — either "
         "the scanner is broken or experiments/ changed shape"
     )
+
+
+_STAGE2_MODULES = ("guardrails", "observability", "context", "orchestration")
+
+
+def test_stage2_modules_are_present_and_in_scope() -> None:
+    for name in _STAGE2_MODULES:
+        assert (_PKG / name).is_dir(), f"expected {_PKG / name}"
+
+
+@pytest.mark.parametrize("subpkg", _STAGE2_MODULES)
+def test_scanner_fires_on_a_forbidden_import_in_a_stage2_module(
+    tmp_path: Path, subpkg: str
+) -> None:
+    """Negative check for the new modules: a synthetic package tree with a
+    forbidden import under each Stage 2 subpackage. Exercises the same
+    `_python_files` + adapters-skip + `_hits` pieces the real assertions
+    use, so a file under `guardrails/` etc. is genuinely in scope."""
+    pkg = tmp_path / "odwi_llm"
+    adapters = pkg / "adapters"
+    mod = pkg / subpkg
+    mod.mkdir(parents=True)
+    (mod / "_evil.py").write_text(
+        "import litellm\nfrom streamlit import thing\nimport langgraph\n",
+        encoding="utf-8",
+    )
+
+    files = _python_files(pkg)
+    prov = {
+        f
+        for f in files
+        if adapters not in f.parents and _hits(_imported_paths(f), PROVIDER_LIBS)
+    }
+    frame = {f for f in files if _hits(_imported_paths(f), FRAMEWORK_LIBS)}
+    agent = {f for f in files if _hits(_imported_paths(f), AGENT_ENGINE_LIBS)}
+
+    assert any(subpkg in f.parts for f in prov), prov
+    assert any(subpkg in f.parts for f in frame), frame
+    assert any(subpkg in f.parts for f in agent), agent
