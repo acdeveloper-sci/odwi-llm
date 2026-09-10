@@ -7,6 +7,8 @@ and its types; LiteLLM, Any-LLM or a native SDK sit behind the port as
 interchangeable adapters. On top sits the **AI Core** (Stage 2): policy,
 context and orchestration ports an app composes with `Composer`.
 
+- **Architecture:** [`ARCHITECTURE.md`](ARCHITECTURE.md) — the port/adapter
+  design, the two stages, the `Workflow` lifecycle, the five extension points.
 - **Status & where to resume:** [`CHANGELOG.md`](CHANGELOG.md) — what's
   implemented (Stage 1 + Stage 2 AI Core), the public API, what's left.
 - Runnable examples: [`examples/`](examples/) — start at

@@ -119,9 +119,11 @@ context selection, the tool executor, the prompt assembly.
   asymmetric with input/output `Deny`, which does abort: the orchestrator
   is mechanism, not policy — Specify §4 — so a single failed tool call
   among possibly several in one turn is left for the model to react to,
-  not treated as grounds to abort the whole run); between turns the
-  reference appends one `Role.ASSISTANT` message plus one `Role.TOOL`
-  message per result; observability events `policy_decision`
+  not treated as grounds to abort the whole run); when `before` denies,
+  `after` is skipped entirely for that call — `execute` never runs, so
+  there is no result for `after` to govern; between turns the reference
+  appends one `Role.ASSISTANT` message plus one `Role.TOOL` message per
+  result; observability events `policy_decision`
   (`phase="tool_before"` / `"tool_after"`), `tool_call`, and a per-turn
   `llm_call` were added.
 
