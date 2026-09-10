@@ -144,7 +144,13 @@ Everything an application supplies is one of five ports.
 [`03_structured_output.py`](examples/03_structured_output.py),
 [`04_fallback.py`](examples/04_fallback.py).
 
-**Stage 2** has no runnable example yet; the shape is:
+**Stage 2** is shown in
+[`05_ai_core_minimal.py`](examples/05_ai_core_minimal.py) (the smallest
+`Composer` path, lifecycle printed),
+[`06_ai_core_guardrails.py`](examples/06_ai_core_guardrails.py) (`Deny`
+and `Redact` in action) and
+[`07_ai_core_tools.py`](examples/07_ai_core_tools.py) (the tool-calling
+loop). In outline:
 
 ```python
 from odwi_llm.guardrails.port import GuardrailSet
