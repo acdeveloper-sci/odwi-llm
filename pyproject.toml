@@ -1,6 +1,6 @@
 [project]
 name = "odwi-llm"
-version = "0.1.0"
+version = "0.2.0"
 description = "Provider-agnostic LLM access layer: a thin port (LLMPort) plus interchangeable adapters."
 readme = "README.md"
 license = "MIT"

@@ -6,9 +6,10 @@ A provider-agnostic LLM access layer: a thin port (`LLMPort`) plus
 interchangeable adapters. Applications depend only on `LLMPort` and its
 types; LiteLLM, Any-LLM or a native SDK sit behind the port.
 
-Stage 1 (contract + adapters + test suite) is **implemented**. See
-[`CHANGELOG.md`](CHANGELOG.md) for what exists and what is left for
-Stage 2.
+Stage 1 (contract + adapters + test suite) and Stage 2 (the AI Core:
+`guardrails/`, `observability/`, `context/`, `orchestration/` — ports and
+types, no real policy rules) are **implemented**. See
+[`CHANGELOG.md`](CHANGELOG.md) for what exists and what is left.
 
 ## Repo layout
 
@@ -27,13 +28,25 @@ src/odwi_llm/
     config.py            ProviderConfig (env-var API key, base_url, timeout)
     pricing.py           static cost table (no library is a reliable cost source)
     _shared.py           helpers + call_with_retry (bounded technical retry, §5.3)
+  guardrails/    Stage 2 — the policy contract, no rules
+    types.py         PolicyContext, Decision[T] = Allow | Deny | Redact[T]
+    errors.py        PolicyError hierarchy (separate from LLMError)
+    port.py          Input/Tool/OutputGuardrail protocols, GuardrailSet
+  observability/ Stage 2 — ObservabilityPort (port.py) + NullObservability (null.py)
+  context/       Stage 2 — ContextBundle (types.py), ContextPort (port.py)
+  orchestration/ Stage 2 — the execution mechanism
+    types.py         WorkflowTask, WorkflowResult
+    port.py          Orchestrator, ToolExecutor protocols
+    workflow.py      Workflow — thin reference orchestrator + tool loop
+    composition.py   Composer — the composition root
 tests/
   contract/        exact assertions vs a FakeAdapter — always offline
   contract_shape/  structural assertions; replays tests/cassettes/ by default,
                    --live hits real providers, --live --record rewrites cassettes
-  architecture/    import-boundary AST check
+  architecture/    import-boundary AST check (provider libs, app frameworks, agent engines)
   adapters/        pricing, error mapping, retry, real-fallback tests
   cassettes/       recorded LLMPort-boundary responses (see its README.md)
+  ai_core/         Stage 2 — guardrail/observability/context fakes + Workflow/Composer suites
 llm_lab/           separate uv project — Stage 1 exploration, kept in the repo
 ```
 
@@ -49,10 +62,13 @@ Stage 1 (done):
 - `odwi_llm_core_task_plan.md` — `core/` + adapters + contract tests
 - `odwi_llm_repo_hygiene_task_plan.md` — preparing the public repo
 
-Stage 2 — AI Core (`guardrails/`, `observability/`, `context/`, `orchestration/`):
+Stage 2 — AI Core (`guardrails/`, `observability/`, `context/`, `orchestration/`), done:
 
 - `odwi_llm_etapa2_specify_v0.4.md` — what / why
-- `odwi_llm_etapa2_design_v0.4.md` — concrete types and structure
+- `odwi_llm_etapa2_design_v0.4.md` — concrete types and structure. Filename
+  is stable; the internal version moved to **v0.6** during implementation
+  (v0.5: guardrail/`ContextPort` protocols → `async`; v0.6: `ToolExecutor`
+  protocol + `tool_executor` param).
 - `odwi_llm_etapa2_ai_core_task_plan.md` — the AI Core task plan (16 tasks)
 
 If you do not have `.docs/` locally, ask the user for the relevant plan

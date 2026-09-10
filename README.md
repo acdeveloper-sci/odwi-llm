@@ -4,10 +4,11 @@
 
 Provider-agnostic LLM access layer. Applications depend only on `LLMPort`
 and its types; LiteLLM, Any-LLM or a native SDK sit behind the port as
-interchangeable adapters.
+interchangeable adapters. On top sits the **AI Core** (Stage 2): policy,
+context and orchestration ports an app composes with `Composer`.
 
 - **Status & where to resume:** [`CHANGELOG.md`](CHANGELOG.md) — what's
-  implemented (Stage 1), the public API, what's left for Stage 2.
+  implemented (Stage 1 + Stage 2 AI Core), the public API, what's left.
 - Runnable examples: [`examples/`](examples/) — start at
   `01_basic_generate.py`; no paid API keys, just a local Ollama.
 - Stage-1 lab (separate `uv` project): [`llm_lab/`](llm_lab/) — raw provider
