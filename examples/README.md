@@ -37,6 +37,7 @@ This series teaches three things, not just one:
 | 07 | [`07_ai_core_tools.py`](07_ai_core_tools.py) | The tool-calling loop: a `ToolGuardrail` with `covers`, a `tool_executor`, and `tool_call` / `tool_before` / `tool_after` events. |
 | 08 | [`08_ai_core_context_patterns.py`](08_ai_core_context_patterns.py) | A follow-up chat over a prior report: `ContextBundle.prior_output` built once, manual prompt assembly, `Allow(grounded=True/False)` plus chained output guardrails. |
 | 09 | [`09_ai_core_tool_coverage.py`](09_ai_core_tool_coverage.py) | `ToolGuardrail.covers`: a catch-all and a tool-specific guardrail both running on the same tool, the specific one denying based on a structured tool-call argument. |
+| 10 | [`10_ai_core_tool_redact.py`](10_ai_core_tool_redact.py) | One `ToolGuardrail` implementing both `before` (clamps args) and `after` (redacts a leaked contact pattern in the tool's own returned content — the most reliable guardrail input of the series). |
 
 `04_fallback.py` names a local LM Studio model as the fallback, but in the
 happy path the fallback is never contacted, so it still runs with only
