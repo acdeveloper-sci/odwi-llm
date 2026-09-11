@@ -10,6 +10,22 @@ ollama pull qwen3:0.6b
 
 Run any of them with `uv run python examples/<file>`.
 
+This series teaches three things, not just one:
+
+1. **Direct use of the API** — `Composer`, guardrails, tools, context.
+   Most examples below are this.
+2. **The line between what `odwi-llm` resolves and what stays on the
+   application side.** [`08_ai_core_context_patterns.py`](08_ai_core_context_patterns.py)
+   is a real case of that line getting tested, not just stated — see the
+   note near the end of its docstring.
+3. **When to recognize you need to build something deliberately left out
+   today** (an agentic orchestrator adapter, for instance). This is
+   conceptual guidance, not something a runnable example can demonstrate
+   on its own: the working line is whether the model picks one tool from
+   a fixed menu once per turn (still a `Workflow`) or chains multiple
+   tool decisions with no sequence anticipated by whoever built the
+   workflow (that crosses into `Agent`).
+
 | # | File | Shows |
 |---|---|---|
 | 01 | [`01_basic_generate.py`](01_basic_generate.py) | The smallest use: one `LiteLLMAdapter`, one async `generate()` call. |

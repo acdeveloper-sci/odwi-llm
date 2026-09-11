@@ -36,6 +36,17 @@ also small: it can append a stray report figure to an otherwise general
 answer, which would flip `grounded` to True. Re-run if a result looks
 off.
 
+Also worth naming: `GroundingClassifierOutput` went through a real bug
+during this example's own development (it first trusted a self-tag the
+model was supposed to add to its own answer, which does not hold up).
+The `odwi-llm` mechanism — `Decision`, the two guardrails composing in
+order, the fail-fast on construction — never changed across that
+diagnosis; the bug was entirely an application-layer choice, which
+policy to use to decide grounding. That is the boundary this package
+draws in practice, not just in the docs: `odwi-llm` gives you the
+mechanism, the app still has to get its own policy right and verify it
+empirically, the same as any other application code.
+
 No API keys. It only needs a running Ollama daemon with the model pulled:
 
     ollama pull qwen3:0.6b
