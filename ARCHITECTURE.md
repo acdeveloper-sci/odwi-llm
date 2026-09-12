@@ -132,7 +132,7 @@ Everything an application supplies is one of five ports.
 
 | Port | Contract | What a real app puts here |
 |---|---|---|
-| `LLMPort` (`core/port.py`) | `generate` · `structured` · `stream` · `chat_with_tools` + `capabilities` | usually a provided adapter (`LiteLLMAdapter` / `AnyLLMAdapter`), optionally wrapped in `FallbackLLM`; or its own adapter over another library |
+| `LLMPort` (`core/port.py`) | `generate` · `structured` · `stream` · `chat_with_tools` + `capabilities` | usually a provided adapter (`LiteLLMAdapter` / `AnyLLMAdapter`), optionally wrapped in `FallbackLLM`; or its own adapter over another library — `adapters/litellm_adapter.py` is the formal reference for that; [`11_ai_core_max_iterations.py`](examples/11_ai_core_max_iterations.py) shows the same structural move (implementing the `ABC` directly) at its smallest: a fake scripted for one property, not a complete adapter |
 | `InputGuardrail` / `ToolGuardrail` / `OutputGuardrail` (`guardrails/port.py`) | `async check` / `before` + `after` → `Decision`; `ToolGuardrail.covers` names the tools it governs (`None` = all) | the real policy: topic scope, data-access rules, injection detection, argument validation, output schema and style checks |
 | `ContextPort` (`context/port.py`) | `async select(*, message=None, ctx)` → `ContextBundle` | retrieval: history, RAG, aggregated run data. The data-access filter runs here — inside `select`, using `ctx.scope`, before the bundle is built |
 | `ObservabilityPort` (`observability/port.py`) | `emit(event, **fields)` | a bridge to OpenTelemetry / Langfuse / structured logging. Default is `NullObservability` (no-op) |

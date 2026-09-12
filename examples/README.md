@@ -38,9 +38,12 @@ This series teaches three things, not just one:
 | 08 | [`08_ai_core_context_patterns.py`](08_ai_core_context_patterns.py) | A follow-up chat over a prior report: `ContextBundle.prior_output` built once, manual prompt assembly, `Allow(grounded=True/False)` plus chained output guardrails. |
 | 09 | [`09_ai_core_tool_coverage.py`](09_ai_core_tool_coverage.py) | `ToolGuardrail.covers`: a catch-all and a tool-specific guardrail both running on the same tool, the specific one denying based on a structured tool-call argument. |
 | 10 | [`10_ai_core_tool_redact.py`](10_ai_core_tool_redact.py) | One `ToolGuardrail` implementing both `before` (clamps args) and `after` (redacts a leaked contact pattern in the tool's own returned content — the most reliable guardrail input of the series). |
+| 11 | [`11_ai_core_max_iterations.py`](11_ai_core_max_iterations.py) | `Workflow`'s `max_tool_iterations` worst-case bound, with a scripted `LLMPort` that always requests a tool — deterministic by construction, needs no model at all. |
 
 `04_fallback.py` names a local LM Studio model as the fallback, but in the
 happy path the fallback is never contacted, so it still runs with only
 Ollama up. `07_ai_core_tools.py` relies on a 0.6b model choosing to call
 the tool (`tool_choice="auto"`); if a run shows `tool_calls=0`, run it
-again.
+again. `11_ai_core_max_iterations.py` is the only example in this series
+that does not need Ollama (or any model) running at all — its `LLMPort`
+is hand-scripted in the script itself.
