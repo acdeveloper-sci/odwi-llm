@@ -177,6 +177,46 @@ result = await comp.orchestrator.run(
 )
 ```
 
+## Same shape, different domains
+
+`Composer` and `GuardrailSet` do not change between applications — what
+changes is which guardrails, tools, and context source get plugged in.
+Two sketches below (illustrative only, not executable — no such
+guardrails ship with `odwi-llm`) show the same composition shape wired
+for two unrelated domains with opposite data-handling needs.
+
+Case A analyzes documents that may contain personal data, so PII is
+redacted before it ever reaches the caller. Case D reports on weather
+and location data — nothing personal to protect, so the same slot
+(`GuardrailSet`) simply carries a different policy instead.
+
+```python
+# Illustrative only — not executable, no such guardrails ship with
+# odwi-llm.
+
+# Case A: document analysis, PII redacted from output
+comp_a = Composer(
+    llm=llm,
+    context=document_context,
+    guardrails=GuardrailSet(
+        input_guardrails=[DocumentScopePolicy()],
+        output_guardrails=[PiiRedactionPolicy(), OutputSchemaPolicy(AnalysisSchema)],
+    ),
+)
+
+# Case D: weather/time reporting with tools — PII allowed here, unlike A
+comp_d = Composer(
+    llm=llm,
+    context=weather_context,
+    guardrails=GuardrailSet(
+        tool_guardrails=[DataAccessPolicy(covers=None)],
+        output_guardrails=[StructuredStylePolicy()],
+    ),
+    tools=[gis_tool, weather_tool],
+    tool_executor=my_executor,
+)
+```
+
 ## What's deliberately not here
 
 `odwi-llm` is not an agent framework, a RAG system, a vector store, a
