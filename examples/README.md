@@ -41,6 +41,7 @@ This series teaches three things, not just one:
 | 11 | [`11_ai_core_max_iterations.py`](11_ai_core_max_iterations.py) | `Workflow`'s `max_tool_iterations` worst-case bound, with a scripted `LLMPort` that always requests a tool — deterministic by construction, needs no model at all. |
 | 12 | [`12_ai_core_composition_seams.py`](12_ai_core_composition_seams.py) | `Composer`'s own seam, in two parts: a custom `Orchestrator` that skips every policy phase (a narrow, honestly-scoped case, not a recommendation), and the default `Workflow` running over a Stage 1 `FallbackLLM` with no friction. |
 | 13 | [`13_custom_llm_adapter.py`](13_custom_llm_adapter.py) | A real, minimal `LLMPort` implemented outside `odwi_llm.adapters` — plain HTTP against Ollama's native API, no `litellm` — including its own fail-fast against `LLMRequirements`. Stage 1 only, no `Composer`. |
+| 14 | [`14_caching_llm.py`](14_caching_llm.py) | `CachingLLM`, an `LLMPort` decorator that caches `generate()` only, keyed on `(messages, intent, max_output_tokens)` — deliberately excluding `metadata`, verified with a same-request-different-metadata case that still hits. |
 
 `04_fallback.py` names a local LM Studio model as the fallback, but in the
 happy path the fallback is never contacted, so it still runs with only
