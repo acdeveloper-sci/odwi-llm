@@ -1,4 +1,4 @@
-"""Reference orchestrator — design §10 (Stage 2, v0.6).
+"""Reference orchestrator — design §10 (Stage 2, v0.7).
 
 A thin hand-rolled loop, the default `Orchestrator` implementation. It
 consults Policy at defined points; it never holds security rules, it only
@@ -12,7 +12,23 @@ When `tools` are registered, `run()` drives a bounded tool-calling loop:
 (the app runs the tool, never this Workflow), then the covering
 guardrails' `after` (may `Deny` or `Redact` the result), feed results
 back, repeat until no more tool calls or `max_tool_iterations`.
+
+`schema` (v0.7) is orthogonal to `tools` — four dispatch paths, not two:
+neither -> `generate()`; only `schema` -> `structured()` directly, no
+loop; only `tools` -> the loop above, unchanged; both -> the loop until a
+clean close (no more `tool_calls`), then one extra `structured()` call
+with the accumulated message history. If the loop instead stops on
+`max_tool_iterations`, `structured()` is never called — the loop did not
+close cleanly, and forcing a validated call over a state the model never
+declared finished would be the orchestrator deciding on its behalf, the
+same principle behind the `tool_before`/`tool_after` `Deny` asymmetry
+(v0.6). A `Redact` from an output guardrail against a structured final
+response is treated as `Deny` (fail-closed): `Redact` only ever rewrites
+`.text`, never `.data`, and a consumer reading `.data` — the whole point
+of this path — would silently bypass the redaction otherwise.
 """
+
+from pydantic import BaseModel
 
 from odwi_llm.context.port import ContextPort
 from odwi_llm.core.port import LLMPort
@@ -23,6 +39,7 @@ from odwi_llm.core.types import (
     LLMResponse,
     Message,
     Role,
+    StructuredResponse,
     ToolCall,
     ToolResult,
     ToolSpec,
@@ -78,6 +95,7 @@ class Workflow:
         tools: list[ToolSpec] | None = None,
         tool_executor: ToolExecutor | None = None,
         max_tool_iterations: int = 6,
+        schema: type[BaseModel] | None = None,
         observability: ObservabilityPort | None = None,
     ) -> None:
         tools = tools or []
@@ -92,6 +110,7 @@ class Workflow:
         self._tools = tools
         self._tool_executor = tool_executor
         self._max_tool_iterations = max_tool_iterations
+        self._schema = schema
         self._obs = observability or NullObservability()
 
     async def run(
@@ -119,16 +138,33 @@ class Workflow:
         # reference Workflow's.
 
         response: LLMResponse
+        messages = [message]
         if self._tools:
-            outcome = await self._tool_loop([message], ctx)
+            outcome = await self._tool_loop(messages, ctx)
             if isinstance(outcome, WorkflowResult):
-                return outcome  # hit max_tool_iterations
-            response, tool_calls_made = outcome
+                return outcome  # hit max_tool_iterations — schema not forced
+            turn, tool_calls_made = outcome
+            if self._schema is not None:
+                # Clean close: the loop stopped because the model made no
+                # more tool_calls, so the accumulated history (including
+                # every Role.TOOL result message) is ready for a schema-
+                # validated final answer.
+                self._obs.emit(
+                    "llm_call", provider=ctx.provider, model=ctx.model
+                )
+                response = await self._llm.structured(
+                    LLMRequest(messages=list(messages)), self._schema
+                )
+            else:
+                response = turn
         else:
-            request = LLMRequest(messages=[message])
-            self._obs.emit("llm_call", provider=ctx.provider, model=ctx.model)
-            response = await self._llm.generate(request)
             tool_calls_made = 0
+            request = LLMRequest(messages=messages)
+            self._obs.emit("llm_call", provider=ctx.provider, model=ctx.model)
+            if self._schema is not None:
+                response = await self._llm.structured(request, self._schema)
+            else:
+                response = await self._llm.generate(request)
 
         grounded = True
         for out_guard in self._guardrails.output_guardrails:
@@ -144,6 +180,20 @@ class Workflow:
                     tool_calls_made=tool_calls_made,
                 )
             if isinstance(out_decision, Redact):
+                if isinstance(response, StructuredResponse):
+                    # (v0.7) Redact rewrites .text only, never .data — a
+                    # consumer reading .data would silently bypass it.
+                    # Fail-closed instead of pretending the redaction held.
+                    reason = (
+                        "redact not supported on structured output "
+                        f"(guardrail requested: {out_decision.reason})"
+                    )
+                    self._obs.emit("error", reason=reason)
+                    return WorkflowResult(
+                        text=reason,
+                        finish_reason=FinishReason.CONTENT_FILTER,
+                        tool_calls_made=tool_calls_made,
+                    )
                 response = response.model_copy(
                     update={"text": out_decision.redacted}
                 )
@@ -158,6 +208,7 @@ class Workflow:
             finish_reason=response.finish_reason,
             grounded=grounded,
             tool_calls_made=tool_calls_made,
+            data=response.data if isinstance(response, StructuredResponse) else None,
         )
 
     # --- tool-calling loop ------------------------------------------
