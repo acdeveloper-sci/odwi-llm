@@ -35,9 +35,9 @@ src/odwi_llm/
   observability/ Stage 2 — ObservabilityPort (port.py) + NullObservability (null.py)
   context/       Stage 2 — ContextBundle (types.py), ContextPort (port.py)
   orchestration/ Stage 2 — the execution mechanism
-    types.py         WorkflowTask, WorkflowResult
+    types.py         WorkflowTask, WorkflowResult (incl. data: BaseModel | None)
     port.py          Orchestrator, ToolExecutor protocols
-    workflow.py      Workflow — thin reference orchestrator + tool loop
+    workflow.py      Workflow — thin reference orchestrator + tool loop + schema dispatch
     composition.py   Composer — the composition root
 tests/
   contract/        exact assertions vs a FakeAdapter — always offline
@@ -66,10 +66,11 @@ Stage 2 — AI Core (`guardrails/`, `observability/`, `context/`, `orchestration
 
 - `odwi_llm_etapa2_specify_v0.4.md` — what / why
 - `odwi_llm_etapa2_design_v0.4.md` — concrete types and structure. Filename
-  is stable; the internal version moved to **v0.6** during implementation
+  is stable; the internal version moved to **v0.7** during implementation
   (v0.5: guardrail/`ContextPort` protocols → `async`; v0.6: `ToolExecutor`
-  protocol + `tool_executor` param).
-- `odwi_llm_etapa2_ai_core_task_plan.md` — the AI Core task plan (16 tasks)
+  protocol + `tool_executor` param; v0.7: `schema=`/`WorkflowResult.data`,
+  orthogonal to `tools`).
+- `odwi_llm_etapa2_ai_core_task_plan.md` — the AI Core task plan (21 tasks)
 
 If you do not have `.docs/` locally, ask the user for the relevant plan
 rather than guessing.

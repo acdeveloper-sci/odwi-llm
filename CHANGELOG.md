@@ -7,6 +7,94 @@ notes, not part of this repository. Lab evidence:
 
 ---
 
+## 0.3.0 — Stage 2: `structured()` + the `Workflow` loop (2026-09)
+
+Executed plan: Fase F of the AI Core task plan (private local notes),
+added after the 0.2.0 close to answer a question left open at that
+handoff — whether `structured()` (Stage 1) can combine with `Workflow`'s
+tool-calling loop. Motivated by a real use case (a domain that needs
+`structured()` + tools + schema in the same turn) that the existing
+surface could not express.
+
+### What got implemented
+
+- **`odwi_llm.orchestration.types.WorkflowResult.data`** —
+  `BaseModel | None = None`, deliberately not generic: a
+  `WorkflowResult[T]` would have forced `Orchestrator.run()` to become
+  generic too, rippling into every existing implementation (`Workflow`,
+  a custom `Orchestrator`, any test fake). Populated only when the final
+  response went through `structured()`.
+- **`Workflow.__init__(..., schema: type[BaseModel] | None = None)`** —
+  orthogonal to `tools`, not conditioned on it. `run()` now dispatches
+  four paths: neither `tools` nor `schema` → `generate()`, unchanged;
+  only `schema` → `structured(request, schema)` directly, no loop; only
+  `tools` → the existing loop, unchanged; both → the loop until a clean
+  close (no more `tool_calls`), then one extra `structured()` call with
+  the accumulated message history (including every `Role.TOOL` result
+  message). If the loop instead stops on `max_tool_iterations`,
+  `structured()` is never called — the same principle behind the
+  `tool_before`/`tool_after` `Deny` asymmetry: the orchestrator does not
+  decide on the model's behalf when it never declared the turn finished.
+- **`Redact` against a structured final response is now `Deny`
+  fail-closed** — `Redact` only ever rewrites `.text`, never `.data`; a
+  consumer reading `.data` (the whole point of this path) would silently
+  bypass the redaction otherwise. Synthesized reason: `"redact not
+  supported on structured output (guardrail requested: {reason})"`.
+  `Deny` / `Allow(grounded=...)` against a structured response are
+  unchanged — they already ran against `.text` only.
+- **`Composer.__init__(..., schema=None)`** — forwarded, with no logic of
+  its own, to the default `Workflow`. A custom `orchestrator=` ignores
+  it, same as it already ignores `tools`/`tool_executor`.
+- **Tests** — `tests/ai_core/test_workflow_schema.py` (new): the four
+  dispatch paths, the max-iterations-never-calls-`structured()` case
+  (verified with a call-counting spy, not just the result), and both
+  `Redact` behaviors (fail-closed against a structured response,
+  unchanged otherwise). Two new cases in `test_composer.py` for the
+  `schema=` forwarding. No new fakes needed —
+  `FakeAdapter.structured()` (Stage 1) already accepted a configurable
+  payload. `uv run pytest`: 159 passed, 6 skipped, offline. `mypy
+  --strict` clean.
+
+### API a consuming app uses (delta over 0.2.0)
+
+```python
+from pydantic import BaseModel
+
+class PropertyReport(BaseModel):
+    address: str
+    estimated_value: float
+
+comp = Composer(
+    llm=llm, context=my_context, guardrails=my_guardrails,
+    tools=[...], tool_executor=my_executor,   # optional, as before
+    schema=PropertyReport,                    # new — orthogonal to tools
+)
+result = await comp.orchestrator.run(task, ctx)
+if result.data is not None:
+    report = cast(PropertyReport, result.data)  # narrowing is the app's job
+```
+
+### What is explicitly left
+
+Unchanged from 0.2.0 (real guardrails/context/tool executors, a real
+agentic `Orchestrator` adapter, the first consuming app), plus:
+
+- **A `Redact` variant that can rewrite fields of a typed `data` object**
+  — postponed until a real case justifies it; today any `Redact` against
+  a structured response is treated as `Deny`.
+- **The example for the use case that motivated this delta** (a
+  real-estate domain combining `structured()` + tools + schema) — a
+  separate decision, not part of this task plan; `examples/` are not
+  planned in that document.
+
+### Where the code diverged from the plan
+
+None worth noting — Design v0.7 was written and reviewed against the
+real `workflow.py` code (Task 13) before this delta was drafted, so the
+implementation matched the design directly.
+
+---
+
 ## 0.2.0 — Stage 2: AI Core (2026-09)
 
 Executed plan: the AI Core task plan (private local notes). Four new
