@@ -1,10 +1,14 @@
 """Task 14 — Composer assembles a default Workflow with everything
 forwarded, and construction fails fast on a bad tool setup.
+
+Task 19 (design v0.7) — Composer forwards schema= to the default Workflow,
+same pattern as tools/tool_executor; a custom orchestrator ignores it.
 """
 
 from datetime import datetime
 
 import pytest
+from pydantic import BaseModel
 
 from odwi_llm.core.types import (
     FinishReason,
@@ -122,3 +126,36 @@ def test_tools_with_guardrail_and_executor_are_forwarded() -> None:
     assert isinstance(comp.orchestrator, Workflow)
     assert [t.name for t in comp.orchestrator._tools] == ["search_docs"]
     assert comp.orchestrator._tool_executor is executor
+
+
+class _Answer(BaseModel):
+    value: str
+
+
+def test_schema_is_forwarded_to_the_default_workflow() -> None:
+    comp = Composer(
+        llm=FakeAdapter(),
+        context=FakeContext(),
+        guardrails=GuardrailSet(),
+        schema=_Answer,
+    )
+    assert isinstance(comp.orchestrator, Workflow)
+    assert comp.orchestrator._schema is _Answer
+
+
+def test_a_custom_orchestrator_ignores_schema() -> None:
+    class _Stub:
+        async def run(
+            self, task: WorkflowTask, ctx: PolicyContext
+        ) -> WorkflowResult:
+            return WorkflowResult(text="x", finish_reason=FinishReason.STOP)
+
+    stub = _Stub()
+    comp = Composer(
+        llm=FakeAdapter(),
+        context=FakeContext(),
+        guardrails=GuardrailSet(),
+        schema=_Answer,
+        orchestrator=stub,
+    )
+    assert comp.orchestrator is stub  # schema= never reaches the stub

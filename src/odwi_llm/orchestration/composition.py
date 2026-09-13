@@ -1,4 +1,6 @@
-"""Composition root — design §11 (Stage 2, v0.6)."""
+"""Composition root — design §11 (Stage 2, v0.7)."""
+
+from pydantic import BaseModel
 
 from odwi_llm.context.port import ContextPort
 from odwi_llm.core.port import LLMPort
@@ -31,6 +33,7 @@ class Composer:
         guardrails: GuardrailSet,
         tools: list[ToolSpec] | None = None,
         tool_executor: ToolExecutor | None = None,
+        schema: type[BaseModel] | None = None,
         orchestrator: Orchestrator | None = None,
         observability: ObservabilityPort | None = None,
     ) -> None:
@@ -40,13 +43,14 @@ class Composer:
         self.observability: ObservabilityPort = (
             observability or NullObservability()
         )
-        # A custom orchestrator ignores tools / tool_executor — running
-        # tools is its own concern (§11).
+        # A custom orchestrator ignores tools / tool_executor / schema —
+        # running tools and structured output are its own concern (§11).
         self.orchestrator: Orchestrator = orchestrator or Workflow(
             llm=llm,
             context=context,
             guardrails=guardrails,
             tools=tools,
             tool_executor=tool_executor,
+            schema=schema,
             observability=self.observability,
         )
