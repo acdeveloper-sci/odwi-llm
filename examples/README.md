@@ -42,6 +42,7 @@ This series teaches three things, not just one:
 | 12 | [`12_ai_core_composition_seams.py`](12_ai_core_composition_seams.py) | `Composer`'s own seam, in two parts: a custom `Orchestrator` that skips every policy phase (a narrow, honestly-scoped case, not a recommendation), and the default `Workflow` running over a Stage 1 `FallbackLLM` with no friction. |
 | 13 | [`13_custom_llm_adapter.py`](13_custom_llm_adapter.py) | A real, minimal `LLMPort` implemented outside `odwi_llm.adapters` — plain HTTP against Ollama's native API, no `litellm` — including its own fail-fast against `LLMRequirements`. Stage 1 only, no `Composer`. |
 | 14 | [`14_caching_llm.py`](14_caching_llm.py) | `CachingLLM`, an `LLMPort` decorator that caches `generate()` only, keyed on `(messages, intent, max_output_tokens)` — deliberately excluding `metadata`, verified with a same-request-different-metadata case that still hits. |
+| 15 | [`15_structured_output.py`](15_structured_output.py) | `Composer(schema=...)`, the "schema only" path (Design v0.7): no `tools`, `Workflow` calls `structured()` directly and `WorkflowResult.data` comes back populated and validated. |
 
 `04_fallback.py` names a local LM Studio model as the fallback, but in the
 happy path the fallback is never contacted, so it still runs with only
