@@ -55,13 +55,14 @@ flowchart TD
     C -->|"any Deny"| Z1["emit: error<br/>return WorkflowResult (finish_reason=CONTENT_FILTER)"]
     C -->|"otherwise"| D["await context.select"]
     D --> E{"tools registered?"}
-
-    E -->|"no"| F["emit: llm_call<br/>await llm.generate"]
+    E -->|"no"| F0{"schema configured?"}
+    F0 -->|"no"| F["emit: llm_call<br/>await llm.generate"]
+    F0 -->|"yes"| F1["emit: llm_call<br/>await llm.structured(schema)"]
     F --> OUT
+    F1 --> OUT
 
     E -->|"yes"| G{"tool loop<br/>(up to max_tool_iterations)"}
     G --> H["emit: llm_call<br/>await llm.chat_with_tools"]
-    H -->|"no tool_calls"| OUT
     H -->|"tool_calls"| I["for each call:<br/>emit: tool_call"]
     I --> J["covering guardrails: before<br/>emit: policy_decision (phase=tool_before)"]
     J -->|"Deny"| K["error ToolResult<br/>execute + after skipped"]
@@ -70,12 +71,17 @@ flowchart TD
     K --> N["feed tool results back"]
     M --> N
     N --> G
-    G -->|"iterations exhausted"| Y["emit: error (exceeded max_tool_iterations)<br/>return WorkflowResult (finish_reason=OTHER)"]
+    H -->|"no tool_calls (clean close)"| H0{"schema configured?"}
+    H0 -->|"no"| OUT
+    H0 -->|"yes"| H1["emit: llm_call<br/>await llm.structured(schema, accumulated messages)"]
+    H1 --> OUT
+    G -->|"iterations exhausted"| Y["emit: error (exceeded max_tool_iterations)<br/>return WorkflowResult (finish_reason=OTHER) — schema never forced"]
 
     OUT["output guardrails — await check (each)<br/>emit: policy_decision (phase=output)"]
     OUT -->|"any Deny"| Z2["emit: error<br/>return WorkflowResult (finish_reason=CONTENT_FILTER)"]
-    OUT -->|"otherwise — Redact rewrites text;<br/>Allow grounded=False lowers grounded"| P["emit: result"]
-    P --> Q["return WorkflowResult<br/>(text, finish_reason, grounded, tool_calls_made)"]
+    OUT -->|"Redact, response is structured"| Z3["emit: error<br/>return WorkflowResult (finish_reason=CONTENT_FILTER) — fail-closed: Redact never rewrites .data"]
+    OUT -->|"otherwise — Redact rewrites text (non-structured only);<br/>Allow grounded=False lowers grounded"| P["emit: result"]
+    P --> Q["return WorkflowResult<br/>(text, finish_reason, grounded, tool_calls_made, data)"]
 ```
 
 Notes the diagram compresses:
@@ -84,8 +90,10 @@ Notes the diagram compresses:
   not.** The orchestrator is mechanism, not policy — a single failed tool
   call among possibly several in one turn is fed back to the model as an
   error `ToolResult` to react to, not treated as grounds to abort.
-- The `llm_call` event fires **once per turn** — once in the no-tools
-  path, once per iteration of the tool loop.
+- The `llm_call` event fires once per turn in the no-tools path (either
+  `generate` or `structured`, never both), once per iteration of the tool
+  loop, plus one extra call if the loop closes cleanly and `schema` is
+  configured.
 - `policy_decision` appears **at least twice** (input, output), plus one
   `tool_before` per covering guardrail evaluated on a tool call, plus one
   `tool_after` per covering guardrail — but `tool_after` fires only when
@@ -94,6 +102,15 @@ Notes the diagram compresses:
 - Hitting `max_tool_iterations` returns a `WorkflowResult`
   (`finish_reason=OTHER`, text `"stopped: exceeded max_tool_iterations
   (N)"`), never an exception.
+- `schema` (v0.7) is orthogonal to `tools`, not conditioned on it — the
+  diagram layers it as a second decision on both the no-tools and
+  clean-loop-close paths, never on the `max_tool_iterations`-exhausted
+  path: forcing a validated call over a state the model never declared
+  finished would be the orchestrator deciding on its behalf.
+- A `Redact` against a structured response (`.data` populated) is
+  treated as `Deny`, fail-closed — `Redact` only ever rewrites `.text`,
+  never `.data`, and a consumer reading `.data` would silently bypass the
+  redaction otherwise.
 
 ## `Decision[T]` — the shared vocabulary
 
